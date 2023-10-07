@@ -1,9 +1,10 @@
 import React from 'react';
+import Topbar from '../sections/Topbar';
 
 const Home = () => {
     return (
         <div>
-            <h1>Hello</h1>
+            <Topbar/>
         </div>
     );
 }
