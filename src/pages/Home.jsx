@@ -1,15 +1,13 @@
 import React from 'react';
-import Topbar from '../sections/Topbar';
-import Header from '../sections/Header';
-import Navbar from '../sections/Navbar';
+
+// layouts
+import AppLayout from '../layouts/AppLayout';
 
 const Home = () => {
     return (
-        <div>
-            <Topbar/>
-            <Header/>
-            <Navbar/>
-        </div>
+        <AppLayout>
+            <h1>Hello!</h1>
+        </AppLayout>
     );
 }
 
