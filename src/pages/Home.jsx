@@ -2,11 +2,12 @@ import React from 'react';
 
 // layouts
 import AppLayout from '../layouts/AppLayout';
+import Categories from '../sections/Categories';
 
 const Home = () => {
     return (
         <AppLayout>
-            <h1>Hello!</h1>
+            <Categories/>
         </AppLayout>
     );
 }
