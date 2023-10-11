@@ -5,20 +5,20 @@ import TestImg from '../assets/images/1.jpg';
 
 const FoodCard = () => {
     return (
-        <div className="relative flex items-center justify-center w-[100%] h-[150px] p-[0.2rem] border-[1px] border-gray-200 rounded-md">
-            <div className="w-[35%] h-full rounded-sm overflow-hidden">
+        <div className="relative w-[100%] h-[360px] p-[0.2rem] border-[1px] border-gray-200 rounded-md">
+            <div className="w-full h-[55%] rounded-sm overflow-hidden">
                 <img src={TestImg} className="w-full h-full object-cover" alt="" />
             </div>
-            <div className="w-[65%] pl-[0.6rem]">
-                <h1 className="text-[1.1rem] font-bold">Chicken Biryani</h1>
-                <p className="text-[1.1rem] py-[0.15rem]">160 Tk</p>
-                <div className="flex items-center justify-start py-[0.15rem]">
+            <div className="relative w-full h-[45%] pl-[0.6rem] pt-[0.6rem]">
+                <h1 className="text-[1.2rem] font-bold">Chicken Biryani</h1>
+                <div className="flex items-center justify-start pt-[0.5rem]">
                     <RxTimer className="text-[1.1rem]"/>
                     <p className="pl-[0.4rem] text-[1rem]">30 - 35 min</p>
                 </div>
-                <button className="mt-[0.4rem] mb-[0.2rem] px-[0.6rem] py-[0.2rem] bg-[crimson] text-[1rem] text-white outline-none rounded-sm">Add to Cart</button>
+                <p className="text-[1.1rem] pt-[0.5rem]">160 Tk</p>
+                <button className="absolute left-0 bottom-0 py-[0.4rem] w-full bg-[crimson] text-[1.1rem] text-white font-[500] outline-none rounded-sm">Add to Cart</button>
             </div>
-            <p className="absolute top-[1rem] left-0 py-[0.2rem] px-[0.8rem] text-[1rem] bg-[orange] rounded-r-md">20% off</p>
+            <p className="absolute top-[1.4rem] left-0 py-[0.2rem] px-[0.8rem] text-[1.1rem] bg-[orange] rounded-r-sm">20% off</p>
         </div>
     );
 }
