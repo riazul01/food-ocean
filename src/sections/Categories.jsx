@@ -1,6 +1,7 @@
 import React from 'react';
 import Category from '../components/Category';
 
+// images
 import FastFoodImg from '../assets/images/fast-food.png';
 import MealImg from '../assets/images/meal.png';
 import GrillImg from '../assets/images/grill.png';
@@ -18,7 +19,7 @@ import MeatImg from '../assets/images/meat.png';
 
 const Categories = () => {
     return (
-        <div className="max-w-[1420px] mx-auto px-[0.4rem]">
+        <div className="mx-auto px-[0.4rem] max-w-[1420px]">
             <div className="w-full grid grid-cols-8 border-[1px] border-e-0 border-b-0 border-[silver]">
                 <Category Category="Fast Foods" CategoryImg={FastFoodImg}/>
                 <Category Category="Meals" CategoryImg={MealImg}/>

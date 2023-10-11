@@ -1,9 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-// icons
-
-
 const Navbar = () => {
     return (
         <div className="w-full">
@@ -17,9 +14,11 @@ const Navbar = () => {
                     <NavLink to="/fruits" className="navLink mr-[0.4rem] px-[0.6rem] py-[0.2rem] text-[#222] text-[1rem] border-[1px] border-gray-600 rounded-md">Fruits</NavLink>
                     <NavLink to="/meat" className="navLink mr-[0.4rem] px-[0.6rem] py-[0.2rem] text-[#222] text-[1rem] border-[1px] border-gray-600 rounded-md">Meat</NavLink>
                     <NavLink to="/fish" className="navLink mr-[0.4rem] px-[0.6rem] py-[0.2rem] text-[#222] text-[1rem] border-[1px] border-gray-600 rounded-md">Fish</NavLink>
-                    <NavLink to="/about" className="navLink mr-[0.4rem] px-[0.6rem] py-[0.2rem] text-[#222] text-[1rem] border-[1px] border-gray-600 rounded-md">About Us</NavLink>
-                    <NavLink to="/contact" className="navLink mr-[0.4rem] px-[0.6rem] py-[0.2rem] text-[#222] text-[1rem] border-[1px] border-gray-600 rounded-md">Contact</NavLink>
-                </div>                
+                    <NavLink to="/eggs" className="navLink mr-[0.4rem] px-[0.6rem] py-[0.2rem] text-[#222] text-[1rem] border-[1px] border-gray-600 rounded-md">Eggs</NavLink>
+                    <NavLink to="/tea-coffe" className="navLink mr-[0.4rem] px-[0.6rem] py-[0.2rem] text-[#222] text-[1rem] border-[1px] border-gray-600 rounded-md">Tea & Coffe</NavLink>
+                    <NavLink to="/spices" className="navLink mr-[0.4rem] px-[0.6rem] py-[0.2rem] text-[#222] text-[1rem] border-[1px] border-gray-600 rounded-md">Spices</NavLink>
+                    <NavLink to="/dry-fruits" className="navLink mr-[0.4rem] px-[0.6rem] py-[0.2rem] text-[#222] text-[1rem] border-[1px] border-gray-600 rounded-md">Dry Fruits</NavLink>
+                </div>           
             </div>
         </div>
     );

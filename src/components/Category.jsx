@@ -6,7 +6,7 @@ const Category = ({ Category="Meals", CategoryImg }) => {
             <div className="pt-[1.2rem] pb-[0.6rem] w-full h-[60%]">
                 <img src={CategoryImg} className="w-full h-full object-contain" alt="" />
             </div>
-            <div className="w-full h-[40%] mt-[0.4rem]">
+            <div className=" mt-[0.4rem] w-full h-[40%]">
                 <h1 className="text-center">{Category}</h1>
                 <p className="text-center">20 Items</p>
             </div>

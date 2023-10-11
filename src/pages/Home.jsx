@@ -9,9 +9,9 @@ const Home = () => {
     return (
         <AppLayout>
             <Categories/>
-            <FoodItems title="top products"/>
+            <FoodItems title="top groceries"/>
+            <FoodItems title="popular foods"/>
             <FoodItems title="recent products"/>
-            <FoodItems title="popular now"/>
         </AppLayout>
     );
 }

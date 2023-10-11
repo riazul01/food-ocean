@@ -4,32 +4,32 @@ import { Link } from 'react-router-dom';
 // icons
 import { BiSearchAlt } from 'react-icons/bi';
 import { PiShoppingCartDuotone } from 'react-icons/pi';
-import { FiPhoneCall } from 'react-icons/fi';
-import { FiUser } from 'react-icons/fi';
+import { FiPhoneCall, FiUser } from 'react-icons/fi';
 import { LuClock4 } from 'react-icons/lu';
 
 const Header = () => {
     return (
         <div className="w-full bg-[#173334]">
-            <div className="flex items-center justify-between max-w-[1420px] mx-[auto] px-[0.4rem] pt-[0.6rem] pb-[1.8rem]">
+            <div className="mx-[auto] px-[0.4rem] py-[1.6rem] flex items-center justify-between max-w-[1420px]">
                 {/* logo */}
                 <Link to="/" className="text-[2rem] text-[orange]" style={{fontFamily: 'Croissant One'}}>Grocery</Link>
 
                 {/* search bar */}
                 <div className="flex items-center justify-center rounded-lg overflow-hidden">
-                    <select className="pl-[0.6rem] h-[44px] w-[140px] text-[1.1rem] text-[#fff] bg-[#173334] border-[2px] border-[#214445] outline-none rounded-l-lg placeholder-[#fff]">
+                    <select className="pl-[0.6rem] h-[44px] w-[140px] text-[#fff] text-[1.1rem] bg-[#173334] border-[2px] border-[#214445] outline-none rounded-l-lg">
                         <option value="all">All</option>
                         <option value="foods">Foods</option>
                         <option value="groceries">Groceries</option>
                         <option value="restaurants">Restaurants</option>
                     </select>
                     
-                    <input className="h-[44px] w-[360px] pl-[1rem] text-[1.1rem] text-[#fff] bg-transparent border-[2px] border-x-0 border-[#214445] outline-none" type="text" placeholder="Search products..." />
-                    <div className="flex items-center justify-center h-[44px] w-[52px] text-[1.1rem] text-[#fff] bg-[#214445] cursor-pointer">
+                    <input className="pl-[1rem] text-[1.1rem] text-[#fff] h-[44px] w-[360px] bg-transparent border-[2px] border-x-0 border-[#214445] outline-none" type="text" placeholder="Search products..." />
+                    <div className="text-[1.1rem] text-[#fff] flex items-center justify-center h-[44px] w-[52px] bg-[#214445] cursor-pointer">
                         <BiSearchAlt className="text-[1.6rem]"/>
                     </div>
                 </div>
 
+                {/* working hours */}
                 <div className="flex items-center justify-center">
                     <div className="px-[0.6rem]">
                         <LuClock4 className="text-[#fff] text-[1.3rem]"/>
@@ -43,13 +43,13 @@ const Header = () => {
                 {/* icon links */}
                 <div className="flex items-center">
                     <Link to="/support">
-                        <FiPhoneCall className="text-[orange] text-[1.4rem] ml-[1.4rem] cursor-pointer"/>
+                        <FiPhoneCall className="ml-[1.4rem] text-[orange] text-[1.4rem] cursor-pointer"/>
                     </Link>
                     <Link to="/cart">
-                        <PiShoppingCartDuotone className="text-[orange] text-[1.6rem] ml-[1.4rem] cursor-pointer"/>
+                        <PiShoppingCartDuotone className="ml-[1.4rem] text-[orange] text-[1.6rem] cursor-pointer"/>
                     </Link>
                     <Link to="/profile">
-                        <FiUser className="text-[orange] text-[1.6rem] ml-[1.4rem] cursor-pointer"/>
+                        <FiUser className="ml-[1.4rem] text-[orange] text-[1.6rem] cursor-pointer"/>
                     </Link>
                 </div>
             </div>
