@@ -7,5 +7,6 @@
 
 .navLink.active {
   color: crimson;
+  border: 1px solid crimson;
   font-weight: 600;
 }

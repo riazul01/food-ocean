@@ -19,7 +19,7 @@ import MeatImg from '../assets/images/meat.png';
 const Categories = () => {
     return (
         <div className="max-w-[1420px] mx-auto px-[0.4rem]">
-            <div className="w-full my-[2rem] py-[2rem] flex flex-wrap gap-[1.4rem] justify-center border-[2px] border-dashed border-red-300 bg-red-50 rounded-lg">
+            <div className="w-full grid grid-cols-8 border-[1px] border-e-0 border-b-0 border-[silver]">
                 <Category Category="Fast Foods" CategoryImg={FastFoodImg}/>
                 <Category Category="Meals" CategoryImg={MealImg}/>
                 <Category Category="Kabab & Grills" CategoryImg={GrillImg}/>

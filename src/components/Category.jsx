@@ -2,7 +2,7 @@ import React from 'react';
 
 const Category = ({ Category="Meals", CategoryImg }) => {
     return (
-        <div className="w-[170px] h-[180px] border-[1px] border-[silver] rounded-lg cursor-pointer">
+        <div className="w-full h-[180px] bg-[#fff] border-[1px] border-s-0 border-t-0 border-[silver] cursor-pointer">
             <div className="pt-[1.2rem] pb-[0.6rem] w-full h-[60%]">
                 <img src={CategoryImg} className="w-full h-full object-contain" alt="" />
             </div>
