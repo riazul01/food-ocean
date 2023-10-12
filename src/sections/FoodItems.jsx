@@ -1,5 +1,6 @@
 import React from 'react';
 import FoodCard from '../components/FoodCard';
+import ProductCard from '../components/ProductCard';
 
 const FoodItems = ({ title }) => {
     return (
@@ -9,13 +10,13 @@ const FoodItems = ({ title }) => {
                 <p className="text-[1rem] font-bold">View more</p>
             </div>
             <div className="grid grid-cols-5 gap-[1.2rem]">
-                <FoodCard/>
-                <FoodCard/>
-                <FoodCard/>
-                <FoodCard/>
-                <FoodCard/>
-                <FoodCard/>
-                <FoodCard/>
+                <ProductCard/>
+                <ProductCard/>
+                <ProductCard/>
+                <ProductCard/>
+                <ProductCard/>
+                <ProductCard/>
+                <ProductCard/>
                 <FoodCard/>
             </div>
         </div>
