@@ -10,3 +10,266 @@
   border: 1px solid crimson;
   font-weight: 600;
 }
+
+.addProductForm {
+  margin-top: 2rem;
+  width: 480px;
+  height: auto;
+}
+
+.addProductForm input {
+  display: block;
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 2.4rem;
+  padding-left: 0.8rem;
+  color: #ddd;
+  font-size: 1.1rem;
+  background: #222;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.productInputBox {
+  margin-bottom: 2rem;
+  display: flex;
+  width: 100%;
+  height: 2.4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productInputBox label {
+  width: 40%;
+  color: #ddd;
+  font-size: 1.1rem;
+}
+
+.productInputBox select {
+  padding: 0 0 0.3rem 0.6rem;
+  width: 60%;
+  height: 2.4rem;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #ccc;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.productWeightInput {
+  display: flex;
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 2.4rem;
+}
+
+.productWeightInput input {
+  width: 80%;
+  margin-bottom: 0;
+}
+
+.productWeightInput select {
+  padding: 0 0 0.3rem 0.6rem;
+  width: 20%;
+  height: 2.4rem;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #ccc;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.imagePreviewBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  height: 140px;
+  width: 100%;
+  background: #222;
+}
+
+.imagePreviewBox p {
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.imagePreviewBox img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.uploadProductImageInputField {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.4rem;
+  background: #222;
+  cursor: pointer;
+}
+
+.imageUploadInputLabel {
+  width: 100%;
+  height: 100%;
+}
+
+.imageUploadInputLabel label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #ddd;
+  margin-left: 0.3rem;
+  cursor: pointer;
+}
+
+.imageUploadInputLabel label .uploadIcon {
+  font-size: 1.2rem;
+}
+
+.imageUploadInputLabel label span {
+  margin-left: 0.2rem;
+  font-size: 1rem;
+}
+
+.uploadProductImageInputField input {
+  width: 0;
+  height: 0;
+}
+
+.addProductForm button {
+  padding: 0.45rem 1rem;
+  color: #fff;
+  font-size: 1.1rem;
+  background: #369837;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 0.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.formPreviewBtn {
+  padding: 0.4rem 0.8rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  background-image: linear-gradient(346deg, rgba(55, 55, 55,0.04) 0%, rgba(55, 55, 55,0.04) 22%,rgba(140, 140, 140,0.04) 22%, rgba(140, 140, 140,0.04) 69%,rgba(225, 225, 225,0.04) 69%, rgba(225, 225, 225,0.04) 100%),linear-gradient(31deg, rgba(55, 55, 55,0.04) 0%, rgba(55, 55, 55,0.04) 42%,rgba(140, 140, 140,0.04) 42%, rgba(140, 140, 140,0.04) 85%,rgba(225, 225, 225,0.04) 85%, rgba(225, 225, 225,0.04) 100%),linear-gradient(55deg, rgba(55, 55, 55,0.04) 0%, rgba(55, 55, 55,0.04) 13%,rgba(140, 140, 140,0.04) 13%, rgba(140, 140, 140,0.04) 72%,rgba(225, 225, 225,0.04) 72%, rgba(225, 225, 225,0.04) 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));    
+  box-shadow: 0.1rem 0.1rem 0.4rem #111;
+  z-index: 9999;
+}
+
+.previewIcon {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.formPreviewBtn p {
+  margin-left: 0.4rem;
+}
+
+.formPreviewBox {
+  color: #fff;
+  padding: 0 0.6rem;
+  position: absolute;
+  top: 3.8rem;
+  right: 0;
+  height: auto;
+  width: 400px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(40%);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background-image: linear-gradient(346deg, rgba(55, 55, 55,0.04) 0%, rgba(55, 55, 55,0.04) 22%,rgba(140, 140, 140,0.04) 22%, rgba(140, 140, 140,0.04) 69%,rgba(225, 225, 225,0.04) 69%, rgba(225, 225, 225,0.04) 100%),linear-gradient(31deg, rgba(55, 55, 55,0.04) 0%, rgba(55, 55, 55,0.04) 42%,rgba(140, 140, 140,0.04) 42%, rgba(140, 140, 140,0.04) 85%,rgba(225, 225, 225,0.04) 85%, rgba(225, 225, 225,0.04) 100%),linear-gradient(55deg, rgba(55, 55, 55,0.04) 0%, rgba(55, 55, 55,0.04) 13%,rgba(140, 140, 140,0.04) 13%, rgba(140, 140, 140,0.04) 72%,rgba(225, 225, 225,0.04) 72%, rgba(225, 225, 225,0.04) 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));    
+}
+
+.formPreviewText {
+  display: flex;
+  padding: 0.8rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #222;
+}
+
+.formPreviewText div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.formPreviewText div p:nth-child(1) {
+  margin-right: 0.4rem;
+  color: #36b86e;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.star {
+  color: #36b86e;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.star.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.required {
+  color: #888;
+  font-size: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.required.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.formPreviewBox.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}

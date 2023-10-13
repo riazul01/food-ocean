@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductUpload from './pages/ProductUpload';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // pages
@@ -11,6 +12,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/upload-product" element={<ProductUpload/>}/>
       </Routes>
     </BrowserRouter>
   );
