@@ -3,15 +3,13 @@ import React from 'react';
 // layouts
 import AppLayout from '../layouts/AppLayout';
 import Categories from '../sections/Categories';
-import FoodItems from '../sections/FoodItems';
+import Products from '../sections/Products';
 
 const Home = () => {
     return (
         <AppLayout>
             <Categories/>
-            <FoodItems title="top groceries"/>
-            <FoodItems title="popular foods"/>
-            <FoodItems title="recent products"/>
+            <Products title="top products"/>
         </AppLayout>
     );
 }

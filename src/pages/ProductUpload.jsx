@@ -30,11 +30,12 @@ const AddProductForm = () => {
     });
 
     const [product, setProduct] = useState({
+        type: 'grocery',
         name: '',
         price: '',
         discount: '',
         category: '',
-        type: 'regular',
+        status: 'regular',
         weight: '',
         unit: 'kg',
         imgUrl: ''

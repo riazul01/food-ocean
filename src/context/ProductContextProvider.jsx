@@ -37,11 +37,11 @@ const ProductsContextProvider = ({children}) => {
     for (let i = 0; i < products.length; i ++) {
         let product = products[i];
 
-        if (product.type === 'top-product') {
+        if (product.status === 'top-product') {
             top.push(product);
-        } else if (product.type === 'recent-product') {
+        } else if (product.status === 'recent-product') {
             recent.push(product);
-        } else if (product.type === 'popular-now') {
+        } else if (product.status === 'popular-now') {
             popular.push(product);
         }
 
@@ -68,8 +68,6 @@ const ProductsContextProvider = ({children}) => {
             breads.push(product);
         }
     }
-
-    console.log(products);
 
     return (
         <ProductsContext.Provider value={{products, top, recent, popular, vegetables, fruits, meatFish, eggs, teaCoffe, spices, dryFruits, biscuitCake, jamJellie, breads}}>
