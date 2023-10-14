@@ -24,6 +24,7 @@ const AddProductForm = () => {
         discount: false,
         category: false,
         type: false,
+        status: false,
         weight: false,
         unit: false,
         img: false
@@ -35,7 +36,7 @@ const AddProductForm = () => {
         price: '',
         discount: '',
         category: '',
-        status: 'regular',
+        status: 'top',
         weight: '',
         unit: 'kg',
         imgUrl: ''
@@ -112,7 +113,7 @@ const AddProductForm = () => {
                         console.log(`Couldn't upload image!`);
                 }
 
-                setProduct({ name: '', price: '', discount: '', category: '', type: 'regular', weight: '', unit: 'kg', imgUrl: '' });
+                setProduct({ name: '', price: '', discount: '', category: '', type: 'grocery', status: 'top', weight: '', unit: 'kg', imgUrl: '' });
                 setBtnDisabled(false);
                 setSelectedImg(null);
                 setPreviewImg(null);
@@ -121,7 +122,7 @@ const AddProductForm = () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                     product.imgUrl = downloadURL;
                     addDataToFireStore(product);
-                    setProduct({ name: '', price: '', discount: '', category: '', type: 'regular', weight: '', unit: 'kg', imgUrl: '' });
+                    setProduct({ name: '', price: '', discount: '', category: '', type: 'grocery', status: 'top', weight: '', unit: 'kg', imgUrl: '' });
                     setBtnDisabled(false);
                     setSelectedImg(null);
                     setPreviewImg(null);
@@ -148,7 +149,7 @@ const AddProductForm = () => {
             price: false,
             discount: false,
             category: false,
-            type: false,
+            status: false,
             weight: false,
             unit: false,
             img: false
@@ -200,12 +201,11 @@ const AddProductForm = () => {
                 </div>
 
                 <div className="productInputBox">
-                    <label htmlFor="type">Product Type</label>
-                    <select name="type" id="type" value={product.type} onFocus={() => handleFocus('type')} onChange={handleChange} required>
-                        <option value="regular">Regular</option>
-                        <option value="top-product">Top Product</option>
-                        <option value="recent-product">Recent Product</option>
-                        <option value="popular-now">Popular now</option>
+                    <label htmlFor="status">Product Status</label>
+                    <select name="status" id="status" value={product.status} onFocus={() => handleFocus('status')} onChange={handleChange} required>
+                        <option value="top">Top Product</option>
+                        <option value="recent">Recent Product</option>
+                        <option value="popular">Popular now</option>
                     </select>
                 </div>
 
