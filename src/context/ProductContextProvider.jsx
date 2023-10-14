@@ -37,11 +37,12 @@ const ProductsContextProvider = ({children}) => {
     for (let i = 0; i < products.length; i ++) {
         let product = products[i];
 
-        if (product.status === 'top-product') {
+        // filter by status
+        if (product.status === 'top') {
             top.push(product);
-        } else if (product.status === 'recent-product') {
+        } else if (product.status === 'recent') {
             recent.push(product);
-        } else if (product.status === 'popular-now') {
+        } else if (product.status === 'popular') {
             popular.push(product);
         }
 
