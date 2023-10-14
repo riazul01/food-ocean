@@ -1,17 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
-import { ProductsContext } from '../context/ProductContextProvider';
 
 
-const Products = ({ title, path }) => {
-    const { products } = useContext(ProductsContext);
-
+const Products = ({ title, path, products }) => {
     return (
         <div className="mx-auto mt-[2rem] px-[0.4rem] pb-[2rem] max-w-[1420px]">
             <div className="py-[1.2rem] flex items-center justify-between">
                 <h1 className="text-[1.4rem] font-bold capitalize">{title}</h1>
-                <Link to={path} className="text-[1rem] font-bold">View more</Link>
+                <Link to={path} className="flex items-center">
+                    <p className="text-[1rem] font-bold text-[green]">View more</p>
+                    <MdKeyboardDoubleArrowRight className="ms-[0.4rem] text-[1.2rem] text-[green] font-bold"/>
+                </Link>
             </div>
             <div className="grid grid-cols-5 gap-[1.2rem]">
                 {products.map((item) => {
