@@ -14,7 +14,8 @@ const ProductsContextProvider = ({children}) => {
     let popular = [];
     let vegetables = [];
     let fruits = [];
-    let meatFish = [];
+    let meat = [];
+    let fish = [];
     let eggs = [];
     let teaCoffe = [];
     let spices = [];
@@ -51,8 +52,10 @@ const ProductsContextProvider = ({children}) => {
             vegetables.push(product);
         } else if (product.category === 'fruits') {
             fruits.push(product);
-        } else if (product.category === 'meat-fish') {
-            meatFish.push(product);
+        } else if (product.category === 'meat') {
+            meat.push(product);
+        } else if (product.category === 'fish') {
+            fish.push(product);
         } else if (product.category === 'eggs') {
             eggs.push(product);
         } else if (product.category === 'tea-coffe') {
@@ -71,7 +74,7 @@ const ProductsContextProvider = ({children}) => {
     }
 
     return (
-        <ProductsContext.Provider value={{products, top, recent, popular, vegetables, fruits, meatFish, eggs, teaCoffe, spices, dryFruits, biscuitCake, jamJellie, breads}}>
+        <ProductsContext.Provider value={{products, top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuitCake, jamJellie, breads}}>
             {children}
         </ProductsContext.Provider>
     );
