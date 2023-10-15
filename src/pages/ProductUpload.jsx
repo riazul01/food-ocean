@@ -189,7 +189,8 @@ const AddProductForm = () => {
                         <option value="">Select Category</option>
                         <option value="vegetables">Vegetables</option>
                         <option value="fruits">Fruits</option>
-                        <option value="meat-fish">Meat & Fish</option>
+                        <option value="meat">Meat</option>
+                        <option value="fish">Fish</option>
                         <option value="eggs">Eggs</option>
                         <option value="tea-coffe">Tea & Coffe</option>
                         <option value="spices">Spices</option>
