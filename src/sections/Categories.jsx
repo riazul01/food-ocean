@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Category from '../components/Category';
 
 import VegetableImg from '../assets/images/categories/vegetable.png';
@@ -21,21 +22,51 @@ const Categories = () => {
     return (
         <div className="mx-auto px-[0.4rem] max-w-[1420px]">
             <div className="w-full grid grid-cols-8 border-[1px] border-e-0 border-b-0 border-[silver]">
-                <Category Category="Vegetables" CategoryImg={VegetableImg}/>
-                <Category Category="Fruits" CategoryImg={FruitImg}/>
-                <Category Category="Meat" CategoryImg={MeatImg}/>
-                <Category Category="Fish" CategoryImg={FishImg}/>
-                <Category Category="Eggs" CategoryImg={EggImg}/>
-                <Category Category="Tea & Coffe" CategoryImg={TeaImg}/>
-                <Category Category="Spicies" CategoryImg={SpicyImg}/>
-                <Category Category="Dried Fruits" CategoryImg={DryFruitImg}/>
-                <Category Category="Jams & Jellies" CategoryImg={JamImg}/>
-                <Category Category="Biscuits" CategoryImg={BiscuitsImg}/>
-                <Category Category="Cakes" CategoryImg={CakeImg}/>
-                <Category Category="Breads" CategoryImg={BreadImg}/>
-                <Category Category="Rice" CategoryImg={RiceImg}/>
-                <Category Category="Flour" CategoryImg={FlourImg}/>
-                <Category Category="Oil" CategoryImg={OilImg}/>
+                <Link to="/vegetables">
+                    <Category Category="Vegetables" CategoryImg={VegetableImg}/>
+                </Link>
+                <Link to="/fruits">
+                    <Category Category="Fruits" CategoryImg={FruitImg}/>
+                </Link>
+                <Link to="/meat">
+                    <Category Category="Meat" CategoryImg={MeatImg}/>
+                </Link>
+                <Link to="/fish">
+                    <Category Category="Fish" CategoryImg={FishImg}/>
+                </Link>
+                <Link to="/eggs">
+                    <Category Category="Eggs" CategoryImg={EggImg}/>
+                </Link>
+                <Link to="/tea-coffe">
+                    <Category Category="Tea & Coffe" CategoryImg={TeaImg}/>
+                </Link>
+                <Link to="/spices">
+                    <Category Category="Spicies" CategoryImg={SpicyImg}/>
+                </Link>
+                <Link to="/dried-fruits">
+                    <Category Category="Dried Fruits" CategoryImg={DryFruitImg}/>
+                </Link>
+                <Link to="/jams">
+                    <Category Category="Jams & Jellies" CategoryImg={JamImg}/>
+                </Link>
+                <Link to="/biscuits">
+                    <Category Category="Biscuits" CategoryImg={BiscuitsImg}/>
+                </Link>
+                <Link to="/cakes">
+                    <Category Category="Cakes" CategoryImg={CakeImg}/>
+                </Link>
+                <Link to="/breads">
+                    <Category Category="Breads" CategoryImg={BreadImg}/>
+                </Link>
+                <Link to="/reice">
+                    <Category Category="Rice" CategoryImg={RiceImg}/>
+                </Link>
+                <Link to="/flour">
+                    <Category Category="Flour" CategoryImg={FlourImg}/>
+                </Link>
+                <Link to="/oil">
+                    <Category Category="Oil" CategoryImg={OilImg}/>
+                </Link>
             </div>
         </div>
     );
