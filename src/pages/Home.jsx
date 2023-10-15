@@ -9,11 +9,13 @@ import Products from '../sections/Products';
 
 const Home = () => {
     const { vegetables } = useContext(ProductsContext);
+    const { fruits } = useContext(ProductsContext);
 
     return (
         <AppLayout>
             <Categories/>
             <Products title="vegetables" path="/vegetables" products={vegetables}/>
+            <Products title="Fruits" path="/fruits" products={fruits}/>
         </AppLayout>
     );
 }

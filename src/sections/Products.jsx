@@ -6,7 +6,7 @@ import ProductCard from '../components/ProductCard';
 
 const Products = ({ title, path, products }) => {
     return (
-        <div className="mx-auto mt-[2rem] px-[0.4rem] pb-[2rem] max-w-[1420px]">
+        <div className="mx-auto px-[0.4rem] pb-[3rem] max-w-[1420px]">
             <div className="py-[1.2rem] flex items-center justify-between">
                 <h1 className="text-[1.4rem] font-bold capitalize">{title}</h1>
                 <Link to={path} className="flex items-center">

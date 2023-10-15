@@ -20,7 +20,7 @@ import OilImg from '../assets/images/categories/oil.png';
 
 const Categories = () => {
     return (
-        <div className="mx-auto px-[0.4rem] max-w-[1420px]">
+        <div className="mx-auto pb-[1.6rem] px-[0.4rem] max-w-[1420px]">
             <div className="w-full grid grid-cols-8 border-[1px] border-e-0 border-b-0 border-[silver]">
                 <Link to="/vegetables">
                     <Category Category="Vegetables" CategoryImg={VegetableImg}/>
