@@ -7,6 +7,7 @@ import Home from './pages/Home';
 
 import './App.css';
 import Groceries from './pages/Groceries';
+import CategoryItems from './pages/CategoryItems';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/groceries" element={<Groceries/>}/>
+        <Route path="/groceries/:category" element={<CategoryItems/>}/>
         <Route path="/upload-product" element={<ProductUpload/>}/>
       </Routes>
     </BrowserRouter>

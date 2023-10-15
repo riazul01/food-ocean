@@ -22,49 +22,49 @@ const Categories = () => {
     return (
         <div className="mx-auto pb-[1.6rem] px-[0.4rem] max-w-[1420px]">
             <div className="w-full grid grid-cols-8 border-[1px] border-e-0 border-b-0 border-[silver]">
-                <Link to="/vegetables">
+                <Link to="/groceries/vegetables">
                     <Category Category="Vegetables" CategoryImg={VegetableImg}/>
                 </Link>
-                <Link to="/fruits">
+                <Link to="/groceries/fruits">
                     <Category Category="Fruits" CategoryImg={FruitImg}/>
                 </Link>
-                <Link to="/meat">
+                <Link to="/groceries/meat">
                     <Category Category="Meat" CategoryImg={MeatImg}/>
                 </Link>
-                <Link to="/fish">
+                <Link to="/groceries/fish">
                     <Category Category="Fish" CategoryImg={FishImg}/>
                 </Link>
-                <Link to="/eggs">
+                <Link to="/groceries/eggs">
                     <Category Category="Eggs" CategoryImg={EggImg}/>
                 </Link>
-                <Link to="/tea-coffe">
+                <Link to="/groceries/tea-coffe">
                     <Category Category="Tea & Coffe" CategoryImg={TeaImg}/>
                 </Link>
-                <Link to="/spices">
+                <Link to="/groceries/spices">
                     <Category Category="Spicies" CategoryImg={SpicyImg}/>
                 </Link>
-                <Link to="/dried-fruits">
+                <Link to="/groceries/dried-fruits">
                     <Category Category="Dried Fruits" CategoryImg={DryFruitImg}/>
                 </Link>
-                <Link to="/jams">
+                <Link to="/groceries/jams">
                     <Category Category="Jams & Jellies" CategoryImg={JamImg}/>
                 </Link>
-                <Link to="/biscuits">
+                <Link to="/groceries/biscuits">
                     <Category Category="Biscuits" CategoryImg={BiscuitsImg}/>
                 </Link>
-                <Link to="/cakes">
+                <Link to="/groceries/cakes">
                     <Category Category="Cakes" CategoryImg={CakeImg}/>
                 </Link>
-                <Link to="/breads">
+                <Link to="/groceries/breads">
                     <Category Category="Breads" CategoryImg={BreadImg}/>
                 </Link>
-                <Link to="/reice">
+                <Link to="/groceries/reice">
                     <Category Category="Rice" CategoryImg={RiceImg}/>
                 </Link>
-                <Link to="/flour">
+                <Link to="/groceries/flour">
                     <Category Category="Flour" CategoryImg={FlourImg}/>
                 </Link>
-                <Link to="/oil">
+                <Link to="/groceries/oil">
                     <Category Category="Oil" CategoryImg={OilImg}/>
                 </Link>
             </div>
