@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { ProductsContext } from '../context/ProductContextProvider';
 
 const CategoryItems = () => {
-    const { vegetables, fruits } = useContext(ProductsContext);
+    const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads } = useContext(ProductsContext);
     const path = useLocation().pathname.split('/').pop();
 
     return (
@@ -16,7 +16,40 @@ const CategoryItems = () => {
                     <p className="text-[1rem] font-bold text-[green]">120 Items</p>
                 </div>
                 <div className="grid grid-cols-5 gap-[1.2rem]">
-                    {fruits.map((item) => {
+                    {path === 'vegetables' && vegetables.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'fruits' && fruits.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'meat' && meat.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'fish' && fish.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'eggs' && eggs.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'tea-coffe' && teaCoffe.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'spices' && spices.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'dry-fruits' && dryFruits.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'biscuits' && biscuits.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'cake' && cake.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'jams' && jams.map((item) => {
+                        return <ProductCard key={item.id} data={item}/>
+                    })}
+                    {path === 'breads' && breads.map((item) => {
                         return <ProductCard key={item.id} data={item}/>
                     })}
                 </div>

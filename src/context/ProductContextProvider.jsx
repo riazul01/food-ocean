@@ -20,8 +20,9 @@ const ProductsContextProvider = ({children}) => {
     let teaCoffe = [];
     let spices = [];
     let dryFruits = [];
-    let biscuitCake = [];
-    let jamJellie = [];
+    let biscuits = [];
+    let cake = [];
+    let jams = [];
     let breads = [];
 
     useEffect(() => {
@@ -64,17 +65,19 @@ const ProductsContextProvider = ({children}) => {
             spices.push(product);
         } else if (product.category === 'dry-fruits') {
             dryFruits.push(product);
-        } else if (product.category === 'biscuits-cakes') {
-            biscuitCake.push(product);
-        } else if (product.category === 'jams-jellies') {
-            jamJellie.push(product);
+        } else if (product.category === 'biscuits') {
+            biscuits.push(product);
+        } else if (product.category === 'cake') {
+            cake.push(product);
+        } else if (product.category === 'jams') {
+            jams.push(product);
         } else if (product.category === 'breads') {
             breads.push(product);
         }
     }
 
     return (
-        <ProductsContext.Provider value={{products, top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuitCake, jamJellie, breads}}>
+        <ProductsContext.Provider value={{products, top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads}}>
             {children}
         </ProductsContext.Provider>
     );
