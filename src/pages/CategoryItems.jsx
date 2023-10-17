@@ -43,7 +43,7 @@ const CategoryItems = () => {
                     {path === 'biscuits' && biscuits.map((item) => {
                         return <ProductCard key={item.id} data={item}/>
                     })}
-                    {path === 'cake' && cake.map((item) => {
+                    {path === 'cakes' && cake.map((item) => {
                         return <ProductCard key={item.id} data={item}/>
                     })}
                     {path === 'jams' && jams.map((item) => {
