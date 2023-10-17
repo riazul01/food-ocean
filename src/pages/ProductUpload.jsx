@@ -199,6 +199,9 @@ const AddProductForm = () => {
                         <option value="cake">Cakes</option>
                         <option value="jams">Jams & Jellies</option>
                         <option value="breads">Breads</option>
+                        <option value="rice">Rice</option>
+                        <option value="flour">Flour</option>
+                        <option value="oil">Oil</option>
                     </select>
                 </div>
 
