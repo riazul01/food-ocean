@@ -61,7 +61,7 @@ const Categories = () => {
                 <Link to="/groceries/breads">
                     <Category title="Breads" quantity={breads ? breads.length : '0'} Image={BreadImg}/>
                 </Link>
-                <Link to="/groceries/reice">
+                <Link to="/groceries/rice">
                     <Category title="Rice" quantity={rice ? rice.length : '0'} Image={RiceImg}/>
                 </Link>
                 <Link to="/groceries/flour">
