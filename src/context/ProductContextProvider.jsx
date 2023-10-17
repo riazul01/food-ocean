@@ -24,6 +24,9 @@ const ProductsContextProvider = ({children}) => {
     let cake = [];
     let jams = [];
     let breads = [];
+    let rice = [];
+    let flour = [];
+    let oil = [];
 
     useEffect(() => {
         const q = query(collection(fs, "products"));
@@ -73,11 +76,17 @@ const ProductsContextProvider = ({children}) => {
             jams.push(product);
         } else if (product.category === 'breads') {
             breads.push(product);
+        } else if (product.category === 'rice') {
+            rice.push(product);
+        } else if (product.category === 'flour') {
+            flour.push(product);
+        } else if (product.category === 'oil') {
+            oil.push(product);
         }
     }
 
     return (
-        <ProductsContext.Provider value={{products, top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads}}>
+        <ProductsContext.Provider value={{products, top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil}}>
             {children}
         </ProductsContext.Provider>
     );
