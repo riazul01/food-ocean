@@ -222,7 +222,7 @@ const AddProductForm = () => {
                         <option value="pcs">pcs</option>
                         <option value="dzn">dzn</option>
                         <option value="liter">liter</option>
-                        <option value="liter">ml</option>
+                        <option value="ml">ml</option>
                     </select>
                 </div>
 
