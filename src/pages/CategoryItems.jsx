@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { ProductsContext } from '../context/ProductContextProvider';
 
 const CategoryItems = () => {
-    const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil } = useContext(ProductsContext);
+    const { top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil } = useContext(ProductsContext);
     const path = useLocation().pathname.split('/').pop();
 
     let data = [];
@@ -56,6 +56,15 @@ const CategoryItems = () => {
     } else if (path === 'oil') {
         data = [...oil];
         quantity = oil.length;
+    } else if (path === 'top-products') {
+        data = [...top];
+        quantity = top.length;
+    } else if (path === 'recent-products') {
+        data = [...recent];
+        quantity = recent.length;
+    } else if (path === 'popular-now') {
+        data = [...popular];
+        quantity = popular.length;
     }
 
     return (
