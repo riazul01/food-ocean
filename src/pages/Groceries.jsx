@@ -3,14 +3,30 @@ import AppLayout from '../layouts/AppLayout';
 import Products from '../sections/Products';
 
 import { ProductsContext } from '../context/ProductContextProvider';
+import Categories from '../sections/Categories';
 
 const Groceries = () => {
-    const { vegetables } = useContext(ProductsContext);
+    const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil } = useContext(ProductsContext);
 
     return (
         <AppLayout>
             <div className="mx-auto max-w-[1420px]">
-                <Products title="vegetables" path="/vegetables" products={vegetables}/>
+                <Categories/>
+                <Products title="vegetables" path="/groceries/raw-products/vegetables" products={vegetables}/>
+                <Products title="fruits" path="/groceries/raw-products/fruits" products={fruits}/>
+                <Products title="meat" path="/groceries/raw-products/meat" products={meat}/>
+                <Products title="fish" path="/groceries/raw-products/fish" products={fish}/>
+                <Products title="eggs" path="/groceries/raw-products/eggs" products={eggs}/>
+                <Products title="tea & coffe" path="/groceries/raw-products/tea-coffe" products={teaCoffe}/>
+                <Products title="spices" path="/groceries/raw-products/spices" products={spices}/>
+                <Products title="dried fruits" path="/groceries/raw-products/dried-fruits" products={dryFruits}/>
+                <Products title="jams & jellies" path="/groceries/raw-products/jams" products={jams}/>
+                <Products title="biscuits" path="/groceries/raw-products/biscuits" products={biscuits}/>
+                <Products title="cakes" path="/groceries/raw-products/cakes" products={cake}/>
+                <Products title="breads" path="/groceries/raw-products/breads" products={breads}/>
+                <Products title="rice" path="/groceries/raw-products/rice" products={rice}/>
+                <Products title="flour" path="/groceries/raw-products/flour" products={flour}/>
+                <Products title="oil" path="/groceries/raw-products/oil" products={oil}/>            
             </div>
         </AppLayout>
     );
