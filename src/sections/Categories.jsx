@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Category from '../components/Category';
 import { ProductsContext } from '../context/ProductContextProvider';
 
@@ -21,55 +21,65 @@ import OilImg from '../assets/images/categories/oil.png';
 
 const Categories = () => {
     const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil } = useContext(ProductsContext);
+    const path = useLocation().pathname.split('/').pop();
+
+    let activeRawProducts = true;
+    let activeBeverages = true;
+
+    if (path === 'raw-products') {
+        activeBeverages = false;
+    } else if (path === 'beverages') {
+        activeRawProducts = false;
+    }
 
     return (
         <div className="mx-auto pb-[1.6rem] px-[0.4rem] max-w-[1420px]">
             <div className="w-full grid grid-cols-8 border-[1px] border-e-0 border-b-0 border-[silver]">
-                <Link to="/groceries/vegetables">
+                {activeRawProducts && <Link to="/groceries/vegetables">
                     <Category title="Vegetables" quantity={vegetables ? vegetables.length : '0'} Image={VegetableImg}/>
-                </Link>
-                <Link to="/groceries/fruits">
+                </Link>}
+                {activeRawProducts && <Link to="/groceries/fruits">
                     <Category title="Fruits" quantity={fruits ? fruits.length : '0'} Image={FruitImg}/>
-                </Link>
-                <Link to="/groceries/meat">
+                </Link>}
+                {activeRawProducts && <Link to="/groceries/meat">
                     <Category title="Meat" quantity={meat ? meat.length : '0'} Image={MeatImg}/>
-                </Link>
-                <Link to="/groceries/fish">
+                </Link>}
+                {activeRawProducts && <Link to="/groceries/fish">
                     <Category title="Fish" quantity={fish ? fish.length : '0'} Image={FishImg}/>
-                </Link>
-                <Link to="/groceries/eggs">
+                </Link>}
+                {activeRawProducts && <Link to="/groceries/eggs">
                     <Category title="Eggs" quantity={eggs ? eggs.length : '0'} Image={EggImg}/>
-                </Link>
-                <Link to="/groceries/tea-coffe">
+                </Link>}
+                {activeBeverages && <Link to="/groceries/tea-coffe">
                     <Category title="Tea & Coffe" quantity={teaCoffe ? teaCoffe.length : '0'} Image={TeaImg}/>
-                </Link>
-                <Link to="/groceries/spices">
+                </Link>}
+                {activeRawProducts && <Link to="/groceries/spices">
                     <Category title="Spicies" quantity={spices ? spices.length : '0'} Image={SpicyImg}/>
-                </Link>
-                <Link to="/groceries/dried-fruits">
+                </Link>}
+                {activeBeverages && <Link to="/groceries/dried-fruits">
                     <Category title="Dried Fruits" quantity={dryFruits ? dryFruits.length : '0'} Image={DryFruitImg}/>
-                </Link>
-                <Link to="/groceries/jams">
+                </Link>}
+                {activeBeverages && <Link to="/groceries/jams">
                     <Category title="Jams & Jellies" quantity={jams ? jams.length : '0'} Image={JamImg}/>
-                </Link>
-                <Link to="/groceries/biscuits">
+                </Link>}
+                {activeBeverages && <Link to="/groceries/biscuits">
                     <Category title="Biscuits" quantity={biscuits ? biscuits.length : '0'} Image={BiscuitsImg}/>
-                </Link>
-                <Link to="/groceries/cakes">
+                </Link>}
+                {activeBeverages && <Link to="/groceries/cakes">
                     <Category title="Cakes" quantity={cake ? cake.length : '0'} Image={CakeImg}/>
-                </Link>
-                <Link to="/groceries/breads">
+                </Link>}
+                {activeBeverages && <Link to="/groceries/breads">
                     <Category title="Breads" quantity={breads ? breads.length : '0'} Image={BreadImg}/>
-                </Link>
-                <Link to="/groceries/rice">
+                </Link>}
+                {activeRawProducts && <Link to="/groceries/rice">
                     <Category title="Rice" quantity={rice ? rice.length : '0'} Image={RiceImg}/>
-                </Link>
-                <Link to="/groceries/flour">
+                </Link>}
+                {activeRawProducts && <Link to="/groceries/flour">
                     <Category title="Flour" quantity={flour ? flour.length : '0'} Image={FlourImg}/>
-                </Link>
-                <Link to="/groceries/oil">
+                </Link>}
+                {activeRawProducts && <Link to="/groceries/oil">
                     <Category title="Oil" quantity={oil ? oil.length : '0'} Image={OilImg}/>
-                </Link>
+                </Link>}
             </div>
         </div>
     );
