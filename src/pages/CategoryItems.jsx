@@ -1,7 +1,13 @@
 import React, { useContext } from 'react';
-import ProductCard from '../components/ProductCard';
-import AppLayout from '../layouts/AppLayout';
 import { useLocation } from 'react-router-dom';
+
+// layouts
+import AppLayout from '../layouts/AppLayout';
+
+// components
+import ProductCard from '../components/ProductCard';
+
+// context
 import { ProductsContext } from '../context/ProductContextProvider';
 
 const CategoryItems = () => {

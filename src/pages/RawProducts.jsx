@@ -2,8 +2,8 @@ import React, { useContext }  from 'react';
 import AppLayout from '../layouts/AppLayout';
 import Products from '../sections/Products';
 
+// context
 import { ProductsContext } from '../context/ProductContextProvider';
-import Categories from '../sections/Categories';
 
 const RawProducts = () => {
     const { vegetables, fruits, meat, fish, eggs, spices, rice, flour, oil } = useContext(ProductsContext);
@@ -11,7 +11,6 @@ const RawProducts = () => {
     return (
         <AppLayout>
             <div className="mx-auto max-w-[1420px]">
-                <Categories/>
                 <Products title="vegetables" path="/groceries/raw-products/vegetables" products={vegetables}/>
                 <Products title="fruits" path="/groceries/raw-products/fruits" products={fruits}/>
                 <Products title="meat" path="/groceries/raw-products/meat" products={meat}/>

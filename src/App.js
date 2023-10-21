@@ -1,15 +1,15 @@
 import React from 'react';
-import ProductUpload from './pages/ProductUpload';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // pages
 import Home from './pages/Home';
-
-import './App.css';
 import Groceries from './pages/Groceries';
-import CategoryItems from './pages/CategoryItems';
 import RawProducts from './pages/RawProducts';
 import Beverages from './pages/Beverages';
+import CategoryItems from './pages/CategoryItems';
+import ProductUpload from './pages/ProductUpload';
+
+import './App.css';
 
 const App = () => {
   return (

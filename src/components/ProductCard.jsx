@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
+
+// context
 import { CartContext } from '../context/CartContextProvider';
 
-import { HiMinus } from 'react-icons/hi';
-import { HiPlus } from 'react-icons/hi';
+// icons
+import { HiPlus, HiMinus } from 'react-icons/hi';
 
 const ProductCard = ({ data }) => {
     const { cartItems, dispatch } = useContext(CartContext);

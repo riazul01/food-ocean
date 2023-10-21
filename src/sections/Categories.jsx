@@ -35,49 +35,49 @@ const Categories = () => {
     return (
         <div className="mx-auto pb-[1.6rem] px-[0.4rem] max-w-[1420px]">
             <div className="w-full grid grid-cols-8 border-[1px] border-e-0 border-b-0 border-[silver]">
-                {activeRawProducts && <Link to="/groceries/vegetables">
+                {activeRawProducts && <Link to="/groceries/raw-products/vegetables">
                     <Category title="Vegetables" quantity={vegetables ? vegetables.length : '0'} Image={VegetableImg}/>
                 </Link>}
-                {activeRawProducts && <Link to="/groceries/fruits">
+                {activeRawProducts && <Link to="/groceries/raw-products/fruits">
                     <Category title="Fruits" quantity={fruits ? fruits.length : '0'} Image={FruitImg}/>
                 </Link>}
-                {activeRawProducts && <Link to="/groceries/meat">
+                {activeRawProducts && <Link to="/groceries/raw-products/meat">
                     <Category title="Meat" quantity={meat ? meat.length : '0'} Image={MeatImg}/>
                 </Link>}
-                {activeRawProducts && <Link to="/groceries/fish">
+                {activeRawProducts && <Link to="/groceries/raw-products/fish">
                     <Category title="Fish" quantity={fish ? fish.length : '0'} Image={FishImg}/>
                 </Link>}
-                {activeRawProducts && <Link to="/groceries/eggs">
+                {activeRawProducts && <Link to="/groceries/raw-products/eggs">
                     <Category title="Eggs" quantity={eggs ? eggs.length : '0'} Image={EggImg}/>
                 </Link>}
-                {activeBeverages && <Link to="/groceries/tea-coffe">
+                {activeBeverages && <Link to="/groceries/beverages/tea-coffe">
                     <Category title="Tea & Coffe" quantity={teaCoffe ? teaCoffe.length : '0'} Image={TeaImg}/>
                 </Link>}
-                {activeRawProducts && <Link to="/groceries/spices">
+                {activeRawProducts && <Link to="/groceries/beverages/spices">
                     <Category title="Spicies" quantity={spices ? spices.length : '0'} Image={SpicyImg}/>
                 </Link>}
-                {activeBeverages && <Link to="/groceries/dried-fruits">
+                {activeBeverages && <Link to="/groceries/beverages/dry-fruits">
                     <Category title="Dried Fruits" quantity={dryFruits ? dryFruits.length : '0'} Image={DryFruitImg}/>
                 </Link>}
-                {activeBeverages && <Link to="/groceries/jams">
+                {activeBeverages && <Link to="/groceries/beverages/jams">
                     <Category title="Jams & Jellies" quantity={jams ? jams.length : '0'} Image={JamImg}/>
                 </Link>}
-                {activeBeverages && <Link to="/groceries/biscuits">
+                {activeBeverages && <Link to="/groceries/beverages/biscuits">
                     <Category title="Biscuits" quantity={biscuits ? biscuits.length : '0'} Image={BiscuitsImg}/>
                 </Link>}
-                {activeBeverages && <Link to="/groceries/cakes">
+                {activeBeverages && <Link to="/groceries/beverages/cakes">
                     <Category title="Cakes" quantity={cake ? cake.length : '0'} Image={CakeImg}/>
                 </Link>}
-                {activeBeverages && <Link to="/groceries/breads">
+                {activeBeverages && <Link to="/groceries/beverages/breads">
                     <Category title="Breads" quantity={breads ? breads.length : '0'} Image={BreadImg}/>
                 </Link>}
-                {activeRawProducts && <Link to="/groceries/rice">
+                {activeRawProducts && <Link to="/groceries/raw-products/rice">
                     <Category title="Rice" quantity={rice ? rice.length : '0'} Image={RiceImg}/>
                 </Link>}
-                {activeRawProducts && <Link to="/groceries/flour">
+                {activeRawProducts && <Link to="/groceries/raw-products/flour">
                     <Category title="Flour" quantity={flour ? flour.length : '0'} Image={FlourImg}/>
                 </Link>}
-                {activeRawProducts && <Link to="/groceries/oil">
+                {activeRawProducts && <Link to="/groceries/raw-products/oil">
                     <Category title="Oil" quantity={oil ? oil.length : '0'} Image={OilImg}/>
                 </Link>}
             </div>

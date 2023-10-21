@@ -1,7 +1,11 @@
 import React from 'react';
-import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+
+// components
 import ProductCard from '../components/ProductCard';
+
+// icons
+import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 
 const Products = ({ title, path, products }) => {
     for (let i = 0; i < products.length; i ++) {
@@ -12,7 +16,7 @@ const Products = ({ title, path, products }) => {
     }
 
     return (
-        <div className="mx-auto px-[0.4rem] pb-[6rem] max-w-[1420px]">
+        <div className="mx-auto px-[0.4rem] pb-[5rem] max-w-[1420px]">
             <div className="py-[1.2rem] flex items-center justify-between">
                 <h1 className="text-[1.4rem] font-bold capitalize">{title}</h1>
                 <Link to={path} className="flex items-center">

@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 
-import { ProductsContext } from '../context/ProductContextProvider';
-
 // layouts
 import AppLayout from '../layouts/AppLayout';
+
+// sections
 import Categories from '../sections/Categories';
 import Products from '../sections/Products';
+
+// context
+import { ProductsContext } from '../context/ProductContextProvider';
 
 const Home = () => {
     const { top, recent, popular } = useContext(ProductsContext);

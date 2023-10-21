@@ -42,9 +42,9 @@ const Header = () => {
 
                 {/* icon links */}
                 <div className="flex items-center">
-                    <Link to="/support">
+                    <a href="tel:+8801234567890">
                         <FiPhoneCall className="ml-[1.4rem] text-[orange] text-[1.4rem] cursor-pointer"/>
-                    </Link>
+                    </a>
                     <Link to="/cart">
                         <PiShoppingCartDuotone className="ml-[1.4rem] text-[orange] text-[1.6rem] cursor-pointer"/>
                     </Link>

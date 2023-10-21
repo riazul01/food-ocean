@@ -1,9 +1,14 @@
 import React, { useContext } from 'react';
-import AppLayout from '../layouts/AppLayout';
-import Products from '../sections/Products';
 
-import { ProductsContext } from '../context/ProductContextProvider';
+// layouts
+import AppLayout from '../layouts/AppLayout';
+
+// sections
+import Products from '../sections/Products';
 import Categories from '../sections/Categories';
+
+// context
+import { ProductsContext } from '../context/ProductContextProvider';
 
 const Groceries = () => {
     const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil } = useContext(ProductsContext);
@@ -19,7 +24,7 @@ const Groceries = () => {
                 <Products title="eggs" path="/groceries/raw-products/eggs" products={eggs}/>
                 <Products title="tea & coffe" path="/groceries/beverages/tea-coffe" products={teaCoffe}/>
                 <Products title="spices" path="/groceries/raw-products/spices" products={spices}/>
-                <Products title="dried fruits" path="/groceries/beverages/dried-fruits" products={dryFruits}/>
+                <Products title="dried fruits" path="/groceries/beverages/dry-fruits" products={dryFruits}/>
                 <Products title="jams & jellies" path="/groceries/beverages/jams" products={jams}/>
                 <Products title="biscuits" path="/groceries/beverages/biscuits" products={biscuits}/>
                 <Products title="cakes" path="/groceries/beverages/cakes" products={cake}/>
