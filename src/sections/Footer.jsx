@@ -5,23 +5,24 @@ import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = () => {
     return (
+        <>
         <div className="w-full bg-[#173334]">
             <div className="mx-[auto] px-[0.4rem] py-[3rem] max-w-[1420px] flex justify-between">
                 <div className="w-[28%] pr-[1.8rem]">
                     <h1 className="text-[1.6rem] text-[orange]" style={{fontFamily: 'Croissant One'}}>Grocery</h1>
                     <p className="mt-[1rem] text-[#fff]">Lorem ipsum dolor sit amet consectetur adeping elit. Animi nostrum voluptatibus non recusandae repudiandae sapiente.</p>
-                    <div className="mt-[1rem] flex items-center">
+                    <div className="mt-[1.4rem] flex items-center">
                         <a href="#null" className="cursor-pointer" title="facebook">
-                            <FaFacebookF className="mr-[1.2rem] text-[orange] text-[1.2rem] cursor-pointer"/>
+                            <FaFacebookF className="mr-[1rem] text-[orange] text-[1.2rem] cursor-pointer"/>
                         </a>
                         <a href="#null" className="cursor-pointer" title="instagram">
-                            <BsInstagram className="mr-[1.2rem] text-[orange] text-[1.2rem] cursor-pointer"/>
+                            <BsInstagram className="mr-[1rem] text-[orange] text-[1.2rem] cursor-pointer"/>
                         </a>
                         <a href="#null" className="cursor-pointer" title="linkedin">
-                            <BsLinkedin className="mr-[1.2rem] text-[orange] text-[1.2rem] cursor-pointer"/>
+                            <BsLinkedin className="mr-[1rem] text-[orange] text-[1.2rem] cursor-pointer"/>
                         </a>
                         <a href="#null" className="cursor-pointer" title="twitter">
-                            <BsTwitter className="mr-[1.2rem] text-[orange] text-[1.2rem] cursor-pointer"/>
+                            <BsTwitter className="mr-[1rem] text-[orange] text-[1.2rem] cursor-pointer"/>
                         </a>
                     </div>
                 </div>
@@ -61,6 +62,13 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+
+        <div className="w-full bg-[#173334] border-t-[1px] border-[#3a4c4d]">
+            <div className="mx-[auto] px-[0.4rem] py-[1.4rem] max-w-[1420px] flex items-center justify-center">
+                <p className="text-[#fff] text-[1.1rem]">Created by <a className="text-[orange]" href="https://github.com/riazul01" target="_blank" rel="noreferrer">riazul01</a> | &copy; 2023 - All Rights Reserved</p>
+            </div>
+        </div>
+        </>
     );
 }
 
