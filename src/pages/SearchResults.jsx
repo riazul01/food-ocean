@@ -18,7 +18,7 @@ const SearchResults = () => {
 
             const items = searchText !== '' && products && products.filter((item) => {
                 const mainText = ''.concat(item.category, item.name, item.price, item.status, item.type, item.weight, item.unit).replace(/[^a-zA-Z0-9@]/g, '').toLowerCase();
-                const srchText = searchText.replace(/[^a-zA-Z0-9@]/g, '').toLowerCase();
+                const srchText = searchText.replace(/[^a-zA-Z0-9@]/g, '').toLowerCase().slice(0, 3);
                 
                 let categoryFlag = null;
 
