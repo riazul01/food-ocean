@@ -52,7 +52,7 @@ const ProductsContextProvider = ({children}) => {
         }
 
         // filter by category
-        if (product.category === 'vegetables') {
+        if (product.category === 'vegetables') { 
             vegetables.push(product);
         } else if (product.category === 'fruits') {
             fruits.push(product);
