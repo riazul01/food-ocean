@@ -2,9 +2,11 @@ import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-    let flag = true;
     const path = useLocation().pathname.split('/');
 
+    let flag = true;
+    
+    // switch raw-products and beverages links
     if (path[path.length - 1] === 'raw-products' || path[path.length - 2] === 'raw-products') {
         flag = true;
     } else if (path[path.length - 1] === 'beverages' || path[path.length - 2] === 'beverages') {

@@ -6,6 +6,7 @@ import App from './App';
 import ProductsContextProvider from './context/ProductContextProvider';
 import CartContextProvider from './context/CartContextProvider';
 
+// style
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

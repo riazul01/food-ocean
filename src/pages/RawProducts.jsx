@@ -1,6 +1,10 @@
 import React, { useContext }  from 'react';
+
+// layouts
 import AppLayout from '../layouts/AppLayout';
-import Products from '../sections/Products';
+
+// sections
+import SectionProducts from '../sections/SectionProducts';
 
 // context
 import { ProductsContext } from '../context/ProductContextProvider';
@@ -11,15 +15,15 @@ const RawProducts = () => {
     return (
         <AppLayout>
             <div className="mx-auto max-w-[1420px]">
-                <Products title="vegetables" path="/groceries/raw-products/vegetables" products={vegetables}/>
-                <Products title="fruits" path="/groceries/raw-products/fruits" products={fruits}/>
-                <Products title="meat" path="/groceries/raw-products/meat" products={meat}/>
-                <Products title="fish" path="/groceries/raw-products/fish" products={fish}/>
-                <Products title="eggs" path="/groceries/raw-products/eggs" products={eggs}/>
-                <Products title="spices" path="/groceries/raw-products/spices" products={spices}/>
-                <Products title="rice" path="/groceries/raw-products/rice" products={rice}/>
-                <Products title="flour" path="/groceries/raw-products/flour" products={flour}/>
-                <Products title="oil" path="/groceries/raw-products/oil" products={oil}/>            
+                <SectionProducts title="vegetables" path="/groceries/raw-products/vegetables" products={vegetables}/>
+                <SectionProducts title="fruits" path="/groceries/raw-products/fruits" products={fruits}/>
+                <SectionProducts title="meat" path="/groceries/raw-products/meat" products={meat}/>
+                <SectionProducts title="fish" path="/groceries/raw-products/fish" products={fish}/>
+                <SectionProducts title="eggs" path="/groceries/raw-products/eggs" products={eggs}/>
+                <SectionProducts title="spices" path="/groceries/raw-products/spices" products={spices}/>
+                <SectionProducts title="rice" path="/groceries/raw-products/rice" products={rice}/>
+                <SectionProducts title="flour" path="/groceries/raw-products/flour" products={flour}/>
+                <SectionProducts title="oil" path="/groceries/raw-products/oil" products={oil}/>            
             </div>
         </AppLayout>
     );

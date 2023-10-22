@@ -32,6 +32,7 @@ const Header = () => {
     }, [search, navigate]);
 
     useEffect(() => {
+        // set search data
         if (location.state) {
             setSearch({searchText: location.state.searchText, searchCategory: location.state.searchCategory});
         }
@@ -56,13 +57,18 @@ const Header = () => {
 
                 {/* search bar */}
                 <div className="flex items-center justify-center rounded-lg overflow-hidden">
+                    
+                    {/* search category */}
                     <select value={search.searchCategory} onChange={handleChange} name="searchCategory" className="pl-[0.6rem] h-[44px] w-[140px] text-[#fff] text-[1.1rem] bg-[#173334] border-[2px] border-[#214445] outline-none rounded-l-lg">
                         <option value="all">All</option>
                         <option value="raw-products">Raw Products</option>
                         <option value="beverages">Beverages</option>
                     </select>
                     
+                    {/* search input */}
                     <input value={search.searchText} onChange={handleChange} name="searchText" className="pl-[1rem] text-[1.1rem] text-[#fff] h-[44px] w-[360px] bg-transparent border-[2px] border-x-0 border-[#214445] outline-none" type="text" placeholder="Search products..." />
+                    
+                    {/* search button */}
                     <div onClick={handleClick} className="text-[1.1rem] text-[#fff] flex items-center justify-center h-[44px] w-[52px] bg-[#214445] cursor-pointer">
                         <BiSearchAlt className="text-[1.6rem]"/>
                     </div>
@@ -84,13 +90,15 @@ const Header = () => {
                     <a href="tel:+8801234567890">
                         <FiPhoneCall className="ml-[1.4rem] text-[orange] text-[1.4rem] cursor-pointer"/>
                     </a>
+
                     <Link className="relative" to="/cart">
                         <PiShoppingCartDuotone className="ml-[1.4rem] text-[orange] text-[1.6rem] cursor-pointer"/>
                         {cartItems.length > 0 && <div className="absolute top-[-0.9rem] right-[-0.7rem] h-[1.5rem] w-[1.5rem] flex items-center justify-center rounded-[50%] bg-[orange]">
                             <p className="text-[#fff] text-[0.8rem] font-bold">{cartItems.length}</p>
                         </div>}
                     </Link>
-                    <Link to="/profile">
+
+                    <Link to="/user/profile">
                         <FiUser className="ml-[1.4rem] text-[orange] text-[1.6rem] cursor-pointer"/>
                     </Link>
                 </div>

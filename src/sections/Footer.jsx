@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// icons
 import { BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
 
@@ -8,6 +10,8 @@ const Footer = () => {
         <>
         <div className="w-full bg-[#173334]">
             <div className="mx-[auto] px-[0.4rem] py-[3rem] max-w-[1420px] flex justify-between">
+                
+                {/* footer column 01 */}
                 <div className="w-[28%] pr-[1.8rem]">
                     <h1 className="text-[1.6rem] text-[orange]" style={{fontFamily: 'Croissant One'}}>Grocery</h1>
                     <p className="mt-[1rem] text-[#fff]">Lorem ipsum dolor sit amet consectetur adeping elit. Animi nostrum voluptatibus non recusandae repudiandae sapiente.</p>
@@ -27,6 +31,7 @@ const Footer = () => {
                     </div>
                 </div>
 
+                {/* footer column 02 */}
                 <div className="flex flex-col w-[18%]">
                     <h1 className="text-[orange] text-[1.2rem] font-bold">Navigation</h1>
                     <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Home</Link>
@@ -35,7 +40,8 @@ const Footer = () => {
                     <Link to="/groceries/raw-products" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Raw Products</Link>
                     <Link to="/groceries/beverages" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Beverages</Link>
                 </div>
-
+                
+                {/* footer column 03 */}
                 <div className="flex flex-col w-[18%]">
                     <h1 className="text-[orange] text-[1.2rem] font-bold">Trending</h1>
                     <Link to="/groceries/raw-products/fruits" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Fruits</Link>
@@ -45,6 +51,7 @@ const Footer = () => {
                     <Link to="/groceries/popular-now" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Popular Now</Link>
                 </div>
                 
+                {/* footer column 04 */}
                 <div className="flex flex-col w-[18%]">
                     <h1 className="text-[orange] text-[1.2rem] font-bold">Quick Links</h1>
                     <Link to="/profile" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">User Account</Link>
@@ -54,6 +61,7 @@ const Footer = () => {
                     <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Latest Blogs</Link>
                 </div>
 
+                {/* footer column 05 */}
                 <div className="flex flex-col w-[18%]">
                     <h1 className="text-[orange] text-[1.2rem] font-bold">Services</h1>
                     <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Help Center</Link>
@@ -63,6 +71,7 @@ const Footer = () => {
             </div>
         </div>
 
+        {/* copyright section */}
         <div className="w-full bg-[#173334] border-t-[1px] border-[#3a4c4d]">
             <div className="mx-[auto] px-[0.4rem] py-[1.4rem] max-w-[1420px] flex items-center justify-center">
                 <p className="text-[#fff] text-[1.1rem]">Created by <a className="text-[orange]" href="https://github.com/riazul01" target="_blank" rel="noreferrer">riazul01</a> | &copy; 2023 - All Rights Reserved</p>

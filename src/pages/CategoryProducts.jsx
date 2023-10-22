@@ -10,10 +10,11 @@ import ProductCard from '../components/ProductCard';
 // context
 import { ProductsContext } from '../context/ProductContextProvider';
 
-const CategoryItems = () => {
+const CategoryProducts = () => {
     const { top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil } = useContext(ProductsContext);
     const path = useLocation().pathname.split('/').pop();
 
+    let title = path;
     let data = [];
     let quantity = 0;
 
@@ -33,12 +34,14 @@ const CategoryItems = () => {
         data = [...eggs];
         quantity = eggs.length;
     } else if (path === 'tea-coffe') {
+        title = "tea & coffe";
         data = [...teaCoffe];
         quantity = teaCoffe.length;
     } else if (path === 'spices') {
         data = [...spices];
         quantity = spices.length;
     } else if (path === 'dry-fruits') {
+        title = "dry fruits";
         data = [...dryFruits];
         quantity = dryFruits.length;
     } else if (path === 'biscuits') {
@@ -48,6 +51,7 @@ const CategoryItems = () => {
         data = [...cake];
         quantity = cake.length;
     } else if (path === 'jams') {
+        title = "jams & jellies";
         data = [...jams];
         quantity = jams.length;
     } else if (path === 'breads') {
@@ -63,12 +67,15 @@ const CategoryItems = () => {
         data = [...oil];
         quantity = oil.length;
     } else if (path === 'top-products') {
+        title = "top products";
         data = [...top];
         quantity = top.length;
     } else if (path === 'recent-products') {
+        title = "recent products";
         data = [...recent];
         quantity = recent.length;
     } else if (path === 'popular-now') {
+        title = "popular now";
         data = [...popular];
         quantity = popular.length;
     }
@@ -77,7 +84,7 @@ const CategoryItems = () => {
         <AppLayout>
             <div className="mx-auto px-[0.4rem] pb-[3rem] max-w-[1420px]">
                 <div className="py-[1.2rem] flex items-center justify-between">
-                    <h1 className="text-[1.4rem] font-bold capitalize">{path}</h1>
+                    <h1 className="text-[1.4rem] font-bold capitalize">{title}</h1>
                     <p className="text-[1rem] font-bold text-[green]">{quantity} Items</p>
                 </div>
                 <div className="grid grid-cols-5 gap-[1.2rem]">
@@ -90,4 +97,4 @@ const CategoryItems = () => {
     );
 }
 
-export default CategoryItems;
+export default CategoryProducts;

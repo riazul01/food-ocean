@@ -7,7 +7,9 @@ import ProductCard from '../components/ProductCard';
 // icons
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 
-const Products = ({ title, path, products }) => {
+const SectionProducts = ({ title, path, products }) => {
+
+    // shuffle product items
     for (let i = 0; i < products.length; i ++) {
         let j = parseInt(Math.random() * products.length);
         let temp = products[i];
@@ -17,6 +19,8 @@ const Products = ({ title, path, products }) => {
 
     return (
         <div className="mx-auto px-[0.4rem] pb-[5rem] max-w-[1420px]">
+
+            {/* header */}
             <div className="py-[1.2rem] flex items-center justify-between">
                 <h1 className="text-[1.4rem] font-bold capitalize">{title}</h1>
                 <Link to={path} className="flex items-center">
@@ -24,6 +28,8 @@ const Products = ({ title, path, products }) => {
                     <MdKeyboardDoubleArrowRight className="ms-[0.4rem] text-[1.2rem] text-[green] font-bold"/>
                 </Link>
             </div>
+
+            {/* products */}
             <div className="grid grid-cols-5 gap-[1.2rem]">
                 {products.slice(0, 10).map((item) => {
                     return <ProductCard key={item.id} data={item}/>
@@ -33,4 +39,4 @@ const Products = ({ title, path, products }) => {
     );
 }
 
-export default Products;
+export default SectionProducts;

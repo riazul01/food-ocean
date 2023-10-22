@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
-import AppLayout from '../layouts/AppLayout';
-import ProductCard from '../components/ProductCard';
 import { useLocation } from 'react-router-dom';
+
+// layouts
+import AppLayout from '../layouts/AppLayout';
+
+// components
+import ProductCard from '../components/ProductCard';
+
+// context
 import { ProductsContext } from '../context/ProductContextProvider';
 
 const SearchResults = () => {
@@ -11,7 +17,7 @@ const SearchResults = () => {
     const [filteredItems, setFilteredItems] = useState([]);
 
     useEffect(() => {
-
+        // filter search items
         if (location.state !== null) {
             const searchText = location.state.searchText;
             const searchCategory = location.state.searchCategory;
@@ -21,9 +27,11 @@ const SearchResults = () => {
                 const srchText = searchText.replace(/[^a-zA-Z0-9@]/g, '').toLowerCase().slice(0, 3);
                 
                 let categoryFlag = null;
-
+                const rawProducts = ['vegetables', 'fruits', 'meat', 'fish', 'eggs', 'spices', 'rice', 'flour', 'oil'];
+                const beverages = ['tea-coffe', 'dry-fruits', 'biscuits', 'cake', 'jams', 'breads']
+                
+                // filter category products
                 if (searchCategory === 'raw-products') {
-                    const rawProducts = ['vegetables', 'fruits', 'meat', 'fish', 'eggs', 'spices', 'rice', 'flour', 'oil'];
                     for (let i = 0; i < rawProducts.length; i ++) {
                         if (item.category === rawProducts[i]) {
                             categoryFlag = true;
@@ -31,7 +39,6 @@ const SearchResults = () => {
                         }
                     }
                 } else if (searchCategory === 'beverages') {
-                    const beverages = ['tea-coffe', 'dry-fruits', 'biscuits', 'cake', 'jams', 'breads']
                     for (let i = 0; i < beverages.length; i ++) {
                         if (item.category === beverages[i]) {
                             categoryFlag = true;
@@ -49,6 +56,7 @@ const SearchResults = () => {
                 }
             });
 
+            // store filtered items
             if (items) {
                 setFilteredItems(items);
             }
@@ -59,10 +67,13 @@ const SearchResults = () => {
     return (
         <AppLayout>
             <div className="mx-auto px-[0.4rem] pb-[3rem] max-w-[1420px] min-h-[50vh]">
+                
+                {/* search info */}
                 <div className="py-[1.2rem] flex items-center justify-between">
                     <h1 className="text-[1.4rem] font-bold italic">Search results for {`"${location.state.searchText}"`}</h1>
                 </div>
 
+                {/* search products */}
                 {filteredItems.length === 0 ? <p className="text-[1.1rem]">No items found in category {`"${location.state.searchCategory}"!`}</p>
                 : <div className="grid grid-cols-5 gap-[1.2rem]">
                     {filteredItems.map((item) => {
