@@ -9,9 +9,11 @@ import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 
 const SectionProducts = ({ title, path, products }) => {
 
+    const len = products ? products.length : 0;
+
     // shuffle product items
-    for (let i = 0; i < products.length; i ++) {
-        let j = parseInt(Math.random() * products.length);
+    for (let i = 0; i < len; i ++) {
+        let j = parseInt(Math.random() * len);
         let temp = products[i];
         products[i] = products[j];
         products[j] = temp;
@@ -31,7 +33,7 @@ const SectionProducts = ({ title, path, products }) => {
 
             {/* products */}
             <div className="grid grid-cols-5 gap-[1.2rem]">
-                {products.slice(0, 10).map((item) => {
+                {products && products.slice(0, 10).map((item) => {
                     return <ProductCard key={item.id} data={item}/>
                 })}
             </div>
