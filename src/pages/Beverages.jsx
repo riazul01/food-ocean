@@ -10,7 +10,7 @@ import SectionProducts from '../sections/SectionProducts';
 import { ProductsContext } from '../context/ProductContextProvider';
 
 const Beverages = () => {
-    const { teaCoffe, dryFruits, biscuits, cake, jams, breads } = useContext(ProductsContext);
+    const { teaCoffe, dryFruits, biscuits, cakes, jams, breads } = useContext(ProductsContext);
 
     return (
         <AppLayout>
@@ -19,7 +19,7 @@ const Beverages = () => {
                 <SectionProducts title="dry fruits" path="/groceries/beverages/dry-fruits" products={dryFruits}/>
                 <SectionProducts title="jams & jellies" path="/groceries/beverages/jams" products={jams}/>
                 <SectionProducts title="biscuits" path="/groceries/beverages/biscuits" products={biscuits}/>
-                <SectionProducts title="cakes" path="/groceries/beverages/cakes" products={cake}/>
+                <SectionProducts title="cakes" path="/groceries/beverages/cakes" products={cakes}/>
                 <SectionProducts title="breads" path="/groceries/beverages/breads" products={breads}/>           
             </div>
         </AppLayout>
