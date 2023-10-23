@@ -11,7 +11,7 @@ import ProductCard from '../components/ProductCard';
 import { ProductsContext } from '../context/ProductContextProvider';
 
 const CategoryProducts = () => {
-    const { top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil } = useContext(ProductsContext);
+    const { top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cakes, jams, breads, rice, flour, oil } = useContext(ProductsContext);
     const path = useLocation().pathname.split('/').pop();
 
     let title = path;
@@ -48,8 +48,8 @@ const CategoryProducts = () => {
         data = [...biscuits];
         quantity = biscuits.length;
     } else if (path === 'cakes') {
-        data = [...cake];
-        quantity = cake.length;
+        data = [...cakes];
+        quantity = cakes.length;
     } else if (path === 'jams') {
         title = "jams & jellies";
         data = [...jams];
