@@ -49,6 +49,20 @@ const SearchResults = () => {
                     categoryFlag = true;
                 }
 
+                if (srchText === 'raw' && categoryFlag) {
+                    for (let i = 0; i < rawProducts.length; i ++) {
+                        if (item.category === rawProducts[i]) {
+                            return true;
+                        }
+                    }
+                } else if (srchText === 'bev' && categoryFlag) {
+                    for (let i = 0; i < beverages.length; i ++) {
+                        if (item.category === beverages[i]) {
+                            return true;
+                        }
+                    }
+                }
+
                 if (mainText.includes(srchText) && categoryFlag) {
                     return true;
                 } else {
