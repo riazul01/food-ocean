@@ -17,16 +17,16 @@ const ProductsContextProvider = ({children}) => {
     let meat = [];
     let fish = [];
     let eggs = [];
-    let teaCoffe = [];
-    let spices = [];
-    let dryFruits = [];
-    let biscuits = [];
-    let cake = [];
-    let jams = [];
-    let breads = [];
     let rice = [];
+    let spices = [];
     let flour = [];
     let oil = [];
+    let teaCoffe = [];
+    let dryFruits = [];
+    let biscuits = [];
+    let cakes = [];
+    let jams = [];
+    let breads = [];
 
     useEffect(() => {
         const q = query(collection(fs, "products"));
@@ -70,8 +70,8 @@ const ProductsContextProvider = ({children}) => {
             dryFruits.push(product);
         } else if (product.category === 'biscuits') {
             biscuits.push(product);
-        } else if (product.category === 'cake') {
-            cake.push(product);
+        } else if (product.category === 'cakes') {
+            cakes.push(product);
         } else if (product.category === 'jams') {
             jams.push(product);
         } else if (product.category === 'breads') {
@@ -86,7 +86,7 @@ const ProductsContextProvider = ({children}) => {
     }
 
     return (
-        <ProductsContext.Provider value={{products, top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil}}>
+        <ProductsContext.Provider value={{products, top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cakes, jams, breads, rice, flour, oil}}>
             {children}
         </ProductsContext.Provider>
     );
