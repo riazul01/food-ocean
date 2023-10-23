@@ -11,7 +11,7 @@ import Categories from '../sections/Categories';
 import { ProductsContext } from '../context/ProductContextProvider';
 
 const Groceries = () => {
-    const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil } = useContext(ProductsContext);
+    const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cakes, jams, breads, rice, flour, oil } = useContext(ProductsContext);
 
     return (
         <AppLayout>
@@ -30,7 +30,7 @@ const Groceries = () => {
                 <SectionProducts title="dry fruits" path="/groceries/beverages/dry-fruits" products={dryFruits}/>
                 <SectionProducts title="jams & jellies" path="/groceries/beverages/jams" products={jams}/>
                 <SectionProducts title="biscuits" path="/groceries/beverages/biscuits" products={biscuits}/>
-                <SectionProducts title="cakes" path="/groceries/beverages/cakes" products={cake}/>
+                <SectionProducts title="cakes" path="/groceries/beverages/cakes" products={cakes}/>
                 <SectionProducts title="breads" path="/groceries/beverages/breads" products={breads}/>
             </div>
         </AppLayout>
