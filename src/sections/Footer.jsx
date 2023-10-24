@@ -8,7 +8,7 @@ import { FaFacebookF } from 'react-icons/fa';
 const Footer = () => {
     return (
         <>
-        <div className="w-full bg-[#173334]">
+        <div className="w-full bg-[#122829]">
             <div className="mx-[auto] px-[0.4rem] py-[3rem] max-w-[1420px] flex justify-between">
                 
                 {/* footer column 01 */}

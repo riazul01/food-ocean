@@ -50,7 +50,7 @@ const Header = () => {
     }
 
     return (
-        <div className="w-full bg-[#173334]"> 
+        <div className="w-full bg-[#173334] z-[9999] sticky top-0 left-0">
             <div className="mx-[auto] px-[0.4rem] py-[1.6rem] flex items-center justify-between max-w-[1420px]">
                 {/* logo */}
                 <Link to="/" className="text-[2rem] text-[orange]" style={{fontFamily: 'Croissant One'}}>Grocery</Link>
