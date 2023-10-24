@@ -7,7 +7,7 @@ import AppLayout from '../layouts/AppLayout';
 import SectionProducts from '../sections/SectionProducts';
 
 // context
-import { ProductsContext } from '../context/ProductContextProvider';
+import { ProductsContext } from '../context/ProductsContextProvider';
 
 const RawProducts = () => {
     const { vegetables, fruits, meat, fish, eggs, spices, rice, flour, oil } = useContext(ProductsContext);

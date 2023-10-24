@@ -8,7 +8,7 @@ import AppLayout from '../layouts/AppLayout';
 import ProductCard from '../components/ProductCard';
 
 // context
-import { ProductsContext } from '../context/ProductContextProvider';
+import { ProductsContext } from '../context/ProductsContextProvider';
 
 const CategoryProducts = () => {
     const { top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cakes, jams, breads, rice, flour, oil } = useContext(ProductsContext);

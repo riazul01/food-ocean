@@ -8,7 +8,7 @@ import SectionProducts from '../sections/SectionProducts';
 import Categories from '../sections/Categories';
 
 // context
-import { ProductsContext } from '../context/ProductContextProvider';
+import { ProductsContext } from '../context/ProductsContextProvider';
 
 const Groceries = () => {
     const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cakes, jams, breads, rice, flour, oil } = useContext(ProductsContext);

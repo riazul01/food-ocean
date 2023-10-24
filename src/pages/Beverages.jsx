@@ -7,7 +7,7 @@ import AppLayout from '../layouts/AppLayout';
 import SectionProducts from '../sections/SectionProducts';
 
 // context
-import { ProductsContext } from '../context/ProductContextProvider';
+import { ProductsContext } from '../context/ProductsContextProvider';
 
 const Beverages = () => {
     const { teaCoffe, dryFruits, biscuits, cakes, jams, breads } = useContext(ProductsContext);

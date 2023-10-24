@@ -8,7 +8,7 @@ import Categories from '../sections/Categories';
 import SectionProducts from '../sections/SectionProducts';
 
 // context
-import { ProductsContext } from '../context/ProductContextProvider';
+import { ProductsContext } from '../context/ProductsContextProvider';
 
 const Home = () => {
     const { top, recent, popular } = useContext(ProductsContext);

@@ -8,7 +8,7 @@ import AppLayout from '../layouts/AppLayout';
 import ProductCard from '../components/ProductCard';
 
 // context
-import { ProductsContext } from '../context/ProductContextProvider';
+import { ProductsContext } from '../context/ProductsContextProvider';
 
 const SearchResults = () => {
     const { products } = useContext(ProductsContext);

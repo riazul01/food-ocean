@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Category from '../components/Category';
 
 // context
-import { ProductsContext } from '../context/ProductContextProvider';
+import { ProductsContext } from '../context/ProductsContextProvider';
 
 // images
 import VegetableImg from '../assets/images/categories/vegetable.png';
