@@ -25,7 +25,7 @@ import RiceImg from '../assets/images/categories/rice.png';
 import OilImg from '../assets/images/categories/oil.png';
 
 const Categories = () => {
-    const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cake, jams, breads, rice, flour, oil } = useContext(ProductsContext);
+    const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cakes, jams, breads, rice, flour, oil } = useContext(ProductsContext);
 
     return (
         <div className="mx-auto pb-[1.6rem] px-[0.4rem] max-w-[1420px]">
@@ -70,7 +70,7 @@ const Categories = () => {
                     <Category title="Biscuits" quantity={biscuits ? biscuits.length : '0'} Image={BiscuitsImg}/>
                 </Link>
                 <Link to="/groceries/beverages/cakes">
-                    <Category title="Cakes" quantity={cake ? cake.length : '0'} Image={CakeImg}/>
+                    <Category title="Cakes" quantity={cakes ? cakes.length : '0'} Image={CakeImg}/>
                 </Link>
                 <Link to="/groceries/beverages/breads">
                     <Category title="Breads" quantity={breads ? breads.length : '0'} Image={BreadImg}/>
