@@ -13,6 +13,7 @@ import { CartContext } from '../context/CartContextProvider';
 const Header = () => {
     const { cartItems } = useContext(CartContext);
 
+    const [toggle, setToggle] = useState(false);
     const [search, setSearch] = useState({
         searchText: '',
         searchCategory: 'all'
@@ -31,12 +32,25 @@ const Header = () => {
         
     }, [search, navigate]);
 
+    const handleToggle = (e) => {
+        e.stopPropagation();
+        setToggle(!toggle);
+    }
+
     useEffect(() => {
         // set search data
         if (location.state) {
             setSearch({searchText: location.state.searchText, searchCategory: location.state.searchCategory});
         }
     }, [location.state]);
+
+    useEffect(() => {
+        const body = document.querySelector('body');
+        // close side nav
+        body.onclick = () => {
+            setToggle(false);
+        }
+    });
 
     const handleChange = (e) => {
         setSearch({...search, [e.target.name]: e.target.value});
@@ -101,6 +115,10 @@ const Header = () => {
                     <Link to="/user/profile">
                         <FiUser className="ml-[1.4rem] text-[orange] text-[1.6rem] cursor-pointer"/>
                     </Link>
+
+                    <div onClick={handleToggle} className={`toggler ${toggle ? 'active' : null} ml-[1.4rem] grid h-[45px] w-auto cursor-pointer place-items-center rounded-sm z-[999]`}>
+                        <span className="toggleBar relative h-[2.4px] w-[28px] bg-[orange]"></span>
+                    </div>
                 </div>
             </div>
         </div>
