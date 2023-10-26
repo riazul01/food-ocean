@@ -16,7 +16,7 @@ import { LuClock4 } from 'react-icons/lu';
 const Header = () => {
     const { cartItems } = useContext(CartContext);
 
-    const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(JSON.parse(localStorage.getItem('toggle') || false));
     const [search, setSearch] = useState({
         searchText: '',
         searchCategory: 'all'
@@ -32,13 +32,7 @@ const Header = () => {
                 navigate('/groceries/search-results', {state: search});
             }
         }
-        
     }, [search, navigate]);
-
-    const handleToggle = (e) => {
-        e.stopPropagation();
-        setToggle(!toggle);
-    }
 
     useEffect(() => {
         // set search data
@@ -48,6 +42,14 @@ const Header = () => {
     }, [location.state]);
 
     useEffect(() => {
+        localStorage.setItem('toggle', JSON.stringify(toggle));
+    }, [toggle]);
+
+    useEffect(() => {
+        setToggle(false);
+    }, [location.pathname]);
+
+    useEffect(() => {
         const body = document.querySelector('body');
         // close side nav
         body.onclick = () => {
@@ -55,6 +57,13 @@ const Header = () => {
         }
     });
 
+    // handle toggle bar
+    const handleToggle = (e) => {
+        e.stopPropagation();
+        setToggle(!toggle);
+    }
+
+    // handle search input
     const handleChange = (e) => {
         setSearch({...search, [e.target.name]: e.target.value});
     }
@@ -68,7 +77,7 @@ const Header = () => {
 
     return (
         <>
-        <Sidebar/>
+        <Sidebar toggle={toggle} setToggle={setToggle}/>
 
         {/* header */}
         <div className="w-full bg-[#173334] z-[9999] sticky top-0 left-0">
