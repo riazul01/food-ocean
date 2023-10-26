@@ -13,6 +13,7 @@ import ProductUpload from './pages/ProductUpload';
 // style
 import './App.css';
 import Login from './auth/Login';
+import Signup from './auth/Signup';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/groceries/raw-products/:category" element={<CategoryProducts/>}/>
         <Route path="/groceries/beverages/:category" element={<CategoryProducts/>}/>
         <Route path="/user/login" element={<Login/>}/>
+        <Route path="/user/register" element={<Signup/>}/>
         <Route path="/upload-product" element={<ProductUpload/>}/>
       </Routes>
     </BrowserRouter>
