@@ -12,6 +12,7 @@ import ProductUpload from './pages/ProductUpload';
 
 // style
 import './App.css';
+import Login from './auth/Login';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/groceries/beverages" element={<Beverages/>}/>
         <Route path="/groceries/raw-products/:category" element={<CategoryProducts/>}/>
         <Route path="/groceries/beverages/:category" element={<CategoryProducts/>}/>
+        <Route path="/user/login" element={<Login/>}/>
         <Route path="/upload-product" element={<ProductUpload/>}/>
       </Routes>
     </BrowserRouter>
