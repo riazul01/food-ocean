@@ -5,6 +5,10 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
+body {
+  position: relative;
+}
+
 .navLink.active {
   color: crimson;
   border: 1px solid crimson;

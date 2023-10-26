@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
+// sections
+import Sidebar from './Sidebar';
+
+// context
+import { CartContext } from '../context/CartContextProvider';
+
 // icons
 import { BiSearchAlt } from 'react-icons/bi';
 import { PiShoppingCartDuotone } from 'react-icons/pi';
 import { FiPhoneCall, FiUser } from 'react-icons/fi';
 import { LuClock4 } from 'react-icons/lu';
-
-// context
-import { CartContext } from '../context/CartContextProvider';
 
 const Header = () => {
     const { cartItems } = useContext(CartContext);
@@ -64,6 +67,10 @@ const Header = () => {
     }
 
     return (
+        <>
+        <Sidebar/>
+
+        {/* header */}
         <div className="w-full bg-[#173334] z-[9999] sticky top-0 left-0">
             <div className="mx-[auto] px-[0.4rem] py-[1.6rem] flex items-center justify-between max-w-[1420px]">
                 {/* logo */}
@@ -122,6 +129,7 @@ const Header = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 
