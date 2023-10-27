@@ -7,7 +7,7 @@ import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 // icons
-import { AiFillWarning } from 'react-icons/ai';
+import { PiWarningCircleDuotone } from 'react-icons/pi';
 import { SiMaildotru } from 'react-icons/si';
 import { BiSolidLock } from 'react-icons/bi';
 
@@ -45,12 +45,10 @@ const Login = () => {
             <div className="mx-auto pb-[1.4rem] max-w-[1420px] flex items-center justify-center">
                 <div className="my-[1rem] w-[380px] h-auto min-h-[50vh]">
                     <h1 className="text-[#173334] text-[1.8rem]">Login</h1>
-                    <p className="text-[#182828] text-[1.1rem]">Welcome back, You've been missed!</p>
-                    {error.flag && <div className="errorBox">
-                        <div className="errorIcon">
-                            <AiFillWarning className="warning"/>
-                        </div>
-                        <p className="errorMsg">{error.message}</p>
+                    <p className="mt-[0.2rem] text-[#182828] text-[1.1rem]">Welcome back, You've been missed!</p>
+                    {error.flag && <div className="mt-[0.3rem] flex items-center">
+                        <PiWarningCircleDuotone className="text-[#b12525] text-[1.3rem]"/>
+                        <p className="ml-[0.3rem] text-[#b12525] text-[1.1rem]">{error.message}</p>
                     </div>}
                     <form onSubmit={handleSubmit}>
                         <div className="mt-[1rem] w-full h-[45px] flex items-center border-[1px] border-[#ddd] rounded-md overflow-hidden">
