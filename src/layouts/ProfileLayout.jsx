@@ -14,23 +14,23 @@ const ProfileLayout = ({ children }) => {
             <div className="mx-auto pt-[1rem] pb-[3rem] max-w-[1420px] flex items-start justify-between gap-[1rem]">
                 <div className="w-[240px]">
                     <div className="p-[0.4rem] w-full max-w-[240px] border-[1px] rounded-lg">
-                        <div className={`${path === 'profile' ? 'bg-[#ddd]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#ddd] cursor-pointer`}>
+                        <div className={`${path === 'profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <FiUser className="text-[1.2rem]"/>
                             <Link to="/user/profile" className="ms-[0.6rem] text-[1.1rem]">My Profile</Link>
                         </div>
-                        <div className={`${path === 'update-profile' ? 'bg-[#ddd]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#ddd] cursor-pointer`}>
+                        <div className={`${path === 'update-profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <FiUserCheck className="text-[1.2rem]"/>
                             <Link to="/user/update-profile" className="ms-[0.6rem] text-[1.1rem]">Update Profile</Link>
                         </div>
-                        <div className={`${path === 'orders' ? 'bg-[#ddd]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#ddd] cursor-pointer`}>
+                        <div className={`${path === 'orders' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <RiListUnordered className="text-[1.2rem]"/>
                             <Link to="/user/orders" className="ms-[0.6rem] text-[1.1rem]">My Orders</Link>
                         </div>
-                        <div className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#ddd] cursor-pointer">
+                        <div className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200">
                             <FiUsers className="text-[1.2rem]"/>
                             <a href="/" className="ms-[0.6rem] text-[1.1rem]">Switch to Admin</a>
                         </div>
-                        <div className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#ddd] cursor-pointer">
+                        <div className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200">
                             <RxExit className="text-[1.2rem]"/>
                             <p className="ms-[0.6rem] text-[1.1rem]">Logout</p>
                         </div>

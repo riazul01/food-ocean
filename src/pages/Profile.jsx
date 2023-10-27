@@ -6,7 +6,7 @@ import ProfileLayout from '../layouts/ProfileLayout';
 import { SlLocationPin } from 'react-icons/sl';
 import { FiCalendar } from 'react-icons/fi';
 
-import TestImg from '../assets/images/user.png';
+import TestImg from '../assets/images/shopping.png';
 
 const Profile = () => {
     return (
@@ -17,7 +17,7 @@ const Profile = () => {
                 
                 {/* header */}
                 <div className="mt-[1rem] flex items-end justify-start gap-[1rem]">
-                    <div className="h-[140px] w-140px] rounded-md overflow-hidden">
+                    <div className="h-[130px] w-130px] rounded-md overflow-hidden">
                         <img src={TestImg} className="h-full w-full object-cover" alt="" />
                     </div>
                     <div className="">
