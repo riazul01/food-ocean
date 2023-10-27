@@ -12,6 +12,7 @@ import { SiMaildotru } from 'react-icons/si';
 import { BiSolidLock } from 'react-icons/bi';
 
 import AppLayout from '../layouts/AppLayout';
+import useUsersList from '../hooks/useUsersList';
 
 const Login = () => {
     const [user, setUser] = useState({email: '', password: ''});
@@ -20,12 +21,17 @@ const Login = () => {
     const navigate = useNavigate();
     const { dispatch } = useContext(LoginContext);
 
+    // get users list
+    const usersList = useUsersList();
+    console.log(usersList);
+
+    // handle user input
     const handleChange = (e) => {
         setUser({...user, [e.target.name]: e.target.value});
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    // start firebase auth
+    const handleLogin = () => {
         signInWithEmailAndPassword(auth, user.email, user.password)
         .then((userCredential) => {
             const user = userCredential.user;
@@ -38,6 +44,30 @@ const Login = () => {
             const errorMessage = error.message;
             setError({flag: true, code: errorCode, message: errorMessage});
         });
+    }
+
+    // check user exist or not
+    const checkValidUser = () => {
+        let flag = false;
+        for (let i = 0; i < usersList.length; i ++) {
+            if (user.email === usersList[i].email && usersList[i].role === 'user') {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    // submit user data
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let isValidUser = checkValidUser();
+        console.log(isValidUser);
+        if (isValidUser) {
+            handleLogin();
+        } else {
+            setError({flag: true, code: 400, message: 'user not found!'});
+        }
     }
 
     return (
