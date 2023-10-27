@@ -19,8 +19,8 @@ const Sidebar = ({ toggle, setToggle }) => {
                         {path === "groceries" && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
                         <span>Groceries</span>
                     </NavLink>
-                    <NavLink to="/groceries/trending" onClick={() => setToggle(false)} className={`${path === 'trending' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
-                        {path === "trending" && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
+                    <NavLink to="/groceries/trending-now" onClick={() => setToggle(false)} className={`${path === 'trending-now' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
+                        {path === "trending-now" && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
                         <span>Trending now</span>
                     </NavLink>
                     <NavLink to="/groceries/raw-products" onClick={() => setToggle(false)} className={`${path === 'raw-products' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
@@ -34,6 +34,10 @@ const Sidebar = ({ toggle, setToggle }) => {
                     <NavLink to="/groceries/offers" onClick={() => setToggle(false)} className={`${path === 'offers' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
                         {path === "offers" && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
                         <span>New Offers</span>
+                    </NavLink>
+                    <NavLink to="/user/profile" onClick={() => setToggle(false)} className={`${(path === "login" || path === "register" || path === "profile" || path === "update-profile") ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
+                        {(path === "login" || path === "register" || path === "profile" || path === "update-profile") && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
+                        <span>Account</span>
                     </NavLink>
                     <NavLink to="/user/orders" onClick={() => setToggle(false)} className={`${path === 'orders' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
                         {path === "orders" && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
