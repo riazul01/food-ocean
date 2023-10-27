@@ -14,6 +14,7 @@ import ProductUpload from './pages/ProductUpload';
 import './App.css';
 import Login from './auth/Login';
 import Signup from './auth/Signup';
+import TrendingProducts from './pages/TrendingProducts';
 
 const App = () => {
   return (
@@ -21,10 +22,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/groceries" element={<Groceries/>}/>
-        <Route path="/groceries/:category" element={<CategoryProducts/>}/>
         <Route path="/groceries/search-results" element={<SearchResults/>}/>
+        <Route path="/groceries/trending-now" element={<TrendingProducts/>}/>
         <Route path="/groceries/raw-products" element={<RawProducts/>}/>
         <Route path="/groceries/beverages" element={<Beverages/>}/>
+        <Route path="/groceries/trending-now/:category" element={<CategoryProducts/>}/>
         <Route path="/groceries/raw-products/:category" element={<CategoryProducts/>}/>
         <Route path="/groceries/beverages/:category" element={<CategoryProducts/>}/>
         <Route path="/user/login" element={<Login/>}/>
