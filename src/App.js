@@ -15,6 +15,7 @@ import './App.css';
 import Login from './auth/Login';
 import Signup from './auth/Signup';
 import TrendingProducts from './pages/TrendingProducts';
+import Profile from './pages/Profile';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/groceries/beverages/:category" element={<CategoryProducts/>}/>
         <Route path="/user/login" element={<Login/>}/>
         <Route path="/user/register" element={<Signup/>}/>
+        <Route path="/user/profile" element={<Profile/>}/>
         <Route path="/upload-product" element={<ProductUpload/>}/>
       </Routes>
     </BrowserRouter>
