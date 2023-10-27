@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 // layouts
 import AppLayout from '../layouts/AppLayout';
@@ -13,6 +13,7 @@ import { ProductsContext } from '../context/ProductsContextProvider';
 const SearchResults = () => {
     const { products } = useContext(ProductsContext);
     const location = useLocation();
+    const navigate = useNavigate();
     
     const [filteredItems, setFilteredItems] = useState([]);
 
@@ -78,6 +79,16 @@ const SearchResults = () => {
 
     }, [location.state, products]);
 
+    const handleRedirect = () => {
+        if (location.state.searchCategory === 'raw-products') {
+            navigate('/groceries/raw-products');
+        } else if (location.state.searchCategory === 'beverages') {
+            navigate('/groceries/beverages');
+        } else {
+            navigate('/groceries');
+        }
+    }
+
     return (
         <AppLayout>
             <div className="mx-auto px-[0.4rem] pb-[3rem] max-w-[1420px] min-h-[50vh]">
@@ -88,7 +99,7 @@ const SearchResults = () => {
                 </div>
 
                 {/* search products */}
-                {filteredItems.length === 0 ? <p className="text-[1.1rem]">No items found in category {`"${location.state.searchCategory}"!`}</p>
+                {filteredItems.length === 0 ? <p className="text-[1.1rem]">No items found in category <span onClick={handleRedirect} className="italic underline cursor-pointer">{location.state.searchCategory}!</span></p>
                 : <div className="grid grid-cols-5 gap-[1.2rem]">
                     {filteredItems.map((item) => {
                         return <ProductCard key={item.id} data={item}/>
