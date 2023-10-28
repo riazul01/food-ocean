@@ -4,6 +4,10 @@ import ProfileLayout from '../layouts/ProfileLayout';
 
 import { UserDetailsContext } from '../context/UserDetailsContextProvider';
 
+// skeleton loader
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 // icons
 import { SlLocationPin } from 'react-icons/sl';
 import { FiCalendar } from 'react-icons/fi';
@@ -25,24 +29,24 @@ const Profile = () => {
                         <img src={DefaultImg} className="h-full w-full object-cover" alt="profile" />
                     </div>
                     <div className="">
-                        <h1 className="text-[1.6rem] font-bold">{userDetails ? userDetails.name : 'Mr. X'}</h1>
-                        <div className="flex items-center">
+                        <h1 className="text-[1.6rem] font-bold">{userDetails ? userDetails.name : <Skeleton width={100}/>}</h1>
+                        {userDetails ? <div className="flex items-center">
                             <SlLocationPin className="text-[1.1rem]"/>
-                            <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">{userDetails ? `${userDetails.address.division}, ${userDetails.address.country}` : 'Dhaka, Bangladesh'}</p>
-                        </div>
-                        <div className="flex items-center">
+                            <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">{`${userDetails.address.division}, ${userDetails.address.country}`}</p>
+                        </div> : <Skeleton containerClassName="flex-1" width={100}/>}
+                        {userDetails ? <div className="flex items-center">
                             <FiCalendar className="text-[1.1rem]"/>
-                            <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">Joined - {userDetails ? `${userDetails.joinedDate.split(' ')[0]}, ${userDetails.joinedDate.split(' ')[2]}` : 'Month, YYYY'}</p>
-                        </div>
+                            <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">{`Joined - ${userDetails.joinedDate.split(' ')[0]}, ${userDetails.joinedDate.split(' ')[2]}`}</p>
+                        </div> : <Skeleton containerClassName="flex-1" width={100}/>}
                     </div>
                 </div>
 
                 {/* description */}
                 <div className="mt-[2rem]">
-                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Email:</strong><span className="text-[1.1rem]">{userDetails ? userDetails.email : ''}</span></p>
-                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Phone:</strong><span className="text-[1.1rem]">{userDetails ? (userDetails.phone ? userDetails.phone : '-:-') : ''}</span></p>
-                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Gender:</strong><span className="text-[1.1rem]">{userDetails ? (userDetails.gender ? userDetails.gender : '-:-') : ''}</span></p>
-                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Address:</strong><span className="text-[1.1rem]">{userDetails ? `${userDetails.address.street} ${userDetails.address.city}${userDetails.address.city !== '' ? '-' : ''}${userDetails.address.postcode} ${userDetails.address.division} ${userDetails.address.country}`.trim().split(' ').join(', ') : ''}</span></p>
+                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Email:</strong><span className="text-[1.1rem]">{userDetails ? userDetails.email : <Skeleton width={100}/>}</span></p>
+                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Phone:</strong><span className="text-[1.1rem]">{userDetails ? (userDetails.phone ? userDetails.phone : '-:-') : <Skeleton width={100}/>}</span></p>
+                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Gender:</strong><span className="text-[1.1rem]">{userDetails ? (userDetails.gender ? userDetails.gender : '-:-') : <Skeleton width={100}/>}</span></p>
+                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Address:</strong><span className="text-[1.1rem]">{userDetails ? `${userDetails.address.street} ${userDetails.address.city}${userDetails.address.city !== '' ? '-' : ''}${userDetails.address.postcode} ${userDetails.address.division} ${userDetails.address.country}`.trim().split(' ').join(', ') : <Skeleton width={100}/>}</span></p>
                 </div>
 
                 {/* delete account button */}
