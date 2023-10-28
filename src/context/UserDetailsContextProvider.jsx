@@ -9,32 +9,18 @@ export const UserDetailsContext = createContext();
 
 const UserDetailsContextProvider = ({ children }) => {
     const { currentUser } = useContext(LoginContext);
-    const [userDetails, setUserDetails] = useState(JSON.parse(localStorage.getItem('userDetails')) || currentUser);
+    const [userDetails, setUserDetails] = useState(currentUser);
 
     useEffect(() => {
         // get user data from firestore
         const getUserData = async () => {
             if (currentUser) {
                 onSnapshot(doc(fs, "users", currentUser.uid), (doc) => {
-                    let userObj = {
-                        id: currentUser.uid,
-                        phone: '',
-                        gender: '',
-                        address: {
-                            street: '',
-                            division: '',
-                            city: '',
-                            postcode: '',
-                            country: 'Bangladesh'
-                        },
-                        ...doc.data(),
-                    }
-                    setUserDetails(userObj);
-                    localStorage.setItem('userDetails', JSON.stringify(userObj));
+                    setUserDetails({...doc.data()});
+                    localStorage.setItem('userDetails', JSON.stringify({...doc.data()}));
                 });
             }    
         }
-        
         getUserData();
     }, [currentUser]);
 
