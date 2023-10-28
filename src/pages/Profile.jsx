@@ -17,7 +17,7 @@ const Profile = () => {
                 
                 {/* header */}
                 <div className="mt-[1rem] flex items-end justify-start gap-[1rem]">
-                    <div className="h-[130px] w-130px] rounded-md overflow-hidden">
+                    <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
                         <img src={TestImg} className="h-full w-full object-cover" alt="" />
                     </div>
                     <div className="">
