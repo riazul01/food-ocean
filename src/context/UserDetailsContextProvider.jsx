@@ -9,7 +9,7 @@ export const UserDetailsContext = createContext();
 
 const UserDetailsContextProvider = ({ children }) => {
     const { currentUser } = useContext(LoginContext);
-    const [userDetails, setUserDetails] = useState(currentUser);
+    const [userDetails, setUserDetails] = useState(null);
 
     useEffect(() => {
         // get user data from firestore
@@ -17,7 +17,6 @@ const UserDetailsContextProvider = ({ children }) => {
             if (currentUser) {
                 onSnapshot(doc(fs, "users", currentUser.uid), (doc) => {
                     setUserDetails({...doc.data()});
-                    localStorage.setItem('userDetails', JSON.stringify({...doc.data()}));
                 });
             }    
         }
