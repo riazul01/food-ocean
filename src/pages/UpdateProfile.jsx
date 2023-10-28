@@ -21,7 +21,8 @@ const UpdateProfile = () => {
         name: '',
         email: '',
         phone: '',
-        gender: 'male'
+        gender: 'male',
+        imgUrl: ''
     });
 
     const [address, setAddress] = useState({
@@ -31,6 +32,9 @@ const UpdateProfile = () => {
         division: 'dhaka',
         country: 'Bangladesh'
     });
+
+    const [profileImage, setProfileImage] = useState(null);
+    const [previewImage, setPreviewImage] = useState(null);
 
     useEffect(() => {
         if (userDetails) {
@@ -50,6 +54,25 @@ const UpdateProfile = () => {
             });
         }
     }, [userDetails]);
+
+    useEffect(() => {
+        if (profileImage === null || profileImage === undefined) {
+            return;
+        }
+
+        const objUrl = URL.createObjectURL(profileImage);
+        setPreviewImage(objUrl);
+
+        // free memory when component is unmounted
+        return (() => URL.revokeObjectURL(objUrl));
+    }, [profileImage]);
+
+    const handleImageInput = (e) => {
+        // fix select file cancelation problem
+        if (e.target.files[0] !== undefined) {
+            setProfileImage(e.target.files[0]);
+        }
+    }
 
     const handleChange = (e) => {
         setUser({...user, [e.target.name]: e.target.value});
@@ -74,7 +97,7 @@ const UpdateProfile = () => {
                 {/* header */}
                 <div className="mt-[1rem] flex items-end justify-start gap-[1rem]">
                     <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
-                        <img src={DefaultImg} className="h-full w-full object-cover" alt="profile" />
+                        <img src={previewImage || DefaultImg} className="h-full w-full object-cover" alt="profile" />
                     </div>
                     <div className="">
                         <h1 className="text-[1.6rem] font-bold">{userDetails ? (userDetails.name ? userDetails.name : <Skeleton width={100}/>) : <Skeleton width={100}/>}</h1>
@@ -87,6 +110,11 @@ const UpdateProfile = () => {
                             <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">{userDetails.joinedDate ? `Joined - ${userDetails.joinedDate.split(' ')[0]}, ${userDetails.joinedDate.split(' ')[2]}` : <Skeleton width={100}/>}</p>
                         </div> : <Skeleton containerClassName="flex-1" width={100}/>}
                     </div>
+                </div>
+
+                <div className="mt-[1rem]">
+                    <label htmlFor="profileImg" className="px-[0.8rem] py-[0.2rem]  bg-[#ddd] border-[1px] border-[#999] rounded-sm">Change Image</label>
+                    <input type="file" id="profileImg" onChange={handleImageInput} accept="image/*" className="hidden" />
                 </div>
 
                 {/* description */}
