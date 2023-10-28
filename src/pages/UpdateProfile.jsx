@@ -93,7 +93,7 @@ const UpdateProfile = () => {
                 <form onSubmit={handleSubmit} className="mt-[2rem]">
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Name:</strong>
-                        <input value={user.name} onChange={handleChange} type="text" name="name" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your name" />
+                        <input value={user.name} onChange={handleChange} type="text" name="name" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your name" required />
                     </div>
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Email:</strong>
@@ -101,7 +101,7 @@ const UpdateProfile = () => {
                     </div>
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Phone:</strong>
-                        <input value={user.phone} onChange={handleChange} type="phone" name="phone" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Phone number" />
+                        <input value={user.phone} onChange={handleChange} type="phone" name="phone" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Phone number" required />
                     </div>
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Gender:</strong>
@@ -115,15 +115,15 @@ const UpdateProfile = () => {
                     <p className="mt-[1.1rem] text-[#555] text-[1.2rem] font-bold inline-block border-b-[2px] border-[#555]">Address</p>
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Street:</strong>
-                        <input value={address.street} onChange={handleAddressChange} type="text" name="street" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Street" />
+                        <input value={address.street} onChange={handleAddressChange} type="text" name="street" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Street" required />
                     </div>
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">City:</strong>
-                        <input value={address.city} onChange={handleAddressChange} type="text" name="city" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="City" />
+                        <input value={address.city} onChange={handleAddressChange} type="text" name="city" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="City" required />
                     </div>
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Postcode:</strong>
-                        <input value={address.postcode} onChange={handleAddressChange} type="text" name="postcode" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Postcode" />
+                        <input value={address.postcode} onChange={handleAddressChange} type="text" name="postcode" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Postcode" required />
                     </div>
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Division:</strong>
