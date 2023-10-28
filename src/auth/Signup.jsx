@@ -1,19 +1,22 @@
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { LoginContext } from '../context/LoginContextProvider';
 
 // firebase
 import { auth, fs } from '../firebase';
 import { doc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
+// context
+import { LoginContext } from '../context/LoginContextProvider';
+
+// layouts
+import AppLayout from '../layouts/AppLayout';
+
 // icons
-import { PiWarningCircleDuotone } from 'react-icons/pi';
 import { SiMaildotru } from 'react-icons/si';
 import { BiSolidLock } from 'react-icons/bi';
 import { LuUserCircle2 } from 'react-icons/lu';
-
-import AppLayout from '../layouts/AppLayout';
+import { PiWarningCircleDuotone } from 'react-icons/pi';
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -27,15 +30,6 @@ const Signup = () => {
     // handle input change
     const handleChange = (e) => {
         setUser({...user, [e.target.name]: e.target.value});
-    }
-
-    // save user info to firestore
-    const addUserToFireStore = async (colName, docName, data) => {
-        try {
-            await setDoc(doc(fs, colName, docName), data);
-        } catch (err) {
-            console.log(err.message);
-        }
     }
 
     const getCurrentTime = () => {
@@ -58,6 +52,16 @@ const Signup = () => {
         return `${monthNames[monthIndex]} ${date}, ${year} ${hh}:${mm}:${ss} ${xm}`;
     }
 
+    // save user info to firestore
+    const addUserToFireStore = async (colName, docName, data) => {
+        try {
+            await setDoc(doc(fs, colName, docName), data);
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
+    // submit user data
     const handleSubmit = async (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, user.email, user.password)
@@ -82,6 +86,8 @@ const Signup = () => {
                 <div className="my-[1rem] w-[380px] h-auto min-h-[50vh]">
                     <h1 className="text-[#173334] text-[1.8rem]">Register</h1>
                     <p className="mt-[0.2rem] text-[#182828] text-[1.1rem]">Please create an account to continue!</p>
+                    
+                    {/* error message */}
                     {error.flag && <div className="mt-[0.3rem] flex items-center">
                         <PiWarningCircleDuotone className="text-[#b12525] text-[1.3rem]"/>
                         <p className="ml-[0.3rem] text-[#b12525] text-[1.1rem]">{error.message}</p>
@@ -103,6 +109,8 @@ const Signup = () => {
                         </div>
                         <button type="submit" className="mt-[1.2rem] px-[1rem] py-[0.4rem] text-[#fff] font-[500] bg-[#173334] rounded-lg">Submit</button>
                     </form>
+
+                    {/* login link */}
                     <div className="mt-[1rem] flex items-center">
                         <p className="me-[0.4rem] text-[#182828] text-[1.1rem]">Already have an account?</p>
                         <Link to="/user/login" className="text-[#182828] text-[1.1rem] underline">Login now</Link>
