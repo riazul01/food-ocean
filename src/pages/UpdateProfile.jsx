@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AppLayout from '../layouts/AppLayout';
 import ProfileLayout from '../layouts/ProfileLayout';
 
@@ -31,6 +31,25 @@ const UpdateProfile = () => {
         division: 'dhaka',
         country: 'Bangladesh'
     });
+
+    useEffect(() => {
+        if (userDetails) {
+            setUser({
+                name: userDetails.name ? userDetails.name : '',
+                email: userDetails.email ? userDetails.email : '',
+                phone: userDetails.phone ? userDetails.phone : '',
+                gender: userDetails.gender ? userDetails.gender : 'male'
+            });
+
+            setAddress({
+                street: userDetails.address.street ? userDetails.address.street : '',
+                city: userDetails.address.city ? userDetails.address.city : '',
+                postcode: userDetails.address.postcode ? userDetails.address.postcode : '',
+                division: userDetails.address.division ? userDetails.address.division : 'dhaka',
+                country: 'Bangladesh'
+            });
+        }
+    }, [userDetails]);
 
     const handleChange = (e) => {
         setUser({...user, [e.target.name]: e.target.value});
@@ -78,7 +97,7 @@ const UpdateProfile = () => {
                     </div>
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Email:</strong>
-                        <input value={user.email} onChange={handleChange} type="email" name="email" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your email" />
+                        <input value={user.email} onChange={handleChange} type="email" name="email" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your email" disabled />
                     </div>
                     <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Phone:</strong>
