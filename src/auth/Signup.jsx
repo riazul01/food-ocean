@@ -65,7 +65,7 @@ const Signup = () => {
             const authUser = userCredential.user;
             dispatch({type: 'LOGIN', payload: authUser});
             let joinedDate = getCurrentTime();
-            addUserToFireStore('users', authUser.uid, {email: user.email, name: user.name, role: 'user', joinedDate});
+            addUserToFireStore('users', authUser.uid, {id: authUser.uid, email: user.email, name: user.name, phone: '', gender: '', address: {street: '', city: '', postcode: '', division: 'Dhaka', country: 'Bangladesh'}, role: 'user', joinedDate});
             setUser({email: '', name: '', password: ''});
             setError({flag: false, code: null, message: ''});
             navigate('/');
