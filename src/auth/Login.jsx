@@ -93,7 +93,7 @@ const Login = () => {
                         <button type="submit" className="mt-[1.2rem] px-[1rem] py-[0.4rem] text-[#fff] font-[500] bg-[#173334] rounded-lg">Login</button>
                     </form>
                     <div className="mt-[1rem] flex items-center">
-                        <p className="me-[0.6rem] text-[#182828] text-[1.1rem]">Don't have an account?</p>
+                        <p className="me-[0.4rem] text-[#182828] text-[1.1rem]">Don't have an account?</p>
                         <Link to="/user/register" className="text-[#182828] text-[1.1rem] underline">Register now</Link>
                     </div>
                 </div>
