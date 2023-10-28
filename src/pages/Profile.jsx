@@ -13,15 +13,6 @@ import DefaultImg from '../assets/images/shopping.png';
 const Profile = () => {
     const userDetails = useContext(UserDetailsContext);
 
-    console.log(userDetails);
-
-    let joinedDate = 'Month, YYYY';
-
-    if (userDetails.joinedDate) {
-        let dateArr = userDetails.joinedDate.split(' ');
-        joinedDate = `${dateArr[0]}, ${dateArr[2]}`;
-    }
-
     return (
         <AppLayout>
             <ProfileLayout>
@@ -31,27 +22,27 @@ const Profile = () => {
                 {/* header */}
                 <div className="mt-[1rem] flex items-end justify-start gap-[1rem]">
                     <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
-                        <img src={userDetails.imgUrl || DefaultImg} className="h-full w-full object-cover" alt="profile" />
+                        <img src={DefaultImg} className="h-full w-full object-cover" alt="profile" />
                     </div>
                     <div className="">
                         <h1 className="text-[1.6rem] font-bold">{userDetails ? userDetails.name : 'Mr. X'}</h1>
                         <div className="flex items-center">
                             <SlLocationPin className="text-[1.1rem]"/>
-                            <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">Sylhet, Bangladesh</p>
+                            <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">{userDetails ? `${userDetails.address.division}, ${userDetails.address.country}` : 'Dhaka, Bangladesh'}</p>
                         </div>
                         <div className="flex items-center">
                             <FiCalendar className="text-[1.1rem]"/>
-                            <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">Joined - {joinedDate}</p>
+                            <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">Joined - {userDetails ? `${userDetails.joinedDate.split(' ')[0]}, ${userDetails.joinedDate.split(' ')[2]}` : 'Month, YYYY'}</p>
                         </div>
                     </div>
                 </div>
 
                 {/* description */}
                 <div className="mt-[2rem]">
-                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Email:</strong><span className="text-[1.1rem]">{userDetails.email ? userDetails.email : ''}</span></p>
-                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Phone:</strong><span className="text-[1.1rem]">{userDetails.phone ? userDetails.phone : '-:-'}</span></p>
-                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Gender:</strong><span className="text-[1.1rem]">{userDetails.gender ? userDetails.gender : '-:-'}</span></p>
-                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Address:</strong><span className="text-[1.1rem]">{`${userDetails.address.division ? userDetails.address.division : 'Dhaka'}, Bangladesh`}</span></p>
+                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Email:</strong><span className="text-[1.1rem]">{userDetails ? userDetails.email : ''}</span></p>
+                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Phone:</strong><span className="text-[1.1rem]">{userDetails ? (userDetails.phone ? userDetails.phone : '-:-') : ''}</span></p>
+                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Gender:</strong><span className="text-[1.1rem]">{userDetails ? (userDetails.gender ? userDetails.gender : '-:-') : ''}</span></p>
+                    <p className="mt-[0.8rem] flex items-center"><strong className="text-[1.1rem] w-[120px]">Address:</strong><span className="text-[1.1rem]">{userDetails ? `${userDetails.address.street} ${userDetails.address.city}${userDetails.address.city !== '' ? '-' : ''}${userDetails.address.postcode} ${userDetails.address.division} ${userDetails.address.country}`.trim().split(' ').join(', ') : ''}</span></p>
                 </div>
 
                 {/* delete account button */}
