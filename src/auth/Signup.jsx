@@ -65,7 +65,7 @@ const Signup = () => {
             const authUser = userCredential.user;
             dispatch({type: 'LOGIN', payload: authUser});
             let joinedDate = getCurrentTime();
-            addUserToFireStore('users', authUser.uid, {id: authUser.uid, email: user.email, name: user.name, phone: '', gender: '', address: {street: '', city: '', postcode: '', division: 'Dhaka', country: 'Bangladesh'}, role: 'user', joinedDate});
+            addUserToFireStore('users', authUser.uid, {id: authUser.uid, email: user.email, name: user.name, imgUrl: '', phone: '', gender: '', address: {street: '', city: '', postcode: '', division: 'Dhaka', country: 'Bangladesh'}, role: 'user', joinedDate});
             setUser({email: '', name: '', password: ''});
             setError({flag: false, code: null, message: ''});
             navigate('/');
@@ -86,6 +86,8 @@ const Signup = () => {
                         <PiWarningCircleDuotone className="text-[#b12525] text-[1.3rem]"/>
                         <p className="ml-[0.3rem] text-[#b12525] text-[1.1rem]">{error.message}</p>
                     </div>}
+
+                    {/* signup form */}
                     <form onSubmit={handleSubmit}>
                         <div className="mt-[0.8rem] w-full h-[45px] flex items-center border-[1px] border-[#ddd] rounded-md overflow-hidden">
                             <SiMaildotru className="ms-[0.8rem] text-gray-400 text-[1rem]"/>
@@ -102,7 +104,7 @@ const Signup = () => {
                         <button type="submit" className="mt-[1.2rem] px-[1rem] py-[0.4rem] text-[#fff] font-[500] bg-[#173334] rounded-lg">Submit</button>
                     </form>
                     <div className="mt-[1rem] flex items-center">
-                        <p className="me-[0.6rem] text-[#182828] text-[1.1rem]">Already have an account?</p>
+                        <p className="me-[0.4rem] text-[#182828] text-[1.1rem]">Already have an account?</p>
                         <Link to="/user/login" className="text-[#182828] text-[1.1rem] underline">Login now</Link>
                     </div>
                 </div>
