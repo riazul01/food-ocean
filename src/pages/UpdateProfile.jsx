@@ -28,7 +28,7 @@ import { FiCalendar } from 'react-icons/fi';
 const UpdateProfile = () => {
     const userDetails = useContext(UserDetailsContext);
 
-    const [user, setUser] = useState({id: '', name: '', email: '', phone: '', gender: 'male', joinedDate: '', imgUrl: '', defaultImg: ''});
+    const [user, setUser] = useState({id: '', name: '', email: '', phone: '', gender: 'male', joinedDate: '', imgUrl: null, defaultImg: null});
     const [address, setAddress] = useState({street: '', city: '', postcode: '', division: 'dhaka', country: 'Bangladesh'});
     const [profileImage, setProfileImage] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
@@ -44,8 +44,8 @@ const UpdateProfile = () => {
                 phone: userDetails.phone ? userDetails.phone : '',
                 gender: userDetails.gender ? userDetails.gender : 'male',
                 joinedDate: userDetails.joinedDate ? userDetails.joinedDate : '',
-                imgUrl: userDetails.imgUrl ? userDetails.imgUrl : '',
-                defaultImg: userDetails.defaultImg ? userDetails.defaultImg : ''
+                imgUrl: userDetails.imgUrl ? userDetails.imgUrl : null,
+                defaultImg: userDetails.defaultImg ? userDetails.defaultImg : null
             });
 
             setAddress({
@@ -179,7 +179,7 @@ const UpdateProfile = () => {
                     
                     {/* profile image */}
                     {userDetails ? <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
-                        <img src={previewImage || user.imgUrl || user.defaultImg} className="h-full w-full object-cover" alt="profile"/>
+                        <img src={previewImage || (userDetails.imgUrl ? userDetails.imgUrl : null) || (userDetails.defaultImg ? userDetails.defaultImg : null)} className="h-full w-full object-cover" alt="profile"/>
                     </div> : <Skeleton className="w-[130px] h-[130px]"/>}
 
                     {/* profile info */}
