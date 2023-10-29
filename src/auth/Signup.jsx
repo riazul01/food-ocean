@@ -69,7 +69,24 @@ const Signup = () => {
             const authUser = userCredential.user;
             dispatch({type: 'LOGIN', payload: authUser});
             let joinedDate = getCurrentTime();
-            addUserToFireStore('users', authUser.uid, {id: authUser.uid, email: user.email, name: user.name, imgUrl: '', phone: '', gender: '', address: {street: '', city: '', postcode: '', division: 'Dhaka', country: 'Bangladesh'}, role: 'user', joinedDate});
+            addUserToFireStore('users', authUser.uid, {
+                id: authUser.uid, 
+                email: user.email, 
+                name: user.name,
+                role: 'user',
+                imgUrl: '',
+                defaultImg: 'https://firebasestorage.googleapis.com/v0/b/grocery-store-c372e.appspot.com/o/images%2Fprofile%2Fdefault.png?alt=media&token=a15597ed-9291-4887-aac7-a07e971bd9e0&_gl=1*1874o5d*_ga*MjM2NTMyOTI2LjE2OTU3MDc1NzU.*_ga_CW55HF8NVT*MTY5ODU2MjU0MC40NS4xLjE2OTg1NjgyNzAuMzguMC4w',
+                phone: '',
+                gender: '',
+                joinedDate,
+                address: {
+                    street: '', 
+                    city: '', 
+                    postcode: '', 
+                    division: 'Dhaka', 
+                    country: 'Bangladesh'
+                }
+            });
             setUser({email: '', name: '', password: ''});
             setError({flag: false, code: null, message: ''});
             navigate('/');

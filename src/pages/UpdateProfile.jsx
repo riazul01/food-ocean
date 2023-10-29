@@ -28,7 +28,7 @@ import { FiCalendar } from 'react-icons/fi';
 const UpdateProfile = () => {
     const userDetails = useContext(UserDetailsContext);
 
-    const [user, setUser] = useState({id: '', name: '', email: '', phone: '', gender: 'male', joinedDate: '', imgUrl: ''});
+    const [user, setUser] = useState({id: '', name: '', email: '', phone: '', gender: 'male', joinedDate: '', imgUrl: '', defaultImg: ''});
     const [address, setAddress] = useState({street: '', city: '', postcode: '', division: 'dhaka', country: 'Bangladesh'});
     const [profileImage, setProfileImage] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
@@ -44,7 +44,8 @@ const UpdateProfile = () => {
                 phone: userDetails.phone ? userDetails.phone : '',
                 gender: userDetails.gender ? userDetails.gender : 'male',
                 joinedDate: userDetails.joinedDate ? userDetails.joinedDate : '',
-                imgUrl: userDetails.imgUrl ? userDetails.imgUrl : ''
+                imgUrl: userDetails.imgUrl ? userDetails.imgUrl : '',
+                defaultImg: userDetails.defaultImg ? userDetails.defaultImg : ''
             });
 
             setAddress({
@@ -124,7 +125,7 @@ const UpdateProfile = () => {
     }
 
     const deletePreviousImageFromStorage = () => {
-        const desertRef = ref(storage, userDetails.imgUrl);
+        const desertRef = ref(storage, user.imgUrl);
 
         deleteObject(desertRef).then(() => {
             console.log('Previous image deleted!');
@@ -160,7 +161,7 @@ const UpdateProfile = () => {
         if (profileImage === null || profileImage === undefined) {
             updateProfileData(userData);
         } else {
-            if (userDetails.imgUrl) {
+            if (user.imgUrl) {
                 deletePreviousImageFromStorage();
             }
             updateProfileDataWithImage(userData);
@@ -177,9 +178,9 @@ const UpdateProfile = () => {
                 <div className="mt-[1rem] flex items-end justify-start gap-[1rem]">
                     
                     {/* profile image */}
-                    <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
-                        <img src={previewImage || user.imgUrl} className="h-full w-full object-cover" alt="profile"/>
-                    </div>
+                    {userDetails ? <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
+                        <img src={previewImage || user.imgUrl || user.defaultImg} className="h-full w-full object-cover" alt="profile"/>
+                    </div> : <Skeleton width={100} height={100}/>}
 
                     {/* profile info */}
                     <div className="">
@@ -202,64 +203,64 @@ const UpdateProfile = () => {
                 </div>
 
                 {/* profile image change button */}
-                <div className="mt-[1rem]">
+                {userDetails ? <div className="mt-[1rem]">
                     <label htmlFor="profileImg" className="px-[0.8rem] py-[0.2rem]  bg-[#ddd] border-[1px] border-[#999] rounded-sm">Change Image</label>
                     <input type="file" id="profileImg" onChange={handleImageChange} accept="image/*" className="hidden" />
-                </div>
+                </div> : <Skeleton width={100}/>}
 
                 {/* description */}
                 <form onSubmit={handleSubmit} className="mt-[2rem]">
 
                     {/* name */}
-                    <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Name:</strong>
                         <input value={user.name} onChange={handleChange} type="text" name="name" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your name" required/>
-                    </div>
+                    </div> : <Skeleton containerClassName="flex-1" width={218}/>}
 
                     {/* email */}
-                    <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Email:</strong>
                         <input value={user.email} onChange={handleChange} type="email" name="email" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your email" disabled/>
-                    </div>
+                    </div> : <Skeleton containerClassName="flex-1" width={218}/>}
 
                     {/* phone */}
-                    <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Phone:</strong>
                         <input value={user.phone} onChange={handleChange} type="phone" name="phone" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Phone number" required/>
-                    </div>
+                    </div> : <Skeleton containerClassName="flex-1" width={218}/>}
 
                     {/* gender */}
-                    <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Gender:</strong>
                         <select value={user.gender} onChange={handleChange} name="gender" className="px-[0.4rem] py-[0.1rem] border-[1px] border-[silver] outline-none rounded-md">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
-                    </div>
+                    </div> : <Skeleton width={100}/>}
 
                     {/* address */}
-                    <h1 className="mt-[1.1rem] text-[#555] text-[1.2rem] font-bold inline-block">Address</h1>
+                    {userDetails ? <h1 className="mt-[1.1rem] text-[#555] text-[1.2rem] font-bold inline-block">Address</h1> : <Skeleton width={100}/>}
                     
                     {/* street */}
-                    <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Street:</strong>
                         <input value={address.street} onChange={handleAddressChange} type="text" name="street" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Street" required/>
-                    </div>
+                    </div> : <Skeleton containerClassName="flex-1" width={218}/>}
 
                     {/* city */}
-                    <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">City:</strong>
                         <input value={address.city} onChange={handleAddressChange} type="text" name="city" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="City" required/>
-                    </div>
+                    </div> : <Skeleton containerClassName="flex-1" width={218}/>}
 
                     {/* postcode */}
-                    <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Postcode:</strong>
                         <input value={address.postcode} onChange={handleAddressChange} type="text" name="postcode" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Postcode" required/>
-                    </div>
+                    </div> : <Skeleton containerClassName="flex-1" width={218}/>}
 
                     {/* division */}
-                    <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Division:</strong>
                         <select value={address.division} onChange={handleAddressChange} name="division" className="px-[0.4rem] py-[0.1rem] border-[1px] border-[silver] outline-none rounded-md">
                             <option value="dhaka">Dhaka</option>
@@ -271,16 +272,16 @@ const UpdateProfile = () => {
                             <option value="khulna">Khulna</option>
                             <option value="chattogram">Chattogram</option>
                         </select>
-                    </div>
+                    </div> : <Skeleton width={100}/>}
 
                     {/* country */}
-                    <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] w-[120px]">Country:</strong>
                         <input value={address.country} onChange={handleAddressChange} type="text" name="country" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Country" disabled/>
-                    </div>
+                    </div> : <Skeleton containerClassName="flex-1" width={218}/>}
 
                     {/* update button */}
-                    <button type="submit" className="mt-[2rem] px-[0.6rem] py-[0.2rem] text-[#fff] font-[500] bg-green-800 rounded-md" disabled={btnDisabled}>Update account</button>
+                    {userDetails ? <button type="submit" className="mt-[2rem] px-[0.6rem] py-[0.2rem] text-[#fff] font-[500] bg-green-800 rounded-md" disabled={btnDisabled}>Update account</button> : <Skeleton width={100}/>}
                 </form>
                 <ToastContainer
                     position="top-right"
