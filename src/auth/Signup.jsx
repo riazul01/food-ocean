@@ -75,7 +75,7 @@ const Signup = () => {
                 name: user.name,
                 role: 'user',
                 imgUrl: '',
-                defaultImg: 'https://firebasestorage.googleapis.com/v0/b/grocery-store-c372e.appspot.com/o/images%2Fprofile%2Fdefault.png?alt=media&token=a15597ed-9291-4887-aac7-a07e971bd9e0&_gl=1*1874o5d*_ga*MjM2NTMyOTI2LjE2OTU3MDc1NzU.*_ga_CW55HF8NVT*MTY5ODU2MjU0MC40NS4xLjE2OTg1NjgyNzAuMzguMC4w',
+                defaultImg: 'https://firebasestorage.googleapis.com/v0/b/grocery-store-c372e.appspot.com/o/images%2Fprofile%2Fdefault.png?alt=media&token=d66db406-b93c-4c0f-90aa-396e7955e0ec&_gl=1*pv1si5*_ga*MjM2NTMyOTI2LjE2OTU3MDc1NzU.*_ga_CW55HF8NVT*MTY5ODYwMzA3Ny41MC4xLjE2OTg2MDMzMDMuMzMuMC4w',
                 phone: '',
                 gender: '',
                 joinedDate,

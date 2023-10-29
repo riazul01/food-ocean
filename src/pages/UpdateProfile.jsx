@@ -100,7 +100,7 @@ const UpdateProfile = () => {
     }
 
     const updateProfileDataWithImage = (user) => {
-        const storageRef = ref(storage, `images/profile/${profileImage.name}`);
+        const storageRef = ref(storage, `images/profile/${user.id}`);
         const uploadTask = uploadBytesResumable(storageRef, profileImage);
 
         // upload image to storage
