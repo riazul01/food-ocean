@@ -179,7 +179,7 @@ const UpdateProfile = () => {
                     
                     {/* profile image */}
                     {userDetails ? <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
-                        <img src={previewImage || (userDetails.imgUrl ? userDetails.imgUrl : null) || (userDetails.defaultImg ? userDetails.defaultImg : null)} className="h-full w-full object-cover" alt="profile"/>
+                        {(userDetails.imgUrl || userDetails.defaultImg) ? <img src={previewImage || (userDetails.imgUrl ? userDetails.imgUrl : null) || (userDetails.defaultImg ? userDetails.defaultImg : null)} className="h-full w-full object-cover" alt="profile"/> : <Skeleton className="w-[130px] h-[130px]"/>}
                     </div> : <Skeleton className="w-[130px] h-[130px]"/>}
 
                     {/* profile info */}
@@ -192,20 +192,20 @@ const UpdateProfile = () => {
                         {userDetails ? <div className="flex items-center">
                             <SlLocationPin className="text-[1.1rem]"/>
                             <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem] capitalize">{userDetails.address ? `${userDetails.address.division}, ${userDetails.address.country}` : <Skeleton className="mb-[0.6rem] w-[130px] h-[22px]"/>}</p>
-                        </div> : <Skeleton containerClassName="flex-1" className="mt-[0.2rem] ml-[0.3rem] w-[120px]"/>}
+                        </div> : <Skeleton containerClassName="flex-1" className="mt-[0.2rem] ml-[0.3rem] w-[120px] h-[22px]"/>}
                         
                         {/* joined date */}
                         {userDetails ? <div className="flex items-center">
                             <FiCalendar className="text-[1.1rem]"/>
                             <p className="mt-[0.2rem] ml-[0.3rem] text-[1.1rem]">{userDetails.joinedDate ? `Joined - ${userDetails.joinedDate.split(' ')[0]}, ${userDetails.joinedDate.split(' ')[2]}` : <Skeleton className="mb-[0.6rem] w-[130px] h-[22px]"/>}</p>
-                        </div> : <Skeleton containerClassName="flex-1" className="mt-[0.2rem] ml-[0.3rem] w-[120px]"/>}
+                        </div> : <Skeleton containerClassName="flex-1" className="mt-[0.6rem] ml-[0.3rem] w-[120px] h-[22px]"/>}
                     </div>
                 </div>
 
                 {/* profile image change button */}
                 {userDetails ? <div className="mt-[1rem]">
                     <label htmlFor="profileImg" className="px-[0.8rem] py-[0.2rem]  bg-[#ddd] border-[1px] border-[#999] rounded-sm">Change Image</label>
-                    <input type="file" id="profileImg" onChange={handleImageChange} accept="image/*" className="hidden" />
+                    <input type="file" id="profileImg" onChange={handleImageChange} accept="image/*" className="hidden" disabled={userDetails.email ? false : true} />
                 </div> : <Skeleton className="mt-[0.8rem] w-[130px] h-[25px]"/>}
 
                 {/* description */}
@@ -281,7 +281,7 @@ const UpdateProfile = () => {
                     </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[270px] h-[22px]"/>}
 
                     {/* update button */}
-                    {userDetails ? <button type="submit" className="mt-[2rem] px-[0.6rem] py-[0.2rem] text-[#fff] font-[500] bg-green-800 rounded-md" disabled={btnDisabled}>Update account</button> : <Skeleton className="mb-[0.6rem] w-[130px] h-[22px]"/>}
+                    {userDetails ? <button type="submit" className="mt-[2rem] px-[0.6rem] py-[0.2rem] text-[#fff] font-[500] bg-green-800 rounded-md" disabled={btnDisabled || (userDetails.email ? false : true)}>Update account</button> : <Skeleton className="mb-[0.6rem] w-[130px] h-[22px]"/>}
                 </form>
                 <ToastContainer
                     position="top-right"
