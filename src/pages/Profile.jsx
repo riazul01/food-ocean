@@ -82,7 +82,7 @@ const Profile = () => {
                         <strong className="text-[1.1rem] w-[120px]">Address:</strong>
                         {userDetails.address ? <div className="flex items-center">
                             {userDetails.address.street && <span className="mr-[0.2rem] text-[1.1rem] capitalize">{userDetails.address.street},</span>}
-                            {userDetails.address.city && <span className="mr-[0.2rem] text-[1.1rem] capitalize">{userDetails.address.city}{userDetails.address.postcode ? '-' : ','}</span>}
+                            {userDetails.address.city && <span className="text-[1.1rem] capitalize">{userDetails.address.city}{userDetails.address.postcode ? '-' : ','}</span>}
                             {userDetails.address.postcode && <span className="mr-[0.2rem] text-[1.1rem]">{userDetails.address.postcode},</span>}
                             {userDetails.address.division && <span className="mr-[0.2rem] text-[1.1rem] capitalize">{userDetails.address.division},</span>}
                             {userDetails.address.country && <span className="mr-[0.2rem] text-[1.1rem] capitalize">{userDetails.address.country}</span>}
