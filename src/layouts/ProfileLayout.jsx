@@ -36,7 +36,7 @@ const ProfileLayout = ({ children }) => {
                         </div>
                     </div>
                 </div>
-                <div className="w-[calc(100%-240px)]">
+                <div className="w-full mt-[1.2rem] md:mt-0 md:w-[calc(100%-240px)]">
                     {children}
                 </div>
             </div>
