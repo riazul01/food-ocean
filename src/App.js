@@ -16,6 +16,7 @@ import Login from './auth/Login';
 import Signup from './auth/Signup';
 import TrendingProducts from './pages/TrendingProducts';
 import Profile from './pages/Profile';
+import Cart from './pages/Cart';
 import UpdateProfile from './pages/UpdateProfile';
 import { LoginContext } from './context/LoginContextProvider';
 
@@ -43,6 +44,8 @@ const App = () => {
         <Route path="/user/profile" element={<RequireAuth><Profile/></RequireAuth>}/>
         <Route path="/user/update-profile" element={<RequireAuth><UpdateProfile/></RequireAuth>}/>
         <Route path="/upload-product" element={<RequireAuth><ProductUpload/></RequireAuth>}/>
+        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/cart" element={<RequireAuth><ProductUpload/></RequireAuth>}/>
       </Routes>
     </BrowserRouter>
   );
