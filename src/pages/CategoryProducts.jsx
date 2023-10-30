@@ -87,7 +87,7 @@ const CategoryProducts = () => {
                     <h1 className="text-[1.4rem] font-bold capitalize">{title}</h1>
                     <p className="text-[1rem] font-bold text-[green]">{quantity} Items</p>
                 </div>
-                <div className="grid grid-cols-5 gap-[1.2rem]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[1.2rem] place-items-center">
                     {data.map((item) => {
                         return <ProductCard key={item.id} data={item}/>
                     })}
