@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+// context
+import { LoginContext } from '../context/LoginContextProvider';
+
 const Topbar = () => {
+    const { currentUser } = useContext(LoginContext);
+
     return (
         <div className="pt-[0.8rem] h-[auto] w-full bg-[#173334]">
             <div className="mx-[auto] px-[0.4rem] text-[#fff] flex justify-between max-w-[1420px]">
@@ -10,14 +15,18 @@ const Topbar = () => {
                 
                 {/* topbar links */}
                 <div className="flex items-center">
-                    <Link to="/user/login" className="text-[#fff] font-[500]">
+                    {currentUser && <Link to="/user/profile" className="text-[#fff] font-[500]">
+                        My Account
+                    </Link>}
+                    {currentUser && <span className="mx-[0.8rem]">|</span>}
+                    {!currentUser && <Link to="/user/login" className="text-[#fff] font-[500]">
                         Login
-                    </Link>
-                    <span className="mx-[0.8rem]">|</span>
-                    <Link to="/user/register" className="text-[#fff] font-[500]">
+                    </Link>}
+                    {!currentUser && <span className="mx-[0.8rem]">|</span>}
+                    {!currentUser && <Link to="/user/register" className="text-[#fff] font-[500]">
                         Register
-                    </Link>
-                    <span className="mx-[0.8rem]">|</span>
+                    </Link>}
+                    {!currentUser && <span className="mx-[0.8rem]">|</span>}
                     <Link to="/about" className="text-[#fff] font-[500]">
                         About Us
                     </Link>
