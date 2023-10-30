@@ -25,7 +25,7 @@ const Profile = () => {
                 <h1 className="pb-[0.2rem] text-[#173334] text-[1.6rem] font-[500] border-b-[1px] border-dashed border-[#ddd]">My Profile</h1>
                 
                 {/* header */}
-                <div className="mt-[1rem] flex items-end justify-start gap-[1rem]">
+                <div className="mt-[1rem] flex flex-col sm:flex-row sm:items-end justify-start gap-[1rem]">
                     
                     {/* profile image */}
                     {userDetails ? <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
@@ -57,13 +57,13 @@ const Profile = () => {
 
                     {/* email */}
                     {userDetails ? <div className="mt-[0.8rem] flex items-center">
-                        <strong className="text-[1.1rem] w-[120px]">Email:</strong>
+                        <strong className="text-[1.1rem] min-w-[120px]">Email:</strong>
                         {userDetails.email ? <span className="text-[1.1rem]">{userDetails.email}</span> : <Skeleton className="w-[152px] h-[20px]"/>}
                     </div> : <Skeleton containerClassName="flex-1" className="mt-[0.8rem] w-[272px] h-[22px]"/>}
 
                     {/* phone */}
                     {userDetails ? <div className="mt-[0.8rem] flex items-center">
-                        <strong className="text-[1.1rem] w-[120px]">Phone:</strong>
+                        <strong className="text-[1.1rem] min-w-[120px]">Phone:</strong>
                         {userDetails.phone ? <span className="text-[1.1rem]">{userDetails.phone}</span>
                         : (userDetails.phone === '' ? <span className="text-[1.1rem]">{`[not added]`}</span> 
                         : <Skeleton className="w-[152px] h-[20px]"/>)}
@@ -71,16 +71,16 @@ const Profile = () => {
 
                     {/* gender */}
                     {userDetails ? <div className="mt-[0.8rem] flex items-center">
-                        <strong className="text-[1.1rem] w-[120px]">Gender:</strong>
+                        <strong className="text-[1.1rem] min-w-[120px]">Gender:</strong>
                         {userDetails.gender ? <span className="text-[1.1rem] capitalize">{userDetails.gender}</span>
                         : (userDetails.gender === '' ? <span className="text-[1.1rem]">{`[not added]`}</span>
                         : <Skeleton className="w-[152px] h-[20px]"/>)}
                     </div> : <Skeleton className="mt-[0.8rem] w-[120px] h-[22px]"/>}
 
                     {/* address */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
-                        <strong className="text-[1.1rem] w-[120px]">Address:</strong>
-                        {userDetails.address ? <div className="flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex items-start">
+                        <strong className="text-[1.1rem] min-w-[120px]">Address:</strong>
+                        {userDetails.address ? <div className="flex flex-wrap items-center">
                             {userDetails.address.street && <span className="mr-[0.2rem] text-[1.1rem] capitalize">{userDetails.address.street},</span>}
                             {userDetails.address.city && <span className="text-[1.1rem] capitalize">{userDetails.address.city}-</span>}
                             {userDetails.address.postcode && <span className="mr-[0.2rem] text-[1.1rem]">{userDetails.address.postcode},</span>}
