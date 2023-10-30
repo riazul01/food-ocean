@@ -29,7 +29,7 @@ const Categories = () => {
 
     return (
         <div className="mx-auto pb-[1.6rem] px-[0.4rem] max-w-[1420px]">
-            <div className="w-full grid grid-cols-8 border-[1px] border-e-0 border-b-0 border-[silver]">
+            <div className="w-full grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 border-[1px] border-e-0 border-b-0 border-[silver]">
                 <Link to="/groceries/raw-products/vegetables">
                     <Category title="Vegetables" quantity={vegetables ? vegetables.length : '0'} Image={VegetableImg}/>
                 </Link>
