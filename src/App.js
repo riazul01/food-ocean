@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // pages
 import Home from './pages/Home';
@@ -17,8 +17,15 @@ import Signup from './auth/Signup';
 import TrendingProducts from './pages/TrendingProducts';
 import Profile from './pages/Profile';
 import UpdateProfile from './pages/UpdateProfile';
+import { LoginContext } from './context/LoginContextProvider';
 
 const App = () => {
+  const { currentUser } = useContext(LoginContext);
+
+  const RequireAuth = ({children}) => {
+    return currentUser ? (children) : <Navigate to="/user/login" replace/>
+  }
+
   return (
     <BrowserRouter>
       <Routes>
@@ -33,9 +40,9 @@ const App = () => {
         <Route path="/groceries/beverages/:category" element={<CategoryProducts/>}/>
         <Route path="/user/login" element={<Login/>}/>
         <Route path="/user/register" element={<Signup/>}/>
-        <Route path="/user/profile" element={<Profile/>}/>
-        <Route path="/user/update-profile" element={<UpdateProfile/>}/>
-        <Route path="/upload-product" element={<ProductUpload/>}/>
+        <Route path="/user/profile" element={<RequireAuth><Profile/></RequireAuth>}/>
+        <Route path="/user/update-profile" element={<RequireAuth><UpdateProfile/></RequireAuth>}/>
+        <Route path="/upload-product" element={<RequireAuth><ProductUpload/></RequireAuth>}/>
       </Routes>
     </BrowserRouter>
   );
