@@ -11,9 +11,9 @@ const ProfileLayout = ({ children }) => {
 
     return (
         <div className="w-full h-auto">
-            <div className="mx-auto pt-[1rem] pb-[3rem] max-w-[1420px] flex items-start justify-between gap-[1rem]">
-                <div className="w-[240px]">
-                    <div className="p-[0.4rem] w-full max-w-[240px] border-[1px] rounded-lg">
+            <div className="mx-auto px-[0.4rem] pt-[1rem] pb-[3rem] max-w-[1420px] flex flex-col md:flex-row items-start justify-between gap-[1rem]">
+                <div className="w-full md:w-[240px]">
+                    <div className="p-[0.4rem] w-full border-[1px] rounded-lg">
                         <Link to="/user/profile" className={`${path === 'profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <FiUser className="text-[1.2rem]"/>
                             <p className="ms-[0.6rem] text-[1.1rem] font-[500]">My Profile</p>
