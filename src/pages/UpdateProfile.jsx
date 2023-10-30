@@ -175,16 +175,23 @@ const UpdateProfile = () => {
                 <h1 className="pb-[0.2rem] text-[#173334] text-[1.6rem] font-[500] border-b-[1px] border-dashed border-[#ddd]">Update Profile</h1>
                 
                 {/* header */}
-                <div className="mt-[1rem] flex items-end justify-start gap-[1rem]">
+                <div className="mt-[1rem] flex flex-col sm:flex-row sm:items-end justify-start gap-[1rem]">
+                    {/* image area */}
+                    <div className="flex flex-col">
+                        {/* profile image */}
+                        {userDetails ? <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
+                            {(userDetails.imgUrl || userDetails.defaultImg) ? <img src={previewImage || (userDetails.imgUrl ? userDetails.imgUrl : null) || (userDetails.defaultImg ? userDetails.defaultImg : null)} className="h-full w-full object-cover" alt="profile"/> : <Skeleton className="w-[130px] h-[130px]"/>}
+                        </div> : <Skeleton className="w-[130px] h-[130px]"/>}
                     
-                    {/* profile image */}
-                    {userDetails ? <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
-                        {(userDetails.imgUrl || userDetails.defaultImg) ? <img src={previewImage || (userDetails.imgUrl ? userDetails.imgUrl : null) || (userDetails.defaultImg ? userDetails.defaultImg : null)} className="h-full w-full object-cover" alt="profile"/> : <Skeleton className="w-[130px] h-[130px]"/>}
-                    </div> : <Skeleton className="w-[130px] h-[130px]"/>}
+                        {/* profile image change button */}
+                        {userDetails ? <div className="mt-[1rem]">
+                            <label htmlFor="profileImg" className="px-[0.8rem] py-[0.2rem]  bg-[#ddd] border-[1px] border-[#999] rounded-sm">Change Image</label>
+                            <input type="file" id="profileImg" onChange={handleImageChange} accept="image/*" className="hidden" disabled={userDetails.email ? false : true} />
+                        </div> : <Skeleton className="mt-[0.8rem] w-[130px] h-[25px]"/>}
+                    </div>
 
                     {/* profile info */}
-                    <div className="">
-
+                    <div className="sm:mb-[2.4rem]">
                         {/* name */}
                         <h1 className="text-[1.6rem] font-bold capitalize">{userDetails ? (userDetails.name ? userDetails.name : <Skeleton className="ml-[0.3rem] w-[120px]"/>) : <Skeleton className="ml-[0.3rem] w-[120px]"/>}</h1>
                         
@@ -202,37 +209,30 @@ const UpdateProfile = () => {
                     </div>
                 </div>
 
-                {/* profile image change button */}
-                {userDetails ? <div className="mt-[1rem]">
-                    <label htmlFor="profileImg" className="px-[0.8rem] py-[0.2rem]  bg-[#ddd] border-[1px] border-[#999] rounded-sm">Change Image</label>
-                    <input type="file" id="profileImg" onChange={handleImageChange} accept="image/*" className="hidden" disabled={userDetails.email ? false : true} />
-                </div> : <Skeleton className="mt-[0.8rem] w-[130px] h-[25px]"/>}
-
                 {/* description */}
                 <form onSubmit={handleSubmit} className="mt-[2rem]">
-
                     {/* name */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
-                        <strong className="text-[1.1rem] w-[120px]">Name:</strong>
-                        <input value={user.name} onChange={handleChange} type="text" name="name" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your name" required/>
+                    {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
+                        <strong className="text-[1.1rem] min-w-[120px]">Name:</strong>
+                        <input value={user.name} onChange={handleChange} type="text" name="name" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[270px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your name" required/>
                     </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[270px] h-[22px]"/>}
 
                     {/* email */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">Email:</strong>
-                        <input value={user.email} onChange={handleChange} type="email" name="email" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your email" disabled/>
+                        <input value={user.email} onChange={handleChange} type="email" name="email" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[270px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your email" disabled/>
                     </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[270px] h-[22px]"/>}
 
                     {/* phone */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">Phone:</strong>
-                        <input value={user.phone} onChange={handleChange} type="phone" name="phone" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Phone number" required/>
+                        <input value={user.phone} onChange={handleChange} type="phone" name="phone" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[270px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Phone number" required/>
                     </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[270px] h-[22px]"/>}
 
                     {/* gender */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">Gender:</strong>
-                        <select value={user.gender} onChange={handleChange} name="gender" className="px-[0.4rem] py-[0.1rem] border-[1px] border-[silver] outline-none rounded-md">
+                        <select value={user.gender} onChange={handleChange} name="gender" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] w-[130px] border-[1px] border-[silver] outline-none rounded-md">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
@@ -242,27 +242,27 @@ const UpdateProfile = () => {
                     {userDetails ? <h1 className="mt-[1.6rem] text-[#555] text-[1.2rem] font-bold inline-block">Address</h1> : <Skeleton className="mt-[1.6rem] mb-[0.6rem] w-[130px] h-[22px]"/>}
                     
                     {/* street */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">Street:</strong>
-                        <input value={address.street} onChange={handleAddressChange} type="text" name="street" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Street" required/>
+                        <input value={address.street} onChange={handleAddressChange} type="text" name="street" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[270px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Street" required/>
                     </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[270px] h-[22px]"/>}
 
                     {/* city */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">City:</strong>
-                        <input value={address.city} onChange={handleAddressChange} type="text" name="city" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="City" required/>
+                        <input value={address.city} onChange={handleAddressChange} type="text" name="city" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[270px] border-[1px] border-[silver] outline-none rounded-md" placeholder="City" required/>
                     </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[270px] h-[22px]"/>}
 
                     {/* postcode */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">Postcode:</strong>
-                        <input value={address.postcode} onChange={handleAddressChange} type="text" name="postcode" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Postcode" required/>
+                        <input value={address.postcode} onChange={handleAddressChange} type="text" name="postcode" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[270px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Postcode" required/>
                     </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[270px] h-[22px]"/>}
 
                     {/* division */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">Division:</strong>
-                        <select value={address.division} onChange={handleAddressChange} name="division" className="px-[0.4rem] py-[0.1rem] border-[1px] border-[silver] outline-none rounded-md">
+                        <select value={address.division} onChange={handleAddressChange} name="division" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] w-[130px] border-[1px] border-[silver] outline-none rounded-md">
                             <option value="dhaka">Dhaka</option>
                             <option value="barishal">Barishal</option>
                             <option value="sylhet">Sylhet</option>
@@ -275,9 +275,9 @@ const UpdateProfile = () => {
                     </div> : <Skeleton className="mb-[0.6rem] w-[130px] h-[22px]"/>}
 
                     {/* country */}
-                    {userDetails ? <div className="mt-[0.8rem] flex items-center">
+                    {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">Country:</strong>
-                        <input value={address.country} onChange={handleAddressChange} type="text" name="country" className="px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[280px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Country" disabled/>
+                        <input value={address.country} onChange={handleAddressChange} type="text" name="country" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[270px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Country" disabled/>
                     </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[270px] h-[22px]"/>}
 
                     {/* update button */}
