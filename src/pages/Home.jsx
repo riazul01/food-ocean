@@ -17,8 +17,8 @@ const Home = () => {
         <AppLayout>
             <Categories/>
             <SectionProducts title="top products" path="/groceries/top-products" products={top}/>
-            {/* <SectionProducts title="recent products" path="/groceries/recent-products" products={recent}/>
-            <SectionProducts title="popular now" path="/groceries/popular-now" products={popular}/> */}
+            <SectionProducts title="recent products" path="/groceries/recent-products" products={recent}/>
+            <SectionProducts title="popular now" path="/groceries/popular-now" products={popular}/>
         </AppLayout>
     );
 }
