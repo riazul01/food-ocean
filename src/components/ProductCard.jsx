@@ -38,7 +38,7 @@ const ProductCard = ({ data }) => {
 
     return (
         <>
-        {data && <div className="relative w-[100%] h-[360px] p-[0.2rem] border-[1px] border-gray-200 rounded-md shadow-lg overflow-hidden">
+        {data && <div className="relative w-[100%] max-w-[300px] h-[360px] p-[0.2rem] border-[1px] border-gray-200 rounded-md shadow-lg overflow-hidden">
             <div className="w-full h-[55%] rounded-sm overflow-hidden">
                 <img src={data.imgUrl} className="w-full h-full object-cover" alt={data.name} />
             </div>
