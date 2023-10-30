@@ -14,25 +14,25 @@ const ProfileLayout = ({ children }) => {
             <div className="mx-auto pt-[1rem] pb-[3rem] max-w-[1420px] flex items-start justify-between gap-[1rem]">
                 <div className="w-[240px]">
                     <div className="p-[0.4rem] w-full max-w-[240px] border-[1px] rounded-lg">
-                        <div className={`${path === 'profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
+                        <Link to="/user/profile" className={`${path === 'profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <FiUser className="text-[1.2rem]"/>
-                            <Link to="/user/profile" className="ms-[0.6rem] text-[1.1rem]">My Profile</Link>
-                        </div>
-                        <div className={`${path === 'update-profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
+                            <p className="ms-[0.6rem] text-[1.1rem] font-[500]">My Profile</p>
+                        </Link>
+                        <Link to="/user/update-profile" className={`${path === 'update-profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <FiUserCheck className="text-[1.2rem]"/>
-                            <Link to="/user/update-profile" className="ms-[0.6rem] text-[1.1rem]">Update Profile</Link>
-                        </div>
-                        <div className={`${path === 'orders' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
+                            <p className="ms-[0.6rem] text-[1.1rem] font-[500]">Update Profile</p>
+                        </Link>
+                        <Link to="/user/orders" className={`${path === 'orders' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <RiListUnordered className="text-[1.2rem]"/>
-                            <Link to="/user/orders" className="ms-[0.6rem] text-[1.1rem]">My Orders</Link>
-                        </div>
+                            <p className="ms-[0.6rem] text-[1.1rem] font-[500]">My Orders</p>
+                        </Link>
                         <div className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200">
                             <FiUsers className="text-[1.2rem]"/>
-                            <a href="/" className="ms-[0.6rem] text-[1.1rem]">Switch to Admin</a>
+                            <a href="/" className="ms-[0.6rem] text-[1.1rem] font-[500]">Switch to Admin</a>
                         </div>
                         <div className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200">
                             <RxExit className="text-[1.2rem]"/>
-                            <p className="ms-[0.6rem] text-[1.1rem]">Logout</p>
+                            <p className="ms-[0.6rem] text-[1.1rem] font-[500]">Logout</p>
                         </div>
                     </div>
                 </div>
