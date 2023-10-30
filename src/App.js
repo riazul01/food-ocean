@@ -19,6 +19,7 @@ import Profile from './pages/Profile';
 import Cart from './pages/Cart';
 import UpdateProfile from './pages/UpdateProfile';
 import { LoginContext } from './context/LoginContextProvider';
+import Orders from './pages/Orders';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/user/register" element={<Signup/>}/>
         <Route path="/user/profile" element={<RequireAuth><Profile/></RequireAuth>}/>
         <Route path="/user/update-profile" element={<RequireAuth><UpdateProfile/></RequireAuth>}/>
+        <Route path="/user/orders" element={<RequireAuth><Orders/></RequireAuth>}/>
         <Route path="/upload-product" element={<RequireAuth><ProductUpload/></RequireAuth>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/cart" element={<RequireAuth><ProductUpload/></RequireAuth>}/>
