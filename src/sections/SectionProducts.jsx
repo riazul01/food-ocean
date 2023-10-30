@@ -32,7 +32,7 @@ const SectionProducts = ({ title, path, products }) => {
             </div>
 
             {/* products */}
-            <div className="grid grid-cols-5 gap-[1.2rem]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[1.2rem]">
                 {products && products.slice(0, 10).map((item) => {
                     return <ProductCard key={item.id} data={item}/>
                 })}
