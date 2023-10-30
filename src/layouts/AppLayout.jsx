@@ -11,7 +11,7 @@ const AppLayout = ({ children }) => {
         <>
             <Topbar/>
             <Header/>
-            {/* <Navbar/> */}
+            <Navbar/>
             {children}
             {/* <Footer/> */}
         </>
