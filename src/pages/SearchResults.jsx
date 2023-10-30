@@ -76,7 +76,6 @@ const SearchResults = () => {
                 setFilteredItems(items);
             }
         }
-
     }, [location.state, products]);
 
     const handleRedirect = () => {

@@ -83,10 +83,14 @@ const CategoryProducts = () => {
     return (
         <AppLayout>
             <div className="mx-auto px-[0.4rem] pb-[3rem] max-w-[1420px]">
+                
+                {/* header */}
                 <div className="py-[1.2rem] flex items-center justify-between">
                     <h1 className="text-[1.4rem] font-bold capitalize">{title}</h1>
                     <p className="text-[1rem] font-bold text-[green]">{quantity} Items</p>
                 </div>
+
+                {/* products */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[1.2rem] place-items-center">
                     {data.map((item) => {
                         return <ProductCard key={item.id} data={item}/>

@@ -13,7 +13,7 @@ const AppLayout = ({ children }) => {
             <Header/>
             <Navbar/>
             {children}
-            {/* <Footer/> */}
+            <Footer/>
         </>
     )
 }

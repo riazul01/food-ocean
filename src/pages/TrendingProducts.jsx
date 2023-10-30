@@ -1,6 +1,12 @@
 import React, { useContext } from 'react';
+
+// layouts
 import AppLayout from '../layouts/AppLayout';
+
+// sections
 import SectionProducts from '../sections/SectionProducts';
+
+// context
 import { ProductsContext } from '../context/ProductsContextProvider';
 
 const TrendingProducts = () => {

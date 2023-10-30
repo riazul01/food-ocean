@@ -10,12 +10,8 @@ const ProductCard = ({ data }) => {
     const { cartItems, dispatch } = useContext(CartContext);
 
     // check if cartItem is already exist in shopping cart
-    let cartItem = cartItems.find((elem) => elem.id === data.id);
-    let addedToCart = false;
-
-    if (cartItem !== undefined) {
-        addedToCart = true;
-    }
+    const cartItem = cartItems.find((elem) => elem.id === data.id);
+    const addedToCart = (cartItem !== undefined) ? true : false;
 
     // add product to cart
     const handleAddToCart = () => {
@@ -39,9 +35,13 @@ const ProductCard = ({ data }) => {
     return (
         <>
         {data && <div className="relative w-[100%] max-w-[280px] h-[360px] p-[0.2rem] border-[1px] border-gray-200 rounded-md shadow-lg overflow-hidden">
+            
+            {/* product image */}
             <div className="w-full h-[55%] rounded-sm overflow-hidden">
                 <img src={data.imgUrl} className="w-full h-full object-cover" alt={data.name} />
             </div>
+
+            {/* product desc */}
             <div className="relative w-full h-[45%] pl-[0.6rem] pt-[0.6rem]">
                 <h1 className="text-[1.2rem] font-bold">{data.name}</h1>
                 <p className="pt-[0.5rem] text-[1rem] font-[500]">{`${data.weight} ${data.unit}`}</p>
@@ -56,6 +56,8 @@ const ProductCard = ({ data }) => {
                     <button onClick={handleIncrement} className="px-[0.7rem] py-[0.62rem] border-none outline-none bg-[#222] rounded-sm"><HiPlus className="text-white text-[1.2rem]"/></button>
                 </div>
             </div>
+
+            {/* discount tag */}
             {data.discount !== '0' && <p className="absolute top-[1.4rem] left-0 py-[0.2rem] px-[0.8rem] text-[1.1rem] font-bold bg-[orange] rounded-r-[0.1rem]" style={{boxShadow: '0.015rem 0.015rem 0.4rem 0 #444'}}>{`${data.discount}% off`}</p>}
         </div>}
         </>
