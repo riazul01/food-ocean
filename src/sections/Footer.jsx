@@ -1,72 +1,157 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// images
+import GooglePalyBadge from '../assets/images/badges/google-play.png';
+import AppStoreBadge from '../assets/images/badges/app-store.png';
+
 // icons
-import { BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs';
+import { BsInstagram, BsLinkedin, BsTwitter, BsYoutube } from 'react-icons/bs';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <>
         <div className="w-full bg-[#122829]">
-            <div className="mx-[auto] px-[0.4rem] py-[3rem] max-w-[1420px] flex justify-between">
+            <div className="mx-[auto] px-[0.4rem] py-[2.6rem] max-w-[1420px] flex justify-between">
                 
                 {/* footer column 01 */}
                 <div className="w-[28%] pr-[1.8rem]">
-                    <h1 className="text-[1.6rem] text-[orange]" style={{fontFamily: 'Croissant One'}}>Grocery</h1>
-                    <p className="mt-[1rem] text-[#fff]">Lorem ipsum dolor sit amet consectetur adeping elit. Animi nostrum voluptatibus non recusandae repudiandae sapiente.</p>
+                    
+                    {/* brand */}
+                    <h1 className="text-[1.8rem] text-[orange]" style={{fontFamily: 'Croissant One'}}>Grocery</h1>
+                    
+                    {/* subscribe */}
+                    <div className="">
+                        <p className="pt-[1rem] pb-[0.4rem] text-[#fff] text-[1.1rem] font-[500]">Stay updated with latest news</p>
+                        <div className="h-[40px] w-[340px] flex items-center rounded-lg border-[2px] border-[#d58b03] bg-[#d58b03] overflow-hidden">
+                            <input type="text" placeholder="Enter your email" className="px-[0.8rem] text-[#111] text-[1.1rem] placeholder:text-[#666] h-full w-[67%] border-0 outline-none bg-[#fff]"/>
+                            <button className="text-[#111] text-[1.1rem] font-[600] h-full w-[33%] bg-[#d58b03]">Subscribe</button>
+                        </div>
+                    </div>
+
+                    {/* social links */}
+                    <div className="mt-[1.6rem] flex items-center">
+                        <a href="#null" className="mr-[0.4rem] h-[2.6rem] w-[2.6rem] flex items-center justify-center rounded-lg border-[1px] border-[#888] cursor-pointer" title="facebook">
+                            <FaFacebookF className="text-[#888] text-[1.2rem] cursor-pointer"/>
+                        </a>
+                        <a href="#null" className="mr-[0.4rem] h-[2.6rem] w-[2.6rem] flex items-center justify-center rounded-lg border-[1px] border-[#888] cursor-pointer" title="instagram">
+                            <BsInstagram className="text-[#888] text-[1.2rem] cursor-pointer"/>
+                        </a>
+                        <a href="#null" className="mr-[0.4rem] h-[2.6rem] w-[2.6rem] flex items-center justify-center rounded-lg border-[1px] border-[#888] cursor-pointer" title="linkedin">
+                            <BsLinkedin className="text-[#888] text-[1.2rem] cursor-pointer"/>
+                        </a>
+                        <a href="#null" className="mr-[0.4rem] h-[2.6rem] w-[2.6rem] flex items-center justify-center rounded-lg border-[1px] border-[#888] cursor-pointer" title="twitter">
+                            <BsTwitter className="text-[#888] text-[1.2rem] cursor-pointer"/>
+                        </a>
+                        <a href="#null" className="mr-[0.4rem] h-[2.6rem] w-[2.6rem] flex items-center justify-center rounded-lg border-[1px] border-[#888] cursor-pointer" title="youtube">
+                            <BsYoutube className="text-[#888] text-[1.2rem] cursor-pointer"/>
+                        </a>
+                    </div>
+
+                    {/* mobile app links */}
                     <div className="mt-[1.4rem] flex items-center">
-                        <a href="#null" className="cursor-pointer" title="facebook">
-                            <FaFacebookF className="mr-[1rem] text-[orange] text-[1.2rem] cursor-pointer"/>
+                        <a href="#null" title="google play" className="mr-[0.6rem] h-[2.6rem] w-[8.6rem]">
+                            <img src={GooglePalyBadge} className="h-full w-full object-cover" alt="google-play" />
                         </a>
-                        <a href="#null" className="cursor-pointer" title="instagram">
-                            <BsInstagram className="mr-[1rem] text-[orange] text-[1.2rem] cursor-pointer"/>
-                        </a>
-                        <a href="#null" className="cursor-pointer" title="linkedin">
-                            <BsLinkedin className="mr-[1rem] text-[orange] text-[1.2rem] cursor-pointer"/>
-                        </a>
-                        <a href="#null" className="cursor-pointer" title="twitter">
-                            <BsTwitter className="mr-[1rem] text-[orange] text-[1.2rem] cursor-pointer"/>
+
+                        <a href="#null" title="app store" className="h-[2.6rem] w-[7.8rem]">
+                            <img src={AppStoreBadge} className="h-full w-full object-cover" alt="google-play" />
                         </a>
                     </div>
                 </div>
 
                 {/* footer column 02 */}
                 <div className="flex flex-col w-[18%]">
-                    <h1 className="text-[orange] text-[1.2rem] font-bold">Navigation</h1>
-                    <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Home</Link>
-                    <Link to="/about" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">About Us</Link>
-                    <Link to="/groceries" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Groceries</Link>
-                    <Link to="/groceries/raw-products" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Raw Products</Link>
-                    <Link to="/groceries/beverages" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Beverages</Link>
+                    <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Navigation</h1>
+                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Home</span>
+                    </Link>
+                    <Link to="/groceries" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Groceries</span>
+                    </Link>
+                    <Link to="/groceries/raw-products" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Raw Products</span>
+                    </Link>
+                    <Link to="/groceries/beverages" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Beverages</span>
+                    </Link>
+                    <Link to="/about" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">About Us</span>
+                    </Link>
                 </div>
                 
                 {/* footer column 03 */}
                 <div className="flex flex-col w-[18%]">
-                    <h1 className="text-[orange] text-[1.2rem] font-bold">Trending</h1>
-                    <Link to="/groceries/raw-products/fruits" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Fruits</Link>
-                    <Link to="/groceries/raw-products/vegetables" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Vegetables</Link>
-                    <Link to="/groceries/top-products" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Top Products</Link>
-                    <Link to="/groceries/recent-products" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Recent Products</Link>
-                    <Link to="/groceries/popular-now" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Popular Now</Link>
+                    <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Trending</h1>
+                    <Link to="/groceries/raw-products/fruits" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Fruits</span>
+                    </Link>
+                    <Link to="/groceries/raw-products/vegetables" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Vegetables</span>
+                    </Link>
+                    <Link to="/groceries/top-products" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Top Products</span>
+                    </Link>
+                    <Link to="/groceries/recent-products" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Recent Products</span>
+                    </Link>
+                    <Link to="/groceries/popular-now" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Popular Now</span>
+                    </Link>
                 </div>
                 
                 {/* footer column 04 */}
                 <div className="flex flex-col w-[18%]">
-                    <h1 className="text-[orange] text-[1.2rem] font-bold">Quick Links</h1>
-                    <Link to="/profile" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">User Account</Link>
-                    <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Become an Affilate</Link>
-                    <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Track Orders</Link>
-                    <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">New offers</Link>
-                    <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Latest Blogs</Link>
+                    <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Quick Links</h1>
+                    <Link to="/profile" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">User Account</span>
+                    </Link>
+                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Become an Affilate</span>
+                    </Link>
+                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Track Orders</span>
+                    </Link>
+                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">New offers</span>
+                    </Link>
+                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Latest Blogs</span>
+                    </Link>
                 </div>
 
                 {/* footer column 05 */}
                 <div className="flex flex-col w-[18%]">
-                    <h1 className="text-[orange] text-[1.2rem] font-bold">Services</h1>
-                    <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Help Center</Link>
-                    <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Terms of use</Link>
-                    <Link to="/" className="mt-[0.6rem] text-[#fff] text-[1.1rem]">Privacy policy</Link>
+                    <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Services</h1>
+                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Help Center</span>
+                    </Link>
+                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Terms of use</span>
+                    </Link>
+                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Privacy policy</span>
+                    </Link>
                 </div>
             </div>
         </div>
