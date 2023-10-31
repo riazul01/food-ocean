@@ -15,25 +15,39 @@ const Topbar = () => {
                 
                 {/* topbar links */}
                 <div className="flex items-center">
-                    {currentUser && <Link to="/user/profile" className="text-[#fff] font-[500]">
-                        My Account
-                    </Link>}
-                    {currentUser && <span className="mx-[0.8rem]">|</span>}
-                    {!currentUser && <Link to="/user/login" className="text-[#fff] font-[500]">
-                        Login
-                    </Link>}
-                    {!currentUser && <span className="mx-[0.8rem]">|</span>}
-                    {!currentUser && <Link to="/user/register" className="text-[#fff] font-[500]">
-                        Register
-                    </Link>}
-                    {!currentUser && <span className="mx-[0.8rem]">|</span>}
-                    <Link to="/about" className="text-[#fff] font-[500]">
-                        About Us
-                    </Link>
-                    <span className="mx-[0.8rem]">|</span>
-                    <Link to="/help" className="text-[#fff] font-[500]">
-                        Help
-                    </Link>
+                    {currentUser && <div className="">
+                        <Link to="/user/profile" className="text-[#fff] font-[500]">
+                            My Account
+                        </Link>
+                        <span className="mx-[0.8rem]">|</span>
+                    </div>}
+
+                    {!currentUser && <div className="">
+                        <Link to="/user/login" className="text-[#fff] font-[500]">
+                            Login
+                        </Link>
+                        <span className="mx-[0.8rem]">|</span>
+                    </div>}
+
+                    {!currentUser && <div className="">
+                        <Link to="/user/register" className="text-[#fff] font-[500]">
+                            Register
+                        </Link>
+                        <span className="mx-[0.8rem]">|</span>
+                    </div>}
+
+                    <div className="">
+                        <Link to="/about" className="text-[#fff] font-[500]">
+                            About Us
+                        </Link>
+                        <span className="mx-[0.8rem]">|</span>
+                    </div>
+
+                    <div className="">
+                        <Link to="/help" className="text-[#fff] font-[500]">
+                            Help
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
