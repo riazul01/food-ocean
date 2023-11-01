@@ -55,7 +55,6 @@ const Footer = () => {
                         <a href="#null" title="google play" className="mr-[0.6rem] h-[2.6rem] w-[8.6rem]">
                             <img src={GooglePalyBadge} className="h-full w-full object-cover" alt="google-play" />
                         </a>
-
                         <a href="#null" title="app store" className="h-[2.6rem] w-[7.8rem]">
                             <img src={AppStoreBadge} className="h-full w-full object-cover" alt="google-play" />
                         </a>
@@ -73,6 +72,10 @@ const Footer = () => {
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Groceries</span>
                     </Link>
+                    <Link to="/trending" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Trending now</span>
+                    </Link>
                     <Link to="/groceries/raw-products" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Raw Products</span>
@@ -80,10 +83,6 @@ const Footer = () => {
                     <Link to="/groceries/beverages" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Beverages</span>
-                    </Link>
-                    <Link to="/about" className="mt-[0.6rem] flex items-center">
-                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
-                        <span className="text-[#fff] text-[1.1rem]">About Us</span>
                     </Link>
                 </div>
                 
@@ -98,15 +97,15 @@ const Footer = () => {
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Vegetables</span>
                     </Link>
-                    <Link to="/groceries/top-products" className="mt-[0.6rem] flex items-center">
+                    <Link to="/groceries/trending/top-products" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Top Products</span>
                     </Link>
-                    <Link to="/groceries/recent-products" className="mt-[0.6rem] flex items-center">
+                    <Link to="/groceries/trending/recent-products" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Recent Products</span>
                     </Link>
-                    <Link to="/groceries/popular-now" className="mt-[0.6rem] flex items-center">
+                    <Link to="/groceries/trending/popular-now" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Popular Now</span>
                     </Link>
@@ -115,23 +114,23 @@ const Footer = () => {
                 {/* footer column 04 */}
                 <div className="pb-[2.4rem] flex flex-col w-full md:w-[33%] lg:w-[40%] xl:w-[18%]">
                     <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Quick Links</h1>
-                    <Link to="/profile" className="mt-[0.6rem] flex items-center">
+                    <Link to="/user/profile" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">User Account</span>
                     </Link>
-                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                    <Link to="#null" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Become an Affilate</span>
                     </Link>
-                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                    <Link to="/user/orders/track-orders" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Track Orders</span>
                     </Link>
-                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                    <Link to="/offers" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">New offers</span>
                     </Link>
-                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                    <Link to="#null" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Latest Blogs</span>
                     </Link>
@@ -140,15 +139,23 @@ const Footer = () => {
                 {/* footer column 05 */}
                 <div className="pb-[3rem] flex flex-col w-full md:w-[33%] lg:w-[60%] xl:w-[18%]">
                     <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Services</h1>
-                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                    <Link to="/services/about" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">About Us</span>
+                    </Link>
+                    <Link to="/services/contact" className="mt-[0.6rem] flex items-center">
+                        <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
+                        <span className="text-[#fff] text-[1.1rem]">Contact Us</span>
+                    </Link>
+                    <Link to="/services/help" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Help Center</span>
                     </Link>
-                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                    <Link to="/services/terms" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Terms of use</span>
                     </Link>
-                    <Link to="/" className="mt-[0.6rem] flex items-center">
+                    <Link to="/services/privacy" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Privacy policy</span>
                     </Link>
@@ -159,7 +166,7 @@ const Footer = () => {
         {/* copyright section */}
         <div className="w-full bg-[#173334] border-t-[1px] border-[#3a4c4d]">
             <div className="mx-[auto] px-[0.4rem] py-[1.4rem] max-w-[1420px] flex items-center justify-center">
-                <p className="text-[#fff] text-[0.8rem] lg:text-[1.1rem]">Created by <a className="text-[orange]" href="https://github.com/riazul01" target="_blank" rel="noreferrer">riazul01</a> | &copy; 2023 - All Rights Reserved</p>
+                <p className="text-[#fff] text-[0.8rem] lg:text-[1.1rem]">Created by <a className="text-[orange]" href="https://github.com/riazul01" target="_blank" rel="noreferrer">riazul01</a> | &copy; 2024 - All Rights Reserved</p>
             </div>
         </div>
         </>
