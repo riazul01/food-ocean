@@ -14,10 +14,10 @@ const Footer = () => {
     return (
         <>
         <div className="w-full bg-[#122829]">
-            <div className="mx-[auto] px-[0.4rem] py-[2.6rem] max-w-[1420px] flex justify-between">
+            <div className="mx-[auto] px-[0.4rem] pt-[2.6rem] max-w-[1420px] h-auto flex flex-wrap justify-between">
                 
                 {/* footer column 01 */}
-                <div className="w-[28%] pr-[1.8rem]">
+                <div className="pb-[2.6rem] xl:pr-[1.8rem] w-full md:w-[50%] lg:w-[40%] xl:w-[28%]">
                     
                     {/* brand */}
                     <h1 className="text-[1.8rem] text-[orange]" style={{fontFamily: 'Croissant One'}}>Grocery</h1>
@@ -25,7 +25,7 @@ const Footer = () => {
                     {/* subscribe */}
                     <div className="">
                         <p className="pt-[1rem] pb-[0.4rem] text-[#fff] text-[1.1rem] font-[500]">Stay updated with latest news</p>
-                        <div className="h-[40px] w-[340px] flex items-center rounded-lg border-[2px] border-[#d58b03] bg-[#d58b03] overflow-hidden">
+                        <div className="h-[40px] w-[300px] lg:w-[340px] flex items-center rounded-lg border-[2px] border-[#d58b03] bg-[#d58b03] overflow-hidden">
                             <input type="text" placeholder="Enter your email" className="px-[0.8rem] text-[#111] text-[1.1rem] placeholder:text-[#666] h-full w-[67%] border-0 outline-none bg-[#fff]"/>
                             <button className="text-[#111] text-[1.1rem] font-[600] h-full w-[33%] bg-[#d58b03]">Subscribe</button>
                         </div>
@@ -63,7 +63,7 @@ const Footer = () => {
                 </div>
 
                 {/* footer column 02 */}
-                <div className="flex flex-col w-[18%]">
+                <div className="pb-[2.4rem] flex flex-col w-full md:w-[50%] lg:w-[30%] xl:w-[18%]">
                     <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Navigation</h1>
                     <Link to="/" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
@@ -88,7 +88,7 @@ const Footer = () => {
                 </div>
                 
                 {/* footer column 03 */}
-                <div className="flex flex-col w-[18%]">
+                <div className="pb-[2.4rem] flex flex-col w-full md:w-[33%] lg:w-[30%] xl:w-[18%]">
                     <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Trending</h1>
                     <Link to="/groceries/raw-products/fruits" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
@@ -113,7 +113,7 @@ const Footer = () => {
                 </div>
                 
                 {/* footer column 04 */}
-                <div className="flex flex-col w-[18%]">
+                <div className="pb-[2.4rem] flex flex-col w-full md:w-[33%] lg:w-[40%] xl:w-[18%]">
                     <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Quick Links</h1>
                     <Link to="/profile" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
@@ -138,7 +138,7 @@ const Footer = () => {
                 </div>
 
                 {/* footer column 05 */}
-                <div className="flex flex-col w-[18%]">
+                <div className="pb-[3rem] flex flex-col w-full md:w-[33%] lg:w-[60%] xl:w-[18%]">
                     <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Services</h1>
                     <Link to="/" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
@@ -159,7 +159,7 @@ const Footer = () => {
         {/* copyright section */}
         <div className="w-full bg-[#173334] border-t-[1px] border-[#3a4c4d]">
             <div className="mx-[auto] px-[0.4rem] py-[1.4rem] max-w-[1420px] flex items-center justify-center">
-                <p className="text-[#fff] text-[1.1rem]">Created by <a className="text-[orange]" href="https://github.com/riazul01" target="_blank" rel="noreferrer">riazul01</a> | &copy; 2023 - All Rights Reserved</p>
+                <p className="text-[#fff] text-[0.8rem] lg:text-[1.1rem]">Created by <a className="text-[orange]" href="https://github.com/riazul01" target="_blank" rel="noreferrer">riazul01</a> | &copy; 2023 - All Rights Reserved</p>
             </div>
         </div>
         </>
