@@ -27,6 +27,7 @@ import { LoginContext } from './context/LoginContextProvider';
 
 // style
 import './App.css';
+import OfferDetails from './pages/OfferDetails';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
@@ -45,6 +46,7 @@ const App = () => {
         <Route path="/groceries/raw-products" element={<RawProducts/>}/>
         <Route path="/groceries/trending-now" element={<TrendingProducts/>}/>
         <Route path="/groceries/search-results" element={<SearchResults/>}/>
+        <Route path="/offers/offer-details" element={<OfferDetails/>}/>
 
         {/* categories */}
         <Route path="/groceries/beverages/:category" element={<CategoryProducts/>}/>
