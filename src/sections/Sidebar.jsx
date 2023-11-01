@@ -24,8 +24,8 @@ const Sidebar = ({ toggle, setToggle }) => {
                         {path === "groceries" && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
                         <span>Groceries</span>
                     </NavLink>
-                    <NavLink to="/groceries/trending-now" onClick={() => setToggle(false)} className={`${path === 'trending-now' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
-                        {path === "trending-now" && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
+                    <NavLink to="/groceries/trending" onClick={() => setToggle(false)} className={`${path === 'trending' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
+                        {path === "trending" && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
                         <span>Trending now</span>
                     </NavLink>
                     <NavLink to="/groceries/raw-products" onClick={() => setToggle(false)} className={`${path === 'raw-products' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>

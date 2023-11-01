@@ -1,10 +1,6 @@
 import React, { useContext } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-// auth
-import Login from './auth/Login';
-import Signup from './auth/Signup';
-
 // pages
 import Home from './pages/Home';
 import Groceries from './pages/Groceries';
@@ -13,6 +9,12 @@ import RawProducts from './pages/RawProducts';
 import TrendingProducts from './pages/TrendingProducts';
 import CategoryProducts from './pages/CategoryProducts';
 import SearchResults from './pages/SearchResults';
+import SupportCenter from './pages/SupportCenter';
+import About from './pages/About';
+
+// auth
+import Login from './auth/Login';
+import Signup from './auth/Signup';
 
 // user
 import Profile from './pages/Profile';
@@ -27,9 +29,6 @@ import { LoginContext } from './context/LoginContextProvider';
 
 // style
 import './App.css';
-import OfferDetails from './pages/OfferDetails';
-import About from './pages/About';
-import SupportCenter from './pages/SupportCenter';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
@@ -46,15 +45,14 @@ const App = () => {
         <Route path="/groceries" element={<Groceries/>}/>
         <Route path="/groceries/beverages" element={<Beverages/>}/>
         <Route path="/groceries/raw-products" element={<RawProducts/>}/>
-        <Route path="/groceries/trending-now" element={<TrendingProducts/>}/>
+        <Route path="/groceries/trending" element={<TrendingProducts/>}/>
         <Route path="/groceries/search-results" element={<SearchResults/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/help" element={<SupportCenter/>}/>
-        <Route path="/offers/offer-details" element={<OfferDetails/>}/>
+        <Route path="/services/about" element={<About/>}/>
+        <Route path="/services/help" element={<SupportCenter/>}/>
 
         {/* categories */}
+        <Route path="/groceries/trending/:category" element={<CategoryProducts/>}/>
         <Route path="/groceries/beverages/:category" element={<CategoryProducts/>}/>
-        <Route path="/groceries/trending-now/:category" element={<CategoryProducts/>}/>
         <Route path="/groceries/raw-products/:category" element={<CategoryProducts/>}/>
         
         {/* auth */}
