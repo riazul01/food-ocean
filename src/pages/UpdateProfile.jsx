@@ -28,6 +28,8 @@ import { FiCalendar } from 'react-icons/fi';
 const UpdateProfile = () => {
     const userDetails = useContext(UserDetailsContext);
 
+    console.log(userDetails);
+
     const [user, setUser] = useState({id: '', name: '', email: '', phone: '', gender: 'male', joinedDate: '', imgUrl: null, defaultImg: null});
     const [address, setAddress] = useState({street: '', city: '', postcode: '', division: 'dhaka', country: 'Bangladesh'});
     const [profileImage, setProfileImage] = useState(null);
@@ -41,6 +43,7 @@ const UpdateProfile = () => {
                 id: userDetails.id ? userDetails.id : '',
                 name: userDetails.name ? userDetails.name : '',
                 email: userDetails.email ? userDetails.email : '',
+                role: userDetails.role ? userDetails.role : '',
                 phone: userDetails.phone ? userDetails.phone : '',
                 gender: userDetails.gender ? userDetails.gender : 'male',
                 joinedDate: userDetails.joinedDate ? userDetails.joinedDate : '',
