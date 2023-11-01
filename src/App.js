@@ -29,6 +29,7 @@ import { LoginContext } from './context/LoginContextProvider';
 import './App.css';
 import OfferDetails from './pages/OfferDetails';
 import About from './pages/About';
+import SupportCenter from './pages/SupportCenter';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/groceries/trending-now" element={<TrendingProducts/>}/>
         <Route path="/groceries/search-results" element={<SearchResults/>}/>
         <Route path="/about" element={<About/>}/>
+        <Route path="/help" element={<SupportCenter/>}/>
         <Route path="/offers/offer-details" element={<OfferDetails/>}/>
 
         {/* categories */}
