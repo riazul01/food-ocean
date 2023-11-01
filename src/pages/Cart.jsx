@@ -1,10 +1,11 @@
 import React from 'react';
+import AppLayout from '../layouts/AppLayout';
 
 const Cart = () => {
     return (
-        <div>
+        <AppLayout>
             <h1>Cart</h1>
-        </div>
+        </AppLayout>
     );
 }
 
