@@ -25,7 +25,7 @@ const Footer = () => {
                     {/* subscribe */}
                     <div className="">
                         <p className="pt-[1rem] pb-[0.4rem] text-[#fff] text-[1.1rem] font-[500]">Stay updated with latest news</p>
-                        <div className="h-[40px] w-[300px] lg:w-[340px] flex items-center rounded-lg border-[2px] border-[#d58b03] bg-[#d58b03] overflow-hidden">
+                        <div className="h-[40px] w-full max-w-[340px] flex items-center rounded-lg border-[2px] border-[#d58b03] bg-[#d58b03] overflow-hidden">
                             <input type="text" placeholder="Enter your email" className="px-[0.8rem] text-[#111] text-[1.1rem] placeholder:text-[#666] h-full w-[67%] border-0 outline-none bg-[#fff]"/>
                             <button className="text-[#111] text-[1.1rem] font-[600] h-full w-[33%] bg-[#d58b03]">Subscribe</button>
                         </div>
