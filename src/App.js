@@ -30,6 +30,7 @@ import { LoginContext } from './context/LoginContextProvider';
 
 // style
 import './App.css';
+import HelpCenter from './pages/HelpCenter';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
@@ -48,8 +49,8 @@ const App = () => {
         <Route path="/groceries/raw-products" element={<RawProducts/>}/>
         <Route path="/groceries/trending" element={<TrendingProducts/>}/>
         <Route path="/groceries/search-results" element={<SearchResults/>}/>
+        <Route path="/services/help" element={<HelpCenter/>}/>
         <Route path="/services/about" element={<About/>}/>
-        <Route path="/services/help" element={<SupportCenter/>}/>
         <Route path="/offers" element={<Offers/>}/>
 
         {/* categories */}
