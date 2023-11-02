@@ -9,7 +9,6 @@ import RawProducts from './pages/RawProducts';
 import TrendingProducts from './pages/TrendingProducts';
 import CategoryProducts from './pages/CategoryProducts';
 import SearchResults from './pages/SearchResults';
-import SupportCenter from './pages/SupportCenter';
 import Offers from './pages/Offers';
 import About from './pages/About';
 
