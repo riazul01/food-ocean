@@ -10,8 +10,12 @@ import ProductCard from '../components/ProductCard';
 // context
 import { ProductsContext } from '../context/ProductsContextProvider';
 
+// skeleton loader
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+
 const CategoryProducts = () => {
-    const { top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cakes, jams, breads, rice, flour, oil } = useContext(ProductsContext);
+    const { products, top, recent, popular, vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cakes, jams, breads, rice, flour, oil } = useContext(ProductsContext);
     const path = useLocation().pathname.split('/').pop();
 
     let title = path;
@@ -82,7 +86,7 @@ const CategoryProducts = () => {
 
     return (
         <AppLayout>
-            <div className="mx-auto px-[0.4rem] pb-[3rem] max-w-[1420px]">
+            <div className="mx-auto px-[0.4rem] pb-[3rem] w-full max-w-[1420px]">
                 
                 {/* header */}
                 <div className="py-[1.2rem] flex items-center justify-between">
@@ -91,11 +95,17 @@ const CategoryProducts = () => {
                 </div>
 
                 {/* products */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[1.2rem] place-items-center">
+                {products.length !== 0 ? <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[1.2rem] place-items-center">
                     {data.map((item) => {
                         return <ProductCard key={item.id} data={item}/>
                     })}
-                </div>
+                </div> : <div className="flex gap-[1.2rem] items-center justify-center">
+                    <Skeleton containerClassName="flex-1" className="w-full h-[360px]"/>
+                    <Skeleton containerClassName="flex-1" className="w-full h-[360px]"/>
+                    <Skeleton containerClassName="flex-1" className="w-full h-[360px]"/>
+                    <Skeleton containerClassName="flex-1" className="w-full h-[360px]"/>
+                    <Skeleton containerClassName="flex-1" className="w-full h-[360px]"/>
+                </div>}
             </div>
         </AppLayout>
     );
