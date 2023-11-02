@@ -10,6 +10,7 @@ import TrendingProducts from './pages/TrendingProducts';
 import CategoryProducts from './pages/CategoryProducts';
 import SearchResults from './pages/SearchResults';
 import SupportCenter from './pages/SupportCenter';
+import Offers from './pages/Offers';
 import About from './pages/About';
 
 // auth
@@ -49,6 +50,7 @@ const App = () => {
         <Route path="/groceries/search-results" element={<SearchResults/>}/>
         <Route path="/services/about" element={<About/>}/>
         <Route path="/services/help" element={<SupportCenter/>}/>
+        <Route path="/offers" element={<Offers/>}/>
 
         {/* categories */}
         <Route path="/groceries/trending/:category" element={<CategoryProducts/>}/>
