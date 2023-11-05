@@ -9,6 +9,7 @@ import RawProducts from './pages/RawProducts';
 import TrendingProducts from './pages/TrendingProducts';
 import CategoryProducts from './pages/CategoryProducts';
 import SearchResults from './pages/SearchResults';
+import HelpCenter from './pages/HelpCenter';
 import Offers from './pages/Offers';
 import About from './pages/About';
 
@@ -23,13 +24,13 @@ import Orders from './pages/Orders';
 
 // cart
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 // context
 import { LoginContext } from './context/LoginContextProvider';
 
 // style
 import './App.css';
-import HelpCenter from './pages/HelpCenter';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
@@ -68,6 +69,7 @@ const App = () => {
         
         {/* cart */}
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/checkout" element={<Checkout/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // layouts
 import AppLayout from '../layouts/AppLayout';
@@ -11,6 +12,7 @@ import { CartContext } from '../context/CartContextProvider';
 
 const Cart = () => {
     const { cartItems, subTotal, shippingCost, discount, totalCost } = useContext(CartContext);
+    const navigate = useNavigate();
 
     return (
         <AppLayout>
@@ -43,7 +45,7 @@ const Cart = () => {
                         <p className="text-[1.2rem] font-[600]">Total Cost</p>
                         <p className="text-[1.1rem] font-[600]">{totalCost} Tk</p>
                     </div>
-                    <button className="mt-[0.6rem] h-[40px] w-full text-[#fff] text-[1.2rem] font-[500] bg-[#327e16] rounded-md">Buy now</button>
+                    <button onClick={() => navigate('/checkout')} className="mt-[0.6rem] h-[40px] w-full text-[#fff] text-[1.2rem] font-[500] bg-[#327e16] rounded-md">Buy now</button>
                 </div>
             </div>
         </AppLayout>
