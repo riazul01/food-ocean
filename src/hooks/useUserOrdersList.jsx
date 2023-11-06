@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { UserDetailsContext } from '../context/UserDetailsProvider';
+import { UserDetailsContext } from '../context/UserDetailsContextProvider';
 
 // firebase
 import { fs } from '../firebase';
