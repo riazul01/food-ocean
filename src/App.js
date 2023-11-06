@@ -31,6 +31,7 @@ import { LoginContext } from './context/LoginContextProvider';
 
 // style
 import './App.css';
+import Payment from './pages/Payment';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
@@ -70,6 +71,7 @@ const App = () => {
         {/* cart */}
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/payment" element={<Payment/>}/>
       </Routes>
     </BrowserRouter>
   );
