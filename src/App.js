@@ -28,6 +28,7 @@ import Checkout from './pages/Checkout';
 
 // context
 import { LoginContext } from './context/LoginContextProvider';
+import { CartContext } from './context/CartContextProvider';
 
 // style
 import './App.css';
@@ -35,10 +36,20 @@ import Payment from './pages/Payment';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
+  const { cartItems, checkoutFormFilled } = useContext(CartContext);
 
   const RequireAuth = ({children}) => {
     return currentUser ? (children) : <Navigate to="/user/login" replace/>
   }
+
+  const RequireAddToCart = ({children}) => {
+    return cartItems.length >= 1 ? (children) : <Navigate to="/empty-cart" replace />
+  }
+
+  const RequireCheckout = ({children}) => {
+    return checkoutFormFilled ? (children) : <Navigate to="/checkout" replace />
+  }
+
 
   return (
     <BrowserRouter>
@@ -69,9 +80,9 @@ const App = () => {
         <Route path="/user/orders" element={<RequireAuth><Orders/></RequireAuth>}/>
         
         {/* cart */}
-        <Route path="/cart" element={<Cart/>}/>
-        <Route path="/checkout" element={<Checkout/>}/>
-        <Route path="/payment" element={<Payment/>}/>
+        <Route path="/cart" element={<RequireAddToCart><Cart/></RequireAddToCart>}/>
+        <Route path="/checkout" element={<RequireAuth><Checkout/></RequireAuth>}/>
+        <Route path="/payment" element={<RequireCheckout><Payment/></RequireCheckout>}/>
       </Routes>
     </BrowserRouter>
   );
