@@ -79,97 +79,107 @@ const Checkout = () => {
 
     return (
         <AppLayout>
-            <div className="mx-auto px-[0.4rem] pb-[3rem] w-full max-w-[1420px] flex items-start justify-between gap-[1rem]">
-                
-                {/* cart products */}
-                <div className="w-[60%]">
-                    <form className="mt-[2rem]">
-                        {/* name */}
-                        {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
-                            <strong className="text-[1.2rem] min-w-[160px]">Name:</strong>
-                            <input value={user.name} onChange={handleChange} type="text" name="name" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your name" required/>
-                        </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
-
-                        {/* email */}
-                        {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
-                            <strong className="text-[1.2rem] w-[160px]">Email:</strong>
-                            <input value={user.email} onChange={handleChange} type="email" name="email" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your email"/>
-                        </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
-
-                        {/* phone */}
-                        {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
-                            <strong className="text-[1.2rem] w-[160px]">Phone:</strong>
-                            <input value={user.phone} onChange={handleChange} type="phone" name="phone" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Phone number" required/>
-                        </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
-
-                        {/* address */}
-                        {userDetails ? <h1 className="mt-[1.6rem] text-[#555] text-[1.2rem] font-bold inline-block">Address</h1> : <Skeleton className="mt-[1.6rem] mb-[0.6rem] w-[130px] h-[24px]"/>}
-                        
-                        {/* street */}
-                        {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
-                            <strong className="text-[1.2rem] w-[160px]">Street:</strong>
-                            <input value={address.street} onChange={handleAddressChange} type="text" name="street" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Street" required/>
-                        </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
-
-                        {/* city */}
-                        {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
-                            <strong className="text-[1.2rem] w-[160px]">City:</strong>
-                            <input value={address.city} onChange={handleAddressChange} type="text" name="city" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="City" required/>
-                        </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
-
-                        {/* postcode */}
-                        {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
-                            <strong className="text-[1.2rem] w-[160px]">Postcode:</strong>
-                            <input value={address.postcode} onChange={handleAddressChange} type="text" name="postcode" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Postcode" required/>
-                        </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
-
-                        {/* division */}
-                        {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
-                            <strong className="text-[1.2rem] w-[160px]">Division:</strong>
-                            <select value={address.division} onChange={handleAddressChange} name="division" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[130px] border-[1px] border-[silver] outline-none rounded-md">
-                                <option value="dhaka">Dhaka</option>
-                                <option value="barishal">Barishal</option>
-                                <option value="sylhet">Sylhet</option>
-                                <option value="mymensingh">Mymensingh</option>
-                                <option value="rajshahi">Rajshahi</option>
-                                <option value="rangpur">Rangpur</option>
-                                <option value="khulna">Khulna</option>
-                                <option value="chattogram">Chattogram</option>
-                            </select>
-                        </div> : <Skeleton className="mb-[0.6rem] w-[160px] h-[24px]"/>}
-
-                        {/* country */}
-                        {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
-                            <strong className="text-[1.2rem] w-[160px]">Country:</strong>
-                            <input value={address.country} onChange={handleAddressChange} type="text" name="country" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Country" disabled/>
-                        </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
-                    </form>
+            <div className="mx-auto px-[0.4rem] pb-[3rem] w-full max-w-[1420px]">
+                {/* breadcrumb */}
+                <div className="flex items-center justify-start gap-[0.4rem]">
+                    <span className="text-[#327e16] text-[1.1rem] font-[500] cursor-pointer">Cart</span>
+                    <span className="text-[#aaa] text-[1.1rem] font-[500] cursor-context-menu">/</span>
+                    <span className="text-[#327e16] text-[1.1rem] font-[500] cursor-pointer">Checkout</span>
+                    <span className="text-[#aaa] text-[1.1rem] font-[500] cursor-context-menu">/</span>
+                    <span className="text-[1.1rem] font-[500] cursor-pointer">Payment</span>
                 </div>
                 
-                {/* amount details */}
-                <div className="cartCard p-[0.8rem] w-[40%] max-w-[400px] border-[1px] border-[#ddd] shadow-lg rounded-lg">
-                    <div className="border-b-[1px] border-b-[#ddd]">
-                        <div className="mb-[0.6rem] flex items-center justify-between">
-                            <p className="text-[1.2rem] font-[600]">Sub Total</p>
-                            <p className="text-[1.2rem] font-[600]">{subTotal} Tk</p>
-                        </div>
-                        <div className="mb-[0.6rem] flex items-center justify-between">
-                            <p className="text-[1.2rem] font-[600]">Shipping Cost</p>
-                            <p className="text-[1.2rem] font-[600]">{shippingCost} Tk</p>
-                        </div>
-                        <div className="mb-[0.6rem] flex items-center justify-between">
-                            <p className="text-[1.2rem] font-[600]">Discount</p>
-                            <p className="text-[1.2rem] font-[600]">{discount} Tk</p>
-                        </div>
+                <div className="flex items-start justify-between gap-[1rem]">
+                    
+                    {/* checkout form */}
+                    <div className="w-[60%]">
+                        <form className="mt-[2rem]">
+                            {/* name */}
+                            {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
+                                <strong className="text-[1.2rem] min-w-[160px]">Name:</strong>
+                                <input value={user.name} onChange={handleChange} type="text" name="name" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your name" required/>
+                            </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
+
+                            {/* email */}
+                            {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
+                                <strong className="text-[1.2rem] w-[160px]">Email:</strong>
+                                <input value={user.email} onChange={handleChange} type="email" name="email" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Your email"/>
+                            </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
+
+                            {/* phone */}
+                            {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
+                                <strong className="text-[1.2rem] w-[160px]">Phone:</strong>
+                                <input value={user.phone} onChange={handleChange} type="phone" name="phone" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Phone number" required/>
+                            </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
+
+                            {/* address */}
+                            {userDetails ? <h1 className="mt-[1.6rem] text-[#555] text-[1.2rem] font-bold inline-block">Address</h1> : <Skeleton className="mt-[1.6rem] mb-[0.6rem] w-[130px] h-[24px]"/>}
+                            
+                            {/* street */}
+                            {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
+                                <strong className="text-[1.2rem] w-[160px]">Street:</strong>
+                                <input value={address.street} onChange={handleAddressChange} type="text" name="street" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Street" required/>
+                            </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
+
+                            {/* city */}
+                            {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
+                                <strong className="text-[1.2rem] w-[160px]">City:</strong>
+                                <input value={address.city} onChange={handleAddressChange} type="text" name="city" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="City" required/>
+                            </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
+
+                            {/* postcode */}
+                            {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
+                                <strong className="text-[1.2rem] w-[160px]">Postcode:</strong>
+                                <input value={address.postcode} onChange={handleAddressChange} type="text" name="postcode" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Postcode" required/>
+                            </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
+
+                            {/* division */}
+                            {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
+                                <strong className="text-[1.2rem] w-[160px]">Division:</strong>
+                                <select value={address.division} onChange={handleAddressChange} name="division" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[130px] border-[1px] border-[silver] outline-none rounded-md">
+                                    <option value="dhaka">Dhaka</option>
+                                    <option value="barishal">Barishal</option>
+                                    <option value="sylhet">Sylhet</option>
+                                    <option value="mymensingh">Mymensingh</option>
+                                    <option value="rajshahi">Rajshahi</option>
+                                    <option value="rangpur">Rangpur</option>
+                                    <option value="khulna">Khulna</option>
+                                    <option value="chattogram">Chattogram</option>
+                                </select>
+                            </div> : <Skeleton className="mb-[0.6rem] w-[160px] h-[24px]"/>}
+
+                            {/* country */}
+                            {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
+                                <strong className="text-[1.2rem] w-[160px]">Country:</strong>
+                                <input value={address.country} onChange={handleAddressChange} type="text" name="country" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.2rem] w-[320px] border-[1px] border-[silver] outline-none rounded-md" placeholder="Country" disabled/>
+                            </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-[320px] h-[24px]"/>}
+                        </form>
                     </div>
-                    <div className="mt-[0.6rem] flex items-center justify-between">
-                        <p className="text-[1.2rem] font-[600]">Total Cost</p>
-                        <p className="text-[1.2rem] font-[600]">{totalCost} Tk</p>
+                    
+                    {/* amount details */}
+                    <div className="cartCard p-[0.8rem] w-[40%] max-w-[400px] border-[1px] border-[#ddd] shadow-lg rounded-lg">
+                        <div className="border-b-[1px] border-b-[#ddd]">
+                            <div className="mb-[0.6rem] flex items-center justify-between">
+                                <p className="text-[1.2rem] font-[600]">Sub Total</p>
+                                <p className="text-[1.2rem] font-[600]">{subTotal} Tk</p>
+                            </div>
+                            <div className="mb-[0.6rem] flex items-center justify-between">
+                                <p className="text-[1.2rem] font-[600]">Shipping Cost</p>
+                                <p className="text-[1.2rem] font-[600]">{shippingCost} Tk</p>
+                            </div>
+                            <div className="mb-[0.6rem] flex items-center justify-between">
+                                <p className="text-[1.2rem] font-[600]">Discount</p>
+                                <p className="text-[1.2rem] font-[600]">{discount} Tk</p>
+                            </div>
+                        </div>
+                        <div className="mt-[0.6rem] flex items-center justify-between">
+                            <p className="text-[1.2rem] font-[600]">Total Cost</p>
+                            <p className="text-[1.2rem] font-[600]">{totalCost} Tk</p>
+                        </div>
+                        <button onClick={handleCheckout} className="mt-[0.6rem] h-[40px] w-full text-[#fff] text-[1.2rem] font-[500] bg-[#327e16] rounded-md">Checkout</button>
                     </div>
-                    <button onClick={handleCheckout} className="mt-[0.6rem] h-[40px] w-full text-[#fff] text-[1.2rem] font-[500] bg-[#327e16] rounded-md">Checkout</button>
                 </div>
             </div>
-
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
