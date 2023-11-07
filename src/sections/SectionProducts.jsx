@@ -12,17 +12,6 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 
 const SectionProducts = ({ title, path, products }) => {
-
-    const len = products ? products.length : 0;
-
-    // shuffle product items
-    for (let i = 0; i < len; i ++) {
-        let j = parseInt(Math.random() * len);
-        let temp = products[i];
-        products[i] = products[j];
-        products[j] = temp;
-    }
-
     return (
         <div className="mx-auto px-[0.4rem] pb-[5rem] max-w-[1420px]">
 
@@ -37,7 +26,7 @@ const SectionProducts = ({ title, path, products }) => {
 
             {/* products */}
             {products.length !== 0 ? <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[1.2rem] place-items-center">
-                {products && products.slice(0, 10).map((item) => {
+                {products && products.slice(0, 10).reverse().map((item) => {
                     return <ProductCard key={item.id} data={item}/>
                 })}
             </div> : <div className="flex gap-[1.2rem] items-center justify-center">
