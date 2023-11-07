@@ -33,6 +33,7 @@ import { CartContext } from './context/CartContextProvider';
 // style
 import './App.css';
 import Payment from './pages/Payment';
+import EmptyCart from './pages/EmptyCart';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
@@ -44,6 +45,10 @@ const App = () => {
 
   const RequireAddToCart = ({children}) => {
     return cartItems.length >= 1 ? (children) : <Navigate to="/empty-cart" replace />
+  }
+
+  const RequireEmptyCart = ({children}) => {
+    return cartItems.length === 0 ? (children) : <Navigate to="/cart" replace />
   }
 
   const RequireCheckout = ({children}) => {
@@ -81,6 +86,7 @@ const App = () => {
         
         {/* cart */}
         <Route path="/cart" element={<RequireAddToCart><Cart/></RequireAddToCart>}/>
+        <Route path="/empty-cart" element={<RequireEmptyCart><EmptyCart/></RequireEmptyCart>}/>
         <Route path="/checkout" element={
           <RequireAuth>
             <RequireAddToCart>
