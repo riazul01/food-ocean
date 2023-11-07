@@ -25,7 +25,7 @@ const CartProduct = ({ cartItem }) => {
     }
 
     return (
-        <div className="cartCard relative mb-[1.4rem] w-full h-[140px] flex items-center border-[1px] border-[#ddd] shadow-lg rounded-lg">
+        <div className="gradient-bg relative mb-[1.4rem] w-full h-[140px] flex items-center border-[1px] border-[#ddd] shadow-lg rounded-lg">
             
             {/* product image */}
             <div className="p-[0.2rem] h-full w-[180px]">
