@@ -5,7 +5,7 @@ export const CartContext = createContext();
 const INITIAL_STATE = {
     cartItems: JSON.parse(localStorage.getItem('cartItems')) || [],
     checkoutConfirmed: JSON.parse(localStorage.getItem('checkoutConfirmed')) || false,
-    orderConfirmed: JSON.parse(localStorage.getItem('orderState')) || false
+    orderConfirmed: JSON.parse(localStorage.getItem('orderConfirmed')) || false
 }
 
 const reducer = (state, action) => {
