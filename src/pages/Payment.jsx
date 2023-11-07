@@ -53,6 +53,7 @@ const Payment = () => {
             setTimeout(() => {
                 navigate('/');
                 dispatch({type: 'MAKE_CART_EMPTY'});
+                dispatch({type: 'RESET_CHECKOUT_STATE'});
             }, 3000);
         } catch (err) {
             toast.err('An error occured!');
@@ -61,6 +62,10 @@ const Payment = () => {
 
     // confirm order
     const handleConfirmOrder = () => {
+        if (cartItems.length === 0) {
+            toast.error('Cart is empty!');
+            return;
+        }
         if (paymentMethod === '') {
             toast.error('Please select payment method!');
             return;

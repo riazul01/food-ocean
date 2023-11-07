@@ -72,9 +72,8 @@ const Checkout = () => {
                 return;
             }
         }
-        dispatch({type: 'CHECKOUT_FORM_FILLED'});
+        dispatch({type: 'CHECKOUT_CONFIRMED'});
         localStorage.setItem("checkoutUserDetails", JSON.stringify({...user, address: address}));
-        localStorage.setItem("checkoutFormFilled", true);
         navigate('/payment');
     }
 
