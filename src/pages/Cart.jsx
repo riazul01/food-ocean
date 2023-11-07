@@ -10,6 +10,9 @@ import CartProduct from '../components/CartProduct';
 // context
 import { CartContext } from '../context/CartContextProvider';
 
+// icons
+import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
+
 const Cart = () => {
     const { cartItems, subTotal, shippingCost, discount, totalCost } = useContext(CartContext);
     const navigate = useNavigate();
@@ -17,13 +20,12 @@ const Cart = () => {
     return (
         <AppLayout>
             <div className="mx-auto px-[0.4rem] pb-[3rem] w-full max-w-[1420px]">
-                
                 {/* breadcrumb */}
                 <div className="flex items-center justify-start gap-[0.4rem]">
-                    <span className="text-[green] text-[1.1rem] font-[500] cursor-pointer">Cart</span>
-                    <span className="text-[#aaa] text-[1.1rem] font-[500] cursor-context-menu">/</span>
+                    <span className="text-[#327e16] text-[1.1rem] font-[500] cursor-pointer">Cart</span>
+                    <MdKeyboardDoubleArrowRight className="text-[#aaa] text-[1.3rem] font-[500] cursor-context-menu"/>
                     <span className="text-[1.1rem] font-[500] cursor-pointer">Checkout</span>
-                    <span className="text-[#aaa] text-[1.1rem] font-[500] cursor-context-menu">/</span>
+                    <MdKeyboardDoubleArrowRight className="text-[#aaa] text-[1.3rem] font-[500] cursor-context-menu"/>
                     <span className="text-[1.1rem] font-[500] cursor-pointer">Payment</span>
                 </div>
 

@@ -38,7 +38,8 @@ const Orders = () => {
             <ProfileLayout>
                 {/* title */}
                 <h1 className="pb-[0.2rem] text-[#173334] text-[1.6rem] font-[500] border-b-[1px] border-dashed border-[#ddd]">My Orders</h1>
-                               
+
+                {/* dashboard */}
                 <div className="mt-[1rem] w-full grid grid-cols-4 gap-[1.2rem]">
                     <div className="w-full h-[120px] flex flex-col items-center justify-center bg-purple-500 rounded-lg">
                         <p className="text-[#fff] text-[1.8rem] font-[700] drop-shadow-lg">{totalOrders < 10 ? `0${totalOrders}` : totalOrders}</p>
@@ -58,6 +59,7 @@ const Orders = () => {
                     </div>
                 </div>
 
+                {/* orders list */}
                 {ordersList && ordersList.length > 0 ? <table className="mt-[1.4rem] w-full rounded-lg overflow-hidden">
                     <thead className="bg-[#333]">
                         <tr className="">

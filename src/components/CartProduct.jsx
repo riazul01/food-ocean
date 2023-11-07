@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 
+// context
 import { CartContext } from '../context/CartContextProvider';
 
 // icons
@@ -26,7 +27,6 @@ const CartProduct = ({ cartItem }) => {
 
     return (
         <div className="gradient-bg relative mb-[1.4rem] w-full h-[140px] flex items-center border-[1px] border-[#ddd] shadow-lg rounded-lg">
-            
             {/* product image */}
             <div className="p-[0.2rem] h-full w-[180px]">
                 <img src={cartItem.imgUrl} alt="cart-img" className="h-full w-full object-cover rounded-[0.2rem]"/>

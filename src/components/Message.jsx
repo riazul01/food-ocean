@@ -1,8 +1,12 @@
 import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LiaTimesSolid } from 'react-icons/lia';
+
+// context
 import { UserDetailsContext } from '../context/UserDetailsContextProvider';
 import { CartContext } from '../context/CartContextProvider';
+
+// icons
+import { LiaTimesSolid } from 'react-icons/lia';
 
 const Message = () => {
     const userDetails = useContext(UserDetailsContext);

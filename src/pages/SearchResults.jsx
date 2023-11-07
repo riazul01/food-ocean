@@ -91,7 +91,6 @@ const SearchResults = () => {
     return (
         <AppLayout>
             <div className="mx-auto px-[0.4rem] pb-[3rem] max-w-[1420px] min-h-[50vh]">
-                
                 {/* search info */}
                 <div className="py-[1.2rem] flex items-center justify-between">
                     <h1 className="text-[1.4rem] font-bold italic">Search results for {`"${location.state.searchText}"`}</h1>

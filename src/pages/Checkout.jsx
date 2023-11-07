@@ -8,6 +8,9 @@ import AppLayout from '../layouts/AppLayout';
 import { CartContext } from '../context/CartContextProvider';
 import { UserDetailsContext } from '../context/UserDetailsContextProvider';
 
+// icons
+import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
+
 // skeleton loader
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -18,12 +21,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
     const { subTotal, shippingCost, discount, totalCost, dispatch } = useContext(CartContext);
-    const navigate = useNavigate();
-
     const userDetails = useContext(UserDetailsContext);
 
     const [user, setUser] = useState({id: '', name: '', email: '', phone: '', gender: 'male', joinedDate: '', imgUrl: null, defaultImg: null});
     const [address, setAddress] = useState({street: '', city: '', postcode: '', division: 'dhaka', country: 'Bangladesh'});
+
+    const navigate = useNavigate();
 
     // autofill
     useEffect(() => {
@@ -82,15 +85,14 @@ const Checkout = () => {
             <div className="mx-auto px-[0.4rem] pb-[3rem] w-full max-w-[1420px]">
                 {/* breadcrumb */}
                 <div className="flex items-center justify-start gap-[0.4rem]">
-                    <span className="text-[#327e16] text-[1.1rem] font-[500] cursor-pointer">Cart</span>
-                    <span className="text-[#aaa] text-[1.1rem] font-[500] cursor-context-menu">/</span>
+                    <span onClick={() => navigate('/cart')} className="text-[#327e16] text-[1.1rem] font-[500] cursor-pointer">Cart</span>
+                    <MdKeyboardDoubleArrowRight className="text-[#aaa] text-[1.3rem] font-[500] cursor-context-menu"/>
                     <span className="text-[#327e16] text-[1.1rem] font-[500] cursor-pointer">Checkout</span>
-                    <span className="text-[#aaa] text-[1.1rem] font-[500] cursor-context-menu">/</span>
+                    <MdKeyboardDoubleArrowRight className="text-[#aaa] text-[1.3rem] font-[500] cursor-context-menu"/>
                     <span className="text-[1.1rem] font-[500] cursor-pointer">Payment</span>
                 </div>
                 
                 <div className="flex items-start justify-between gap-[1rem]">
-                    
                     {/* checkout form */}
                     <div className="w-[60%]">
                         <form className="mt-[2rem]">
@@ -157,7 +159,7 @@ const Checkout = () => {
                     </div>
                     
                     {/* amount details */}
-                    <div className="cartCard p-[0.8rem] w-[40%] max-w-[400px] border-[1px] border-[#ddd] shadow-lg rounded-lg">
+                    <div className="gradient-bg p-[0.8rem] w-[40%] max-w-[400px] border-[1px] border-[#ddd] shadow-lg rounded-lg">
                         <div className="border-b-[1px] border-b-[#ddd]">
                             <div className="mb-[0.6rem] flex items-center justify-between">
                                 <p className="text-[1.2rem] font-[600]">Sub Total</p>

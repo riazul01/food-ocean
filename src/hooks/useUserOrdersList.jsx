@@ -1,4 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
+
+// context
 import { UserDetailsContext } from '../context/UserDetailsContextProvider';
 
 // firebase

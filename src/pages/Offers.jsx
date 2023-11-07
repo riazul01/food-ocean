@@ -4,7 +4,9 @@ import AppLayout from '../layouts/AppLayout';
 const Offers = () => {
     return (
         <AppLayout>
-            <h1>Offers</h1>
+            <div className="mx-auto px-[0.4rem] pb-[3rem] max-w-[1420px] min-h-[50vh]">
+                <h1>Offers</h1>
+            </div>
         </AppLayout>
     );
 }

@@ -87,7 +87,6 @@ const Header = () => {
 
                 {/* search bar */}
                 <div className="flex items-center justify-center rounded-lg overflow-hidden">
-                    
                     {/* select category */}
                     <select value={search.searchCategory} onChange={handleChange} name="searchCategory" className="hidden sm:block pl-[0.6rem] h-[44px] w-[120px] lg:w-[140px] text-[#fff] text-[1.1rem] bg-[#173334] border-[2px] border-[#214445] outline-none rounded-l-lg">
                         <option value="all">All</option>

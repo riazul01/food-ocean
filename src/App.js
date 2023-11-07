@@ -25,6 +25,8 @@ import Orders from './pages/Orders';
 // cart
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import Payment from './pages/Payment';
+import EmptyCart from './pages/EmptyCart';
 
 // context
 import { LoginContext } from './context/LoginContextProvider';
@@ -32,8 +34,6 @@ import { CartContext } from './context/CartContextProvider';
 
 // style
 import './App.css';
-import Payment from './pages/Payment';
-import EmptyCart from './pages/EmptyCart';
 
 const App = () => {
   const { currentUser } = useContext(LoginContext);
@@ -54,7 +54,6 @@ const App = () => {
   const RequireCheckout = ({children}) => {
     return checkoutConfirmed ? (children) : <Navigate to="/checkout" replace />
   }
-
 
   return (
     <BrowserRouter>

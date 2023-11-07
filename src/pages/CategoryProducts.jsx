@@ -87,7 +87,6 @@ const CategoryProducts = () => {
     return (
         <AppLayout>
             <div className="mx-auto px-[0.4rem] pb-[3rem] w-full max-w-[1420px]">
-                
                 {/* header */}
                 <div className="py-[1.2rem] flex items-center justify-between">
                     <h1 className="text-[1.4rem] font-bold capitalize">{title}</h1>

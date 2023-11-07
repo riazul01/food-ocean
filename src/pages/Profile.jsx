@@ -34,7 +34,6 @@ const Profile = () => {
 
                     {/* profile info */}
                     <div className="">
-
                         {/* name */}
                         <h1 className="text-[1.6rem] font-bold capitalize">{userDetails ? (userDetails.name ? userDetails.name : <Skeleton className="ml-[0.3rem] w-[120px]"/>) : <Skeleton className="ml-[0.3rem] w-[120px]"/>}</h1>
                         
@@ -54,7 +53,6 @@ const Profile = () => {
 
                 {/* description */}
                 <div className="mt-[2rem]">
-
                     {/* email */}
                     {userDetails ? <div className="mt-[0.8rem] flex items-center">
                         <strong className="text-[1.1rem] min-w-[120px]">Email:</strong>
@@ -90,7 +88,7 @@ const Profile = () => {
                     </div> : <Skeleton containerClassName="flex-1" className="mt-[0.8rem] w-[272px] h-[22px]"/>}
                 </div>
 
-                {/* delete account button */}
+                {/* account delete button */}
                 {userDetails ? <button className="mt-[2rem] px-[0.6rem] py-[0.2rem] text-[#a71818] font-[500] border-[1px] border-[#a71818] rounded-md" disabled={userDetails.email ? false : true}>Delete account</button> : <Skeleton className="mt-[2rem] w-[120px] h-[22px]"/>}
             </ProfileLayout>
         </AppLayout>
