@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // layouts
 import AppLayout from '../layouts/AppLayout';
 import ProfileLayout from '../layouts/ProfileLayout';
 
-// hooks
-import useUserOrdersList from '../hooks/useUserOrdersList';
+// context
+import { UserDetailsContext } from '../context/UserDetailsContextProvider';
 
 // icons
 import { RxDoubleArrowRight } from 'react-icons/rx';
 
 const Orders = () => {
-    const ordersList = useUserOrdersList();
+    const userDetails = useContext(UserDetailsContext);
+    const ordersList = userDetails ? (userDetails.ordersList ? userDetails.ordersList : []) : [];
     const navigate = useNavigate();
-
+    
     let totalOrders = 0;
     let pendingOrders = 0;
     let shippedOrders = 0;

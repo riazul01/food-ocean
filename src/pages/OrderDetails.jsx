@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // layouts
 import AppLayout from '../layouts/AppLayout';
 import ProfileLayout from '../layouts/ProfileLayout';
 
-// hooks
-import useUserOrdersList from '../hooks/useUserOrdersList';
+// context
+import { UserDetailsContext } from '../context/UserDetailsContextProvider';
 
 // skeleton loader
 import Skeleton from 'react-loading-skeleton';
@@ -14,8 +14,9 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 const OrderDetails = () => {
     const orderId = useLocation().pathname.split('/').pop();
-    const ordersList = useUserOrdersList();
-
+    const userDetails = useContext(UserDetailsContext);
+    const ordersList = userDetails ? (userDetails.ordersList ? userDetails.ordersList : []) : [];
+    
     const orderDetails = ordersList.find((elem) => orderId === elem.orderId);
     const isInvalidId = (ordersList.length > 0 && orderDetails === undefined) ? true : false;
 

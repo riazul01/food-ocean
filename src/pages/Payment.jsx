@@ -37,17 +37,9 @@ const Payment = () => {
     const storeOrderDetails = async (orderDetails) => {
         try {
             const docRef = await addDoc(collection(fs, "orders"), orderDetails);
-            
-            let orderList = [];
-            
-            if (userDetails.orderList) {
-                orderList = [...userDetails.orderList, docRef.id];
-            } else {
-                orderList = [docRef.id];
-            }
-            
+            const ordersList = userDetails.ordersList ? [...userDetails.ordersList, {orderId: docRef.id, ...orderDetails}] : [{orderId: docRef.id, ...orderDetails}];
             const userRef = doc(fs, 'users', userDetails.id);
-            setDoc(userRef, {orderList}, {merge: true});
+            setDoc(userRef, {ordersList}, {merge: true});
             setTimeout(() => {
                 toast.success('Order placed successfully!');
             }, 100);
@@ -71,6 +63,10 @@ const Payment = () => {
         }
         if (paymentMethod === '') {
             toast.error('Please select a payment method!');
+            return;
+        }
+        if (!userDetails) {
+            toast.error('Something wrong!');
             return;
         }
         if (paymentMethod === 'cashon') {
