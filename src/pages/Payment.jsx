@@ -84,7 +84,7 @@ const Payment = () => {
             }
             storeOrderDetails(orderDetails);
         } else if (paymentMethod === 'stripe') {
-            toast.error('Sorry! Payment method not included yet!');
+            toast.error('Sorry! Stripe is not included yet!');
         }
     }
 

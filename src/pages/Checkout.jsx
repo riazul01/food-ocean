@@ -62,7 +62,7 @@ const Checkout = () => {
     }
 
      // submit checkout form
-     const handleCheckout = (e) => {
+     const handleCheckout = () => {
         for (let key in user) {
             if (user[key] === '') {
                 toast.error('Please fill your details first!');
@@ -160,7 +160,7 @@ const Checkout = () => {
                     </div>
                     
                     {/* amount details */}
-                    <div className="gradient-bg mt-[1.4rem] lg:mt-0 p-[0.8rem] w-full lg:w-[40%] max-w-[400px] border-[1px] border-[#ddd] shadow-lg rounded-lg">
+                    <div className="gradient-bg mt-[1.6rem] lg:mt-0 p-[0.8rem] w-full lg:w-[40%] max-w-[400px] border-[1px] border-[#ddd] shadow-lg rounded-lg">
                         <div className="border-b-[1px] border-b-[#ddd]">
                             <div className="mb-[0.6rem] flex items-center justify-between">
                                 <p className="text-[1.1rem] sm:text-[1.2rem] font-[600]">Sub Total</p>
