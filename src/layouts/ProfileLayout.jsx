@@ -7,7 +7,7 @@ import { RiListUnordered } from 'react-icons/ri';
 import { RxExit } from 'react-icons/rx';
 
 const ProfileLayout = ({ children }) => {
-    const path = useLocation().pathname.split('/').pop();
+    const path = useLocation().pathname.split('/').reverse();
 
     return (
         <div className="w-full h-auto">
@@ -16,22 +16,22 @@ const ProfileLayout = ({ children }) => {
                 {/* navigation */}
                 <div className="w-full md:w-[240px]">
                     <div className="p-[0.4rem] w-full border-[1px] rounded-lg">
-                        <Link to="/user/profile" className={`${path === 'profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
+                        <Link to="/user/profile" className={`${path[0] === 'profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <FiUser className="text-[1.2rem]"/>
                             <p className="ms-[0.6rem] text-[1.1rem] font-[500]">My Profile</p>
                         </Link>
-                        <Link to="/user/update-profile" className={`${path === 'update-profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
+                        <Link to="/user/update-profile" className={`${path[0] === 'update-profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <FiUserCheck className="text-[1.2rem]"/>
                             <p className="ms-[0.6rem] text-[1.1rem] font-[500]">Update Profile</p>
                         </Link>
-                        <Link to="/user/orders" className={`${path === 'orders' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
+                        <Link to="/user/orders" className={`${(path[0] === 'orders' || path[1] === 'orders') ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <RiListUnordered className="text-[1.2rem]"/>
                             <p className="ms-[0.6rem] text-[1.1rem] font-[500]">My Orders</p>
                         </Link>
-                        <div className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200">
+                        <a href="#null" className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200">
                             <FiUsers className="text-[1.2rem]"/>
-                            <a href="/" className="ms-[0.6rem] text-[1.1rem] font-[500]">Switch to Admin</a>
-                        </div>
+                            <p href="/" className="ms-[0.6rem] text-[1.1rem] font-[500]">Switch to Admin</p>
+                        </a>
                         <div className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200">
                             <RxExit className="text-[1.2rem]"/>
                             <p className="ms-[0.6rem] text-[1.1rem] font-[500]">Logout</p>
