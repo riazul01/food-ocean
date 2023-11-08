@@ -1,7 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+// layouts
 import AppLayout from '../layouts/AppLayout';
 import ProfileLayout from '../layouts/ProfileLayout';
 
+// hooks
 import useUserOrdersList from '../hooks/useUserOrdersList';
 
 // icons
@@ -9,6 +13,7 @@ import { RxDoubleArrowRight } from 'react-icons/rx';
 
 const Orders = () => {
     const ordersList = useUserOrdersList();
+    const navigate = useNavigate();
 
     let totalOrders = 0;
     let pendingOrders = 0;
@@ -78,7 +83,7 @@ const Orders = () => {
                                     <td className="py-[0.4rem] text-[1.1rem]">{elem.time.split(' ').slice(1, 4).join(' ')}</td>
                                     <td className="py-[0.4rem] text-[1.1rem]">{elem.totalCost} Tk</td>
                                     <td className="py-[0.4rem]"><span className={`${elem.status} px-[0.6rem] py-[0.1rem] text-[#fff] text-[1.1rem] rounded-md shadow-lg`}>{elem.status}</span></td>
-                                    <td className="py-[0.4rem] text-[1.1rem] flex items-center justify-center cursor-pointer">
+                                    <td onClick={() => navigate(`/user/orders/${elem.orderId}`)} className="py-[0.4rem] text-[1.1rem] flex items-center justify-center cursor-pointer">
                                         <span className="text-green-900 text-[1.1rem] font-[600]">view details</span>
                                         <RxDoubleArrowRight className="ml-[0.2rem] text-green-900 text-[1.1rem] font-[600]" />
                                     </td>
