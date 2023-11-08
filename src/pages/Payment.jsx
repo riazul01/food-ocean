@@ -23,7 +23,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Payment = () => {
-    const { cartItems, subTotal, shippingCost, discount, totalCost, dispatch } = useContext(CartContext);
+    const { cartItems, subTotal, shippingCost, discount, totalCost, orderConfirmed, dispatch } = useContext(CartContext);
     const userDetails = useContext(UserDetailsContext);
     const [paymentMethod, setPaymentMethod] = useState('');
     const navigate = useNavigate();
@@ -46,9 +46,9 @@ const Payment = () => {
             localStorage.setItem("orderConfirmed", true);
             dispatch({type: 'ORDER_CONFIRMED'});
             setTimeout(() => {
-                navigate('/');
                 dispatch({type: 'MAKE_CART_EMPTY'});
                 dispatch({type: 'RESET_CHECKOUT_STATE'});
+                navigate('/');
             }, 3000);
         } catch (err) {
             toast.err('An error occured!');
@@ -142,7 +142,7 @@ const Payment = () => {
                             <p className="text-[1.2rem] font-[600]">Total Cost</p>
                             <p className="text-[1.1rem] font-[600]">{totalCost} Tk</p>
                         </div>
-                        <button onClick={handleConfirmOrder} className="mt-[0.6rem] h-[40px] w-full text-[#fff] text-[1.2rem] font-[500] bg-[#327e16] rounded-md">Confirm Order</button>
+                        <button onClick={handleConfirmOrder} className="mt-[0.6rem] h-[40px] w-full text-[#fff] text-[1.2rem] font-[500] bg-[#327e16] rounded-md" disabled={orderConfirmed}>Confirm Order</button>
                     </div>
                 </div>
             </div>

@@ -76,6 +76,7 @@ const Checkout = () => {
             }
         }
         dispatch({type: 'CHECKOUT_CONFIRMED'});
+        dispatch({type: 'RESET_ORDER_STATE'});
         localStorage.setItem("checkoutUserDetails", JSON.stringify({...user, address: address}));
         navigate('/payment');
     }
