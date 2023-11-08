@@ -26,7 +26,7 @@ const CartProduct = ({ cartItem }) => {
     }
 
     return (
-        <div className="gradient-bg relative mb-[1.4rem] w-full h-[100px] sm:h-[140px] flex items-center border-[1px] border-[#ddd] shadow-lg rounded-lg">
+        <div className="gradient-bg relative mb-[1.4rem] w-full h-[110px] sm:h-[140px] flex items-center border-[1px] border-[#ddd] shadow-lg rounded-lg">
             {/* product image */}
             <div className="p-[0.2rem] h-full w-[120px] sm:w-[180px]">
                 <img src={cartItem.imgUrl} alt="cart-img" className="h-full w-full object-cover rounded-[0.2rem]"/>
@@ -35,7 +35,7 @@ const CartProduct = ({ cartItem }) => {
             {/* product details */}
             <div className="pl-[0.2rem] sm:pl-[0.6rem]">
                 <h1 className="text-[1.1rem] sm:text-[1.3rem] font-bold">{cartItem.name}</h1>
-                <p className="my-[0.3rem] sm:my-[0.8rem] text-[1rem] sm:text-[1.1rem] text-[#555] font-bold">{`${cartItem.weight} ${cartItem.unit} * ${cartItem.cartQuantity}`}</p>
+                <p className="my-[0.6rem] sm:my-[0.8rem] text-[1rem] sm:text-[1.1rem] text-[#555] font-bold">{`${cartItem.weight} ${cartItem.unit} * ${cartItem.cartQuantity}`}</p>
                 <p className="text-[1.1rem] sm:text-[1.2rem] text-[#2e7016] font-bold">{cartItem.price * cartItem.cartQuantity}Tk</p>
             </div>
 
