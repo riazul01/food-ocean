@@ -29,35 +29,35 @@ const Cart = () => {
                     <span className="text-[1.1rem] font-[500] cursor-pointer">Payment</span>
                 </div>
 
-                <div className="mt-[1rem] flex items-start justify-between gap-[1rem]">
+                <div className="mt-[1rem] flex flex-col-reverse lg:flex-row items-center lg:items-start justify-between gap-[1rem]">
                     {/* cart products */}
-                    <div className="w-[60%]">
+                    <div className="w-full max-w-[400px] sm:max-w-[780px] lg:w-[60%]">
                         {cartItems && cartItems.map((item) => {
                             return <CartProduct key={item.id} cartItem={item} />
                         })}
                     </div>
                     
                     {/* amount details */}
-                    <div className="gradient-bg p-[0.8rem] w-[40%] max-w-[400px] border-[1px] border-[#ddd] shadow-lg rounded-lg">
+                    <div className="gradient-bg p-[0.8rem] w-full lg:w-[40%] max-w-[400px] border-[1px] border-[#ddd] shadow-lg rounded-lg">
                         <div className="border-b-[1px] border-b-[#ddd]">
                             <div className="mb-[0.6rem] flex items-center justify-between">
-                                <p className="text-[1.2rem] font-[600]">Sub Total</p>
-                                <p className="text-[1.1rem] font-[600]">{subTotal} Tk</p>
+                                <p className="text-[1.1rem] sm:text-[1.2rem] font-[600]">Sub Total</p>
+                                <p className="text-[1rem] sm:text-[1.1rem] font-[600]">{subTotal} Tk</p>
                             </div>
                             <div className="mb-[0.6rem] flex items-center justify-between">
-                                <p className="text-[1.2rem] font-[600]">Shipping Cost</p>
-                                <p className="text-[1.1rem] font-[600]">{shippingCost} Tk</p>
+                                <p className="text-[1.1rem] sm:text-[1.2rem] font-[600]">Shipping Cost</p>
+                                <p className="text-[1rem] sm:text-[1.1rem] font-[600]">{shippingCost} Tk</p>
                             </div>
                             <div className="mb-[0.6rem] flex items-center justify-between">
-                                <p className="text-[1.2rem] font-[600]">Discount</p>
-                                <p className="text-[1.1rem] font-[600]">{discount} Tk</p>
+                                <p className="text-[1.1rem] sm:text-[1.2rem] font-[600]">Discount</p>
+                                <p className="text-[1rem] sm:text-[1.1rem] font-[600]">{discount} Tk</p>
                             </div>
                         </div>
                         <div className="mt-[0.6rem] flex items-center justify-between">
-                            <p className="text-[1.2rem] font-[600]">Total Cost</p>
-                            <p className="text-[1.1rem] font-[600]">{totalCost} Tk</p>
+                            <p className="text-[1.1rem] sm:text-[1.2rem] font-[600]">Total Cost</p>
+                            <p className="text-[1rem] sm:text-[1.1rem] font-[600]">{totalCost} Tk</p>
                         </div>
-                        <button onClick={() => navigate('/checkout')} className="mt-[0.6rem] h-[40px] w-full text-[#fff] text-[1.2rem] font-[500] bg-[#327e16] rounded-md">Buy now</button>
+                        <button onClick={() => navigate('/checkout')} className="mt-[0.6rem] h-[40px] w-full text-[#fff] text-[1.1rem] sm:text-[1.2rem] font-[500] bg-[#327e16] rounded-md">Buy now</button>
                     </div>
                 </div>
             </div>
