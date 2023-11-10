@@ -5,10 +5,18 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   position: relative;
 }
 
+
+
+/* navlinks */
 .navLink.active {
   color: crimson;
   border: 1px solid crimson;
