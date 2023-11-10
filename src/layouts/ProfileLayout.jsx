@@ -1,5 +1,13 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
+// firebase
+import { auth } from '../firebase';
+import { signOut } from 'firebase/auth';
+
+// context
+import { LoginContext } from '../context/LoginContextProvider';
+import { CartContext } from '../context/CartContextProvider';
 
 // icons
 import { FiUser, FiUsers, FiUserCheck } from 'react-icons/fi';
@@ -8,6 +16,23 @@ import { RxExit } from 'react-icons/rx';
 
 const ProfileLayout = ({ children }) => {
     const path = useLocation().pathname.split('/').reverse();
+    const loginContext = useContext(LoginContext);
+    const cartContext = useContext(CartContext);
+
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            loginContext.dispatch({type: 'LOGOUT'});
+            cartContext.dispatch({type: 'MAKE_CART_EMPTY'});
+            cartContext.dispatch({type: 'RESET_CHECKOUT_STATE'});
+            cartContext.dispatch({type: 'RESET_ORDER_STATE'});
+            navigate('/');
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
 
     return (
         <div className="w-full h-auto">
@@ -32,7 +57,7 @@ const ProfileLayout = ({ children }) => {
                             <FiUsers className="text-[1.2rem]"/>
                             <p href="/" className="ms-[0.6rem] text-[1.1rem] font-[500]">Switch to Admin</p>
                         </a>
-                        <div className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200">
+                        <div onClick={handleLogout} className="px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200">
                             <RxExit className="text-[1.2rem]"/>
                             <p className="ms-[0.6rem] text-[1.1rem] font-[500]">Logout</p>
                         </div>
