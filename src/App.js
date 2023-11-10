@@ -29,6 +29,9 @@ import Checkout from './pages/Checkout';
 import Payment from './pages/Payment';
 import EmptyCart from './pages/EmptyCart';
 
+// effects
+import ScrollToTop from './effects/ScrollToTop';
+
 // context
 import { LoginContext } from './context/LoginContextProvider';
 import { CartContext } from './context/CartContextProvider';
@@ -58,6 +61,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop/>
       <Routes>
         {/* pages */}
         <Route path="/" element={<Home/>}/>
