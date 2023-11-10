@@ -166,7 +166,7 @@ const Footer = () => {
         {/* copyright section */}
         <div className="w-full bg-[#173334] border-t-[1px] border-[#3a4c4d]">
             <div className="mx-[auto] px-[0.4rem] py-[1.4rem] max-w-[1420px] flex items-center justify-center">
-                <p className="text-[#fff] text-[0.8rem] lg:text-[1.1rem]">Created by <a className="text-[orange]" href="https://github.com/riazul01" target="_blank" rel="noreferrer">riazul01</a> | &copy; 2024 - All Rights Reserved</p>
+                <p className="text-[#fff] text-[0.8rem] lg:text-[1.1rem]">Created by <a className="text-[orange]" href="https://github.com/riazul01" target="_blank" rel="noreferrer">riazul01</a> | &copy; 2023 - All Rights Reserved</p>
             </div>
         </div>
         </>
