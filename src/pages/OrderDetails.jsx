@@ -1,26 +1,76 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // layouts
 import AppLayout from '../layouts/AppLayout';
 import ProfileLayout from '../layouts/ProfileLayout';
 
+// components
+import AlertBox from '../components/AlertBox';
+
 // context
 import { UserDetailsContext } from '../context/UserDetailsContextProvider';
+
+import { fs } from '../firebase';
+import { doc, setDoc } from "firebase/firestore";
 
 // skeleton loader
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
+// toast notification
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const OrderDetails = () => {
-    const orderId = useLocation().pathname.split('/').pop();
     const userDetails = useContext(UserDetailsContext);
+    const orderId = useLocation().pathname.split('/').pop();
     const ordersList = userDetails ? (userDetails.ordersList ? userDetails.ordersList : []) : [];
     
     const orderDetails = ordersList.find((elem) => orderId === elem.orderId);
     const isInvalidId = (ordersList.length > 0 && orderDetails === undefined) ? true : false;
 
+    const [showAlert, setShowAlert] = useState(false);
+
+    const storeUpdatedDataToDatabase = async (user) => {
+        try {
+            // update users database
+            await setDoc(doc(fs, "users", userDetails.id), user);
+
+            // update orders database
+            const orderRef = doc(fs, 'orders', orderId);
+            await setDoc(orderRef, { status: 'canceled' }, { merge: true });
+            toast.success('Your order is successfully cancled!');
+        } catch (error) {
+            toast.error('An error occured!');
+            console.log(error);
+        }
+    }   
+
+    // get alert box confirmation
+    const getAlertResponse = (flag) => {
+        if (flag) {
+            userDetails.ordersList.map((elem) => {
+                if (orderId === elem.orderId) {
+                    elem.status = 'canceled';
+                }
+                return elem;
+            });
+            
+            storeUpdatedDataToDatabase(userDetails);
+            setShowAlert(false);
+        } else {
+            setShowAlert(false);
+        }
+    }
+
+    const handleCancelOrder = () => {
+        setShowAlert(true);
+    }
+
     return (
+        <>
+        <AlertBox showAlert={showAlert} setShowAlert={setShowAlert} alertMessage="Confirm order cancellation!" getAlertResponse={getAlertResponse}/>
         <AppLayout>
             <ProfileLayout>
                 {/* title */}
@@ -156,10 +206,23 @@ const OrderDetails = () => {
                         </div>
                     </div>}
 
-                    {orderDetails === undefined ? <Skeleton className="mt-[2rem] w-[140px] h-[28px] rounded-lg"/> : <button className="mt-[2rem] px-[0.8rem] py-[0.2rem] text-[#fff] text-[1rem] bg-red-800 rounded-md">Cancle order</button>}
+                    {orderDetails === undefined ? <Skeleton className="mt-[2rem] w-[140px] h-[28px] rounded-lg"/> : <button onClick={handleCancelOrder} className="mt-[2rem] px-[0.8rem] py-[0.2rem] text-[#fff] text-[1rem] bg-red-800 rounded-md" disabled={(orderDetails.status === 'canceled') ? true : false}>{(orderDetails.status === 'canceled') ? 'Canceled' : 'Cancel Order'}</button>}
                 </div>}
             </ProfileLayout>
         </AppLayout>
+        <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+        />
+        </>
     );
 }
 
