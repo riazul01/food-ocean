@@ -18,6 +18,7 @@ import Login from './auth/Login';
 import Signup from './auth/Signup';
 
 // user
+import User from './pages/User';
 import Profile from './pages/Profile';
 import UpdateProfile from './pages/UpdateProfile';
 import Orders from './pages/Orders';
@@ -84,6 +85,7 @@ const App = () => {
         <Route path="/user/register" element={<Signup/>}/>
 
         {/* user */}
+        <Route path="/user" element={<RequireAuth><User/></RequireAuth>}/>
         <Route path="/user/profile" element={<RequireAuth><Profile/></RequireAuth>}/>
         <Route path="/user/update-profile" element={<RequireAuth><UpdateProfile/></RequireAuth>}/>
         <Route path="/user/orders" element={<RequireAuth><Orders/></RequireAuth>}/>
