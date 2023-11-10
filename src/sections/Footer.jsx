@@ -122,7 +122,7 @@ const Footer = () => {
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Become an Affilate</span>
                     </Link>
-                    <Link to="/user/orders/track-orders" className="mt-[0.6rem] flex items-center">
+                    <Link to="#null" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Track Orders</span>
                     </Link>
@@ -139,23 +139,23 @@ const Footer = () => {
                 {/* footer column 05 */}
                 <div className="pb-[3rem] flex flex-col w-full md:w-[33%] lg:w-[60%] xl:w-[18%]">
                     <h1 className="pl-[0.4rem] text-[orange] text-[1.2rem] font-bold">Services</h1>
-                    <Link to="/services/about" className="mt-[0.6rem] flex items-center">
+                    <Link to="/about" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">About Us</span>
                     </Link>
-                    <Link to="/services/contact" className="mt-[0.6rem] flex items-center">
+                    <Link to="#null" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Contact Us</span>
                     </Link>
-                    <Link to="/services/help" className="mt-[0.6rem] flex items-center">
+                    <Link to="/help" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Help Center</span>
                     </Link>
-                    <Link to="/services/terms" className="mt-[0.6rem] flex items-center">
+                    <Link to="#null" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Terms of use</span>
                     </Link>
-                    <Link to="/services/privacy" className="mt-[0.6rem] flex items-center">
+                    <Link to="#null" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Privacy policy</span>
                     </Link>
