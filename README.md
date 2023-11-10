@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Grocery Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An e-commerce web application for buying and selling grocery products online
 
-## Available Scripts
+**Live Site -** [https://e-grocery-store.vercel.app/](https://e-grocery-store.vercel.app/)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+```bash
+- User and admin authentication
+- Update user and admin profile
+- Searching + filtering products
+- Fully functional shopping cart
+- Increment/decrement product quantity
+- Users list + users details view
+- Orders list + orders details view
+- Products list + products details view
+- Track order status and order cancellation
+- Product upload, update and delete
+- Client side form validation
+- Password strength cheacker
+- Reset password and logout
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Preview
+#### Home
+![01](https://github.com/riazul01/grocery-store/assets/141500318/745d7bb3-29a0-468b-9da1-55bc3e30adbc)
+#### Search Products
+![02](https://github.com/riazul01/grocery-store/assets/141500318/d0623a26-28a4-4399-98f7-63f6cb3742de)
+#### Shopping Cart
+![03](https://github.com/riazul01/grocery-store/assets/141500318/3bcca67b-b1d1-4aff-8bf7-b2e43556ee23)
+#### Checkout
+![04](https://github.com/riazul01/grocery-store/assets/141500318/daa56487-4c13-49a7-ad3a-d85eb3bfb8b0)
+#### Payment
+![05](https://github.com/riazul01/grocery-store/assets/141500318/80b25408-b889-4300-866a-a06c5101d09a)
+#### Confirmation Message
+![06](https://github.com/riazul01/grocery-store/assets/141500318/2bb70c67-a874-4632-bdc9-d67552384a68)
+#### Orders
+![07](https://github.com/riazul01/grocery-store/assets/141500318/84b6932f-dd2c-40fa-a91e-c69ea4da7b5e)
+#### Order details
+![08](https://github.com/riazul01/grocery-store/assets/141500318/6b1b169e-226c-4d5a-8618-52d3aaef6fe7)
+#### Cancel order
+![09](https://github.com/riazul01/grocery-store/assets/141500318/d77a3076-d51a-487d-af96-ea5bf52a25d0)
+#### User profile
+![10](https://github.com/riazul01/grocery-store/assets/141500318/8b201452-4737-4885-881e-e5bbf5a725d6)
+#### Update profile
+![11](https://github.com/riazul01/grocery-store/assets/141500318/dd6f86a4-16ab-469a-8952-29e3785e8f5f)
