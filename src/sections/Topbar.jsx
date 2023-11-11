@@ -37,14 +37,14 @@ const Topbar = () => {
                     </div>}
 
                     <div className="">
-                        <Link to="/services/about" className="text-[#fff] font-[500]">
+                        <Link to="/about" className="text-[#fff] font-[500]">
                             About Us
                         </Link>
                         <span className="mx-[0.8rem]">|</span>
                     </div>
 
                     <div className="">
-                        <Link to="/services/help" className="text-[#fff] font-[500]">
+                        <Link to="/help" className="text-[#fff] font-[500]">
                             Help
                         </Link>
                     </div>
