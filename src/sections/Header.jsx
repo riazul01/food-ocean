@@ -37,7 +37,10 @@ const Header = () => {
     useEffect(() => {
         // set search data
         if (location.state) {
-            setSearch({searchText: location.state.searchText, searchCategory: location.state.searchCategory});
+            setSearch({
+                searchText: location.state.searchText ? location.state.searchText : '',
+                searchCategory: location.state.searchCategory ? location.state.searchCategory : 'all'
+            });
         }
     }, [location.state]);
 
