@@ -13,6 +13,7 @@ import SearchResults from './pages/SearchResults';
 // auth
 import Login from './auth/Login';
 import Signup from './auth/Signup';
+import ResetPassword from './pages/ResetPassword';
 
 // user
 import User from './pages/User';
@@ -82,6 +83,7 @@ const App = () => {
         {/* auth */}
         <Route path="/user/login" element={<Login/>}/>
         <Route path="/user/register" element={<Signup/>}/>
+        <Route path="/user/reset-password" element={<ResetPassword/>}/>
 
         {/* user */}
         <Route path="/user" element={<RequireAuth><User/></RequireAuth>}/>
