@@ -84,7 +84,7 @@ const ResetPassword = () => {
                             <AiFillWarning className="me-[0.2rem] text-red-700" />
                             <p className="text-[1rem] text-red-700">{errorMsg}</p>
                         </div>}
-                        <input className="mt-[0.4rem] px-[0.6rem] block h-[36px] w-full max-w-[320px] outline-none border-[1px] border-[#ccc] rounded-md" value={email} onChange={handleChange} type="text" placeholder="Enter your email" required />
+                        <input className="mt-[0.4rem] px-[0.6rem] block h-[38px] w-full max-w-[320px] outline-none border-[1px] border-[#aaa] placeholder:text-gray-500 rounded-md" value={email} onChange={handleChange} type="text" placeholder="Enter your email" required/>
                         <button className="mt-[0.8rem] px-[0.6rem] py-[0.2rem] text-[#111] text-[1rem] bg-green-500 border-[1px] border-gray-600 rounded-md" type="submit">Reset password</button>
                     </form>
                 </div>}
