@@ -140,12 +140,12 @@ const UpdateProfile = () => {
         const zipRegex = /^\d{4}$/;
 
         if (!phoneRegex.test(user.phone)) {
-            toast.error('Phone is not valid!');
+            toast.error('Phone must be 11 digits long!');
             return false;
         }
 
         if (!zipRegex.test(user.address.postcode)) {
-            toast.error('Postcode can contain only 4 digits');
+            toast.error('Postcode must have 4 digits!');
             return false;
         }
 
