@@ -61,8 +61,25 @@ const Checkout = () => {
         setAddress({...address, [e.target.name]: e.target.value});
     }
 
-     // submit checkout form
-     const handleCheckout = () => {
+    const validateForm = (user) => {
+        const phoneRegex = /^(\+88)?-?01[1-9]\d{8}$/;
+        const zipRegex = /^\d{4}$/;
+
+        if (!phoneRegex.test(user.phone)) {
+            toast.error('Phone must be 11 characters long!');
+            return false;
+        }
+
+        if (!zipRegex.test(user.address.postcode)) {
+            toast.error('Postcode can contain only 4 digits');
+            return false;
+        }
+
+        return true;
+    }
+
+    // submit checkout form
+    const handleCheckout = () => {
         for (let key in user) {
             if (user[key] === '') {
                 toast.error('Please fill your details first!');
@@ -75,9 +92,12 @@ const Checkout = () => {
                 return;
             }
         }
+        const userData = {...user, address: address}
+        const isValid = validateForm(userData);
+        if (!isValid) return;
         dispatch({type: 'CHECKOUT_CONFIRMED'});
         dispatch({type: 'RESET_ORDER_STATE'});
-        localStorage.setItem("checkoutUserDetails", JSON.stringify({...user, address: address}));
+        localStorage.setItem("checkoutUserDetails", JSON.stringify(userData));
         navigate('/payment');
     }
 
