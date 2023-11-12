@@ -77,7 +77,7 @@ const Orders = () => {
                         </tr>
                     </thead>
                     <tbody className="bg-[#eee]">
-                        {ordersList.map((elem) => {
+                        {ordersList.sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()).map((elem) => {
                             return (
                                 <tr className="text-center odd:bg-[#eeefef] even:bg-[#dddfef] border-b-[1px] border-b-[#ccc] last:border-b-0" key={elem.orderId}>
                                     <td className="hidden lg:table-cell py-[0.4rem] text-[1.1rem]">{`#${elem.orderId.slice(0, 6)}`}</td>
