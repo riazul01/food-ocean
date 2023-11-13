@@ -26,8 +26,10 @@ const Message = () => {
     return (
         <div className={`${(path === '' && orderConfirmed) ? null : 'hidden'} w-full bg-[#d78d02] shadow-lg`}>
             <div className="mx-auto px-[0.4rem] py-[0.5rem] max-w-[1420px] flex items-center justify-between">
-                <p className="text-[#222] text-[1.1rem] font-[500]">Dear <strong className="capitalize">{userDetails ? userDetails.name : 'user'}</strong>, Your order has been confirmed! <span onClick={handleRedirect} className="underline cursor-pointer">View orders</span></p>
-                <LiaTimesSolid onClick={handleCloseMessage} className="text-[1.3rem] font-bold cursor-pointer"/>
+                <p className="text-[#222] text-[1rem] md:text-[1.1rem] font-[500]">Dear <strong className="capitalize">{userDetails ? userDetails.name : 'user'}</strong>, Your order has been confirmed! <span onClick={handleRedirect} className="underline cursor-pointer">View orders</span></p>
+                <div className="flex items-center justify-center">
+                    <LiaTimesSolid onClick={handleCloseMessage} className="text-[1.3rem] font-bold cursor-pointer"/>
+                </div>
             </div>
         </div>
     );
