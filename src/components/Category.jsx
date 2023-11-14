@@ -5,7 +5,7 @@ const Category = ({ title, quantity, Image }) => {
         <div className="w-full h-[180px] bg-[#fff] border-[1px] border-s-0 border-t-0 border-[silver] cursor-pointer">
             {/* image */}
             <div className="pt-[1.2rem] pb-[0.6rem] w-full h-[60%]">
-                <img src={Image} className="w-full h-full object-contain" alt="" />
+                <img src={Image} className="w-full h-full object-contain" alt=""/>
             </div>
 
             {/* info */}

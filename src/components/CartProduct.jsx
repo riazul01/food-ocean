@@ -4,9 +4,9 @@ import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContextProvider';
 
 // icons
-import { RiDeleteBin6Line } from 'react-icons/ri';
-import { HiMinus } from 'react-icons/hi';
 import { HiPlus } from 'react-icons/hi';
+import { HiMinus } from 'react-icons/hi';
+import { RiDeleteBin6Line } from 'react-icons/ri';
 
 const CartProduct = ({ cartItem }) => {
     const { dispatch } = useContext(CartContext);

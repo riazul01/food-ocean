@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // images
-import GooglePalyBadge from '../assets/images/badges/google-play.png';
 import AppStoreBadge from '../assets/images/badges/app-store.png';
+import GooglePalyBadge from '../assets/images/badges/google-play.png';
 
 // icons
-import { BsInstagram, BsLinkedin, BsTwitter, BsYoutube } from 'react-icons/bs';
-import { MdKeyboardArrowRight } from 'react-icons/md';
 import { FaFacebookF } from 'react-icons/fa';
+import { MdKeyboardArrowRight } from 'react-icons/md';
+import { BsInstagram, BsLinkedin, BsTwitter, BsYoutube } from 'react-icons/bs';
 
 const Footer = () => {
     return (
@@ -53,10 +53,10 @@ const Footer = () => {
                     {/* mobile app links */}
                     <div className="mt-[1.4rem] flex items-center">
                         <a href="#null" title="google play" className="mr-[0.6rem] h-[2.6rem] w-[8.6rem]">
-                            <img src={GooglePalyBadge} className="h-full w-full object-cover" alt="google-play" />
+                            <img src={GooglePalyBadge} className="h-full w-full object-cover" alt="google-play"/>
                         </a>
                         <a href="#null" title="app store" className="h-[2.6rem] w-[7.8rem]">
-                            <img src={AppStoreBadge} className="h-full w-full object-cover" alt="google-play" />
+                            <img src={AppStoreBadge} className="h-full w-full object-cover" alt="google-play"/>
                         </a>
                     </div>
                 </div>

@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 // context
-import { UserDetailsContext } from '../context/UserDetailsContextProvider';
 import { CartContext } from '../context/CartContextProvider';
+import { UserDetailsContext } from '../context/UserDetailsContextProvider';
 
 // icons
 import { LiaTimesSolid } from 'react-icons/lia';

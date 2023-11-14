@@ -86,7 +86,7 @@ const Orders = () => {
                                     <td className="hidden sm:table-cell py-[0.4rem]"><span className={`${elem.status} px-[0.6rem] py-[0.1rem] text-[#fff] text-[1.1rem] rounded-md shadow-lg`}>{elem.status}</span></td>
                                     <td onClick={() => navigate(`/user/orders/${elem.orderId}`)} className="py-[0.4rem] text-[1.1rem] flex items-center justify-center cursor-pointer">
                                         <span className="text-green-900 text-[1.1rem] font-[600]">view details</span>
-                                        <RxDoubleArrowRight className="ml-[0.2rem] text-green-900 text-[1.1rem] font-[600]" />
+                                        <RxDoubleArrowRight className="ml-[0.2rem] text-green-900 text-[1.1rem] font-[600]"/>
                                     </td>
                                 </tr>
                             );

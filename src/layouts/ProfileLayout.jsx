@@ -6,13 +6,13 @@ import { auth } from '../firebase';
 import { signOut } from 'firebase/auth';
 
 // context
-import { LoginContext } from '../context/LoginContextProvider';
 import { CartContext } from '../context/CartContextProvider';
+import { LoginContext } from '../context/LoginContextProvider';
 
 // icons
-import { FiUser, FiUsers, FiUserCheck } from 'react-icons/fi';
-import { RiListUnordered } from 'react-icons/ri';
 import { RxExit } from 'react-icons/rx';
+import { RiListUnordered } from 'react-icons/ri';
+import { FiUser, FiUsers, FiUserCheck } from 'react-icons/fi';
 
 const ProfileLayout = ({ children }) => {
     const path = useLocation().pathname.split('/').reverse();

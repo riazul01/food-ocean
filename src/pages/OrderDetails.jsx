@@ -160,7 +160,7 @@ const OrderDetails = () => {
                                             </p>
                                         </div>
                                         <div className="mt-[0.2rem] h-[110px] w-[120px]">
-                                            <img className="h-full w-full object-cover rounded-[0.1rem]" src={elem.imgUrl} alt="product-img" />
+                                            <img className="h-full w-full object-cover rounded-[0.1rem]" src={elem.imgUrl} alt="product-img"/>
                                         </div>
                                     </div>
                                 )

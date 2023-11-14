@@ -98,7 +98,7 @@ const Header = () => {
                     </select>
                     
                     {/* search input */}
-                    <input value={search.searchText} onChange={handleChange} name="searchText" className="pl-[1rem] text-[1.1rem] text-[#fff] h-[44px] w-full sm:w-[240px] lg:w-[300px] xl:w-[360px] bg-transparent border-[2px] sm:border-x-0 border-[#214445] outline-none rounded-lg sm:rounded-none" type="text" placeholder="Search products..." />
+                    <input value={search.searchText} onChange={handleChange} name="searchText" className="pl-[1rem] text-[1.1rem] text-[#fff] h-[44px] w-full sm:w-[240px] lg:w-[300px] xl:w-[360px] bg-transparent border-[2px] sm:border-x-0 border-[#214445] outline-none rounded-lg sm:rounded-none" type="text" placeholder="Search products..."/>
                     
                     {/* search button */}
                     <div onClick={handleClick} className="hidden text-[1.1rem] text-[#fff] sm:flex items-center justify-center h-[44px] w-[52px] bg-[#214445] cursor-pointer">

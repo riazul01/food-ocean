@@ -9,6 +9,9 @@ import RawProducts from './pages/RawProducts';
 import TrendingProducts from './pages/TrendingProducts';
 import CategoryProducts from './pages/CategoryProducts';
 import SearchResults from './pages/SearchResults';
+import HelpCenter from './pages/HelpCenter';
+import Offers from './pages/Offers';
+import About from './pages/About';
 
 // auth
 import Login from './auth/Login';
@@ -27,11 +30,6 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Payment from './pages/Payment';
 import EmptyCart from './pages/EmptyCart';
-
-// others
-import About from './pages/About';
-import HelpCenter from './pages/HelpCenter';
-import Offers from './pages/Offers';
 
 // effects
 import ScrollToTop from './effects/ScrollToTop';
