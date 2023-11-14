@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 // layouts
 import AppLayout from '../layouts/AppLayout';
@@ -16,6 +16,21 @@ import 'react-loading-skeleton/dist/skeleton.css';
 const Offers = () => {
     const { products } = useContext(ProductsContext);
     const discountProducts = products.filter((product) => product.discount !== '0');
+    const [len, setLen] = useState(15);
+
+    useEffect(() => {
+        window.onscroll = () => {
+            const footer = document.querySelector(".footer");
+            const scrollHeight = document.documentElement.scrollHeight;
+            const scrollTop = document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const footerHeight = footer.offsetHeight;
+            
+            if (windowHeight + scrollTop + 1 >= scrollHeight - footerHeight) {
+                setLen((prev) => prev + 15);
+            }
+        }
+    });
 
     return (
         <AppLayout>
@@ -28,7 +43,7 @@ const Offers = () => {
 
                 {/* products */}
                 {products.length !== 0 ? <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[1.2rem] place-items-center">
-                    {discountProducts.map((item) => {
+                    {discountProducts.slice(0, len).map((item) => {
                         return <ProductCard key={item.id} data={item}/>
                     })}
                 </div> : <div className="flex gap-[1.2rem] items-center justify-center">

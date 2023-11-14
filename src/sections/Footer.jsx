@@ -13,7 +13,7 @@ import { FaFacebookF } from 'react-icons/fa';
 const Footer = () => {
     return (
         <>
-        <div className="w-full bg-[#122829]">
+        <div className="footer w-full bg-[#122829]">
             <div className="mx-[auto] px-[0.4rem] pt-[2.6rem] max-w-[1420px] h-auto flex flex-wrap justify-between">
                 
                 {/* footer column 01 */}
