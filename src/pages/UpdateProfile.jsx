@@ -199,7 +199,7 @@ const UpdateProfile = () => {
                         {/* profile image */}
                         {userDetails ? <div className="relative h-[130px] w-[130px] rounded-md overflow-hidden">
                             {(userDetails.imgUrl || userDetails.defaultImg) ? <img src={previewImage || (userDetails.imgUrl ? userDetails.imgUrl : null) || (userDetails.defaultImg ? userDetails.defaultImg : null)} className="h-full w-full object-cover" alt="profile"/> : <Skeleton className="w-[130px] h-[130px]"/>}
-                            {userDetails.imgUrl && <div onClick={deleteProfileImage} title="delete image" className="absolute bottom-0 right-0 px-[0.4rem] py-[0.4rem] bg-gray-200 rounded-tl-lg cursor-pointer">
+                            {userDetails.imgUrl && <div onClick={deleteProfileImage} title="delete image" className="absolute bottom-0 right-0 px-[0.4rem] py-[0.4rem] bg-[#ddd] rounded-tl-lg cursor-pointer">
                                 <RiDeleteBin6Line className="text-[1.4rem] text-red-700"/>
                             </div>}
                         </div> : <Skeleton className="w-[130px] h-[130px]"/>}
