@@ -13,6 +13,9 @@ import { doc, setDoc } from "firebase/firestore";
 import { deleteObject } from "firebase/storage";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
+// icons
+import { RiDeleteBin6Line } from 'react-icons/ri';
+
 // skeleton loader
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -86,13 +89,17 @@ const UpdateProfile = () => {
     }
 
     // store updated data to firestore
-    const updateProfileData = async (user) => {
+    const updateProfileData = async (user, type) => {
         try {
             await setDoc(doc(fs, "users", userDetails.id), user);
-            if (!profileImage) toast.success('Profile updated!');
+            if (!profileImage && type === 'profile') {
+                toast.success('Profile updated!');
+            } else if (type === 'image') {
+                toast.success('Profile image deleted!');
+            }
         } catch (error) {
-            if (!profileImage) toast.error('An error occured!');
-            else console.log(error);
+            console.log(error);
+            toast.error('Profile update failed!');
         } finally {
             setBtnDisabled(false);
             setProfileImage(null);
@@ -110,29 +117,32 @@ const UpdateProfile = () => {
             console.log('Upload is ' + progress + '% done');
         }, (error) => {
             console.log(error);
-            updateProfileData(user);
+            updateProfileData(user, 'profile');
         }, () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                 user.imgUrl = downloadURL;
-                updateProfileData(user);
+                updateProfileData(user, 'profile');
             });
         });
 
         toast.promise(uploadTask, {
             pending: 'Uploading...',
             success: 'Profile updated!',
-            error: 'An error occured!'
+            error: 'Image upload failed!'
         });
     }
 
-    const deletePreviousImageFromStorage = () => {
-        const desertRef = ref(storage, user.imgUrl);
-
-        deleteObject(desertRef).then(() => {
-            console.log('Previous image deleted!');
-        }).catch((error) => {
-            console.log(error);
-        });
+    const deleteProfileImage = async () => {
+        if (user.imgUrl) {
+            const desertRef = ref(storage, user.imgUrl);
+            deleteObject(desertRef).then(() => {
+                console.log('Profile image deleted!');
+                updateProfileData({...user, imgUrl: null, address: {...address}}, 'image');
+            }).catch((error) => {
+                console.log(error);
+                toast.error('An error ocured!');
+            });
+        }
     }
 
     const validateForm = (user) => {
@@ -160,10 +170,17 @@ const UpdateProfile = () => {
         setBtnDisabled(true);
 
         if (profileImage === null || profileImage === undefined) {
-            updateProfileData(userData);
+            updateProfileData(userData, 'profile');
         } else {
             if (user.imgUrl) {
-                deletePreviousImageFromStorage();
+                const desertRef = ref(storage, user.imgUrl);
+
+                // delete previous image from storage
+                deleteObject(desertRef).then(() => {
+                    console.log('Previous image deleted!');
+                }).catch((error) => {
+                    console.log(error);
+                });
             }
             updateProfileDataWithImage(userData);
         }
@@ -180,14 +197,17 @@ const UpdateProfile = () => {
                     {/* image area */}
                     <div className="flex flex-col">
                         {/* profile image */}
-                        {userDetails ? <div className="h-[130px] w-[130px] rounded-md overflow-hidden">
+                        {userDetails ? <div className="relative h-[130px] w-[130px] rounded-md overflow-hidden">
                             {(userDetails.imgUrl || userDetails.defaultImg) ? <img src={previewImage || (userDetails.imgUrl ? userDetails.imgUrl : null) || (userDetails.defaultImg ? userDetails.defaultImg : null)} className="h-full w-full object-cover" alt="profile"/> : <Skeleton className="w-[130px] h-[130px]"/>}
+                            {userDetails.imgUrl && <div onClick={deleteProfileImage} title="delete image" className="absolute bottom-0 right-0 px-[0.4rem] py-[0.4rem] bg-gray-200 rounded-tl-lg cursor-pointer">
+                                <RiDeleteBin6Line className="text-[1.4rem] text-red-700"/>
+                            </div>}
                         </div> : <Skeleton className="w-[130px] h-[130px]"/>}
                     
                         {/* profile image change button */}
                         {userDetails ? <div className="mt-[1rem]">
                             <label htmlFor="profileImg" className="px-[0.8rem] py-[0.2rem]  bg-[#ddd] border-[1px] border-[#999] rounded-sm">Change Image</label>
-                            <input type="file" id="profileImg" onChange={handleImageChange} accept="image/*" className="hidden" disabled={userDetails.email ? false : true} />
+                            <input type="file" id="profileImg" onChange={handleImageChange} onClick={(e) => e.target.value = null} accept="image/*" className="hidden" disabled={userDetails.email ? false : true} />
                         </div> : <Skeleton className="mt-[0.8rem] w-[130px] h-[25px]"/>}
                     </div>
 
@@ -282,7 +302,7 @@ const UpdateProfile = () => {
                     </div> : <Skeleton containerClassName="flex-1" className="mb-[0.6rem] w-full max-w-[270px] h-[22px]"/>}
 
                     {/* update button */}
-                    {userDetails ? <button type="submit" className="mt-[2rem] px-[0.6rem] py-[0.2rem] text-[#fff] font-[500] bg-green-800 rounded-md" disabled={btnDisabled || (userDetails.email ? false : true)}>Update account</button> : <Skeleton className="mb-[0.6rem] w-[130px] h-[22px]"/>}
+                    {userDetails ? <button type="submit" className="mt-[2rem] px-[0.8rem] py-[0.25rem] text-[#fff] text-[1rem] font-[500] bg-green-800 rounded-md" disabled={btnDisabled || (userDetails.email ? false : true)}>Update account</button> : <Skeleton className="mb-[0.6rem] w-[130px] h-[22px]"/>}
                 </form>
                 <ToastContainer
                     position="top-right"
