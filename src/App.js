@@ -3,15 +3,17 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // pages
 import Home from './pages/Home';
+import About from './pages/About';
+import HelpCenter from './pages/HelpCenter';
+
+// products
 import Groceries from './pages/products/Groceries';
 import Beverages from './pages/products/Beverages';
 import RawProducts from './pages/products/RawProducts';
 import TrendingProducts from './pages/products/TrendingProducts';
 import CategoryProducts from './pages/products/CategoryProducts';
 import SearchResults from './pages/products/SearchResults';
-import HelpCenter from './pages/HelpCenter';
 import Offers from './pages/products/Offers';
-import About from './pages/About';
 
 // auth
 import Login from './auth/Login';
@@ -68,11 +70,16 @@ const App = () => {
       <Routes>
         {/* pages */}
         <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/help" element={<HelpCenter/>}/>
+
+        {/* products */}
         <Route path="/groceries" element={<Groceries/>}/>
         <Route path="/groceries/beverages" element={<Beverages/>}/>
         <Route path="/groceries/raw-products" element={<RawProducts/>}/>
         <Route path="/groceries/trending" element={<TrendingProducts/>}/>
         <Route path="/groceries/search-results" element={<SearchResults/>}/>
+        <Route path="/offers" element={<Offers/>}/>
 
         {/* categories */}
         <Route path="/groceries/trending/:category" element={<CategoryProducts/>}/>
@@ -109,11 +116,6 @@ const App = () => {
             </RequireCheckout>
           </RequireAuth>
         }/>
-
-        {/* others */}
-        <Route path="/about" element={<About/>}/>
-        <Route path="/help" element={<HelpCenter/>}/>
-        <Route path="/offers" element={<Offers/>}/>
       </Routes>
     </BrowserRouter>
   );

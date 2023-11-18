@@ -38,7 +38,7 @@ const Confirmation = () => {
         <div className={`${(path === '' && confirmation.flag) ? null : 'hidden'} w-full bg-[#d78d02] shadow-lg`}>
             <div className="mx-auto px-[0.4rem] py-[0.5rem] max-w-[1420px] flex items-center justify-between">
                 {confirmation.type === "order" && <p className="text-[#222] text-[1rem] md:text-[1.1rem] font-[500]">Dear <strong className="capitalize">{userDetails ? userDetails.name : 'user'}</strong>, Your order has been confirmed! <span onClick={handleRedirectOrders} className="underline cursor-pointer">View orders</span></p>}
-                {confirmation.type === "account-delete" && <p className="text-[#222] text-[1rem] md:text-[1.1rem] font-[500]">Your account is scheduled for deletion! If you don't do this please <span onClick={handleRedirectLogin} className="underline cursor-pointer">login again</span>.</p>}
+                {confirmation.type === "account-delete" && <p className="text-[#222] text-[1rem] md:text-[1.1rem] font-[500]">Your account is scheduled for deletion. If you don't do this please <span onClick={handleRedirectLogin} className="underline cursor-pointer">login again</span>!</p>}
                 <div className="flex items-center justify-center">
                     <LiaTimesSolid onClick={handleCloseMessage} className="text-[1.3rem] font-bold cursor-pointer"/>
                 </div>
