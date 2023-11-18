@@ -44,7 +44,6 @@ const UpdateProfile = () => {
                 id: userDetails.id ? userDetails.id : '',
                 name: userDetails.name ? userDetails.name : '',
                 email: userDetails.email ? userDetails.email : '',
-                role: userDetails.role ? userDetails.role : '',
                 phone: userDetails.phone ? userDetails.phone : '',
                 gender: userDetails.gender ? userDetails.gender : 'male',
                 joinedDate: userDetails.joinedDate ? userDetails.joinedDate : '',
@@ -64,9 +63,7 @@ const UpdateProfile = () => {
 
     // convert image to object url
     useEffect(() => {
-        if (profileImage === null || profileImage === undefined) {
-            return;
-        }
+        if (!profileImage) return;
         const objUrl = URL.createObjectURL(profileImage);
         setPreviewImage(objUrl);
 
@@ -74,6 +71,7 @@ const UpdateProfile = () => {
         return (() => URL.revokeObjectURL(objUrl));
     }, [profileImage]);
 
+    // [>> HANDLE USER INPUT]
     const handleChange = (e) => {
         setUser({...user, [e.target.name]: e.target.value});
     }
@@ -87,19 +85,17 @@ const UpdateProfile = () => {
             setProfileImage(e.target.files[0]);
         }
     }
+    // [HANDLE USER INPUT <<]
 
     // store updated data to firestore
-    const updateProfileData = async (user, type) => {
+    const updateProfileData = async (userData) => {
         try {
-            await setDoc(doc(fs, "users", userDetails.id), user);
-            if (!profileImage && type === 'profile') {
-                toast.success('Profile updated!');
-            } else if (type === 'image') {
-                toast.success('Profile image deleted!');
-            }
+            const userRef = doc(fs, 'users', userDetails.id);
+            await setDoc(userRef, userData, {merge: true});
+            if (!profileImage) toast.success('Profile updated!');
         } catch (error) {
             console.log(error);
-            toast.error('Profile update failed!');
+            if (!profileImage) toast.error('Profile update failed!');
         } finally {
             setBtnDisabled(false);
             setProfileImage(null);
@@ -107,8 +103,19 @@ const UpdateProfile = () => {
         }
     }
 
-    const updateProfileDataWithImage = (user) => {
-        const storageRef = ref(storage, `images/profile/${user.id}`);
+    const updateProfileDataWithImage = (userData) => {
+        if (user.imgUrl) {
+            const desertRef = ref(storage, user.imgUrl);
+
+            // delete previous image from storage
+            deleteObject(desertRef).then(() => {
+                console.log('Previous image deleted!');
+            }).catch((error) => {
+                console.log(error);
+            });
+        }
+
+        const storageRef = ref(storage, `images/profile/${userData.id}`);
         const uploadTask = uploadBytesResumable(storageRef, profileImage);
 
         // upload image to storage
@@ -117,11 +124,11 @@ const UpdateProfile = () => {
             console.log('Upload is ' + progress + '% done');
         }, (error) => {
             console.log(error);
-            updateProfileData(user, 'profile');
+            updateProfileData(userData);
         }, () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                user.imgUrl = downloadURL;
-                updateProfileData(user, 'profile');
+                userData.imgUrl = downloadURL;
+                updateProfileData(userData);
             });
         });
 
@@ -137,10 +144,12 @@ const UpdateProfile = () => {
             const desertRef = ref(storage, user.imgUrl);
             deleteObject(desertRef).then(() => {
                 console.log('Profile image deleted!');
-                updateProfileData({...user, imgUrl: null, address: {...address}}, 'image');
+                const userRef = doc(fs, 'users', userDetails.id);
+                setDoc(userRef, {imgUrl: null}, {merge: true});
+                toast.success('Profile image deleted!');
             }).catch((error) => {
                 console.log(error);
-                toast.error('An error ocured!');
+                toast.error('Failed to delete!');
             });
         }
     }
@@ -169,20 +178,10 @@ const UpdateProfile = () => {
         if (!isValid) return;
         setBtnDisabled(true);
 
-        if (profileImage === null || profileImage === undefined) {
-            updateProfileData(userData, 'profile');
-        } else {
-            if (user.imgUrl) {
-                const desertRef = ref(storage, user.imgUrl);
-
-                // delete previous image from storage
-                deleteObject(desertRef).then(() => {
-                    console.log('Previous image deleted!');
-                }).catch((error) => {
-                    console.log(error);
-                });
-            }
+        if (profileImage) {
             updateProfileDataWithImage(userData);
+        } else {
+            updateProfileData(userData);
         }
     }
 
@@ -283,7 +282,7 @@ const UpdateProfile = () => {
                     {/* division */}
                     {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">Division:</strong>
-                        <select value={address.division} onChange={handleAddressChange} name="division" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] w-[130px] border-[1px] border-[silver] outline-none rounded-md">
+                        <select value={address.division} onChange={handleAddressChange} name="division" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[130px] border-[1px] border-[silver] outline-none rounded-md">
                             <option value="dhaka">Dhaka</option>
                             <option value="barishal">Barishal</option>
                             <option value="sylhet">Sylhet</option>
