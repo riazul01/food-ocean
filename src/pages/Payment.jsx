@@ -36,14 +36,15 @@ const Payment = () => {
     // store order details to firestore
     const storeOrderDetails = async (orderDetails) => {
         try {
-            const docRef = await addDoc(collection(fs, "orders"), orderDetails);
+            const docRef = await addDoc(collection(fs, 'orders'), orderDetails);
             const ordersList = userDetails.ordersList ? [...userDetails.ordersList, {orderId: docRef.id, ...orderDetails}] : [{orderId: docRef.id, ...orderDetails}];
             const userRef = doc(fs, 'users', userDetails.id);
             setDoc(userRef, {ordersList}, {merge: true});
             setTimeout(() => {
                 toast.success('Order placed successfully!');
             }, 100);
-            localStorage.setItem("orderConfirmed", true);
+            localStorage.setItem('orderConfirmed', true);
+            localStorage.setItem('confirmationRequired', JSON.stringify({type: 'order', flag: true}));
             dispatch({type: 'ORDER_CONFIRMED'});
             setTimeout(() => {
                 dispatch({type: 'MAKE_CART_EMPTY'});

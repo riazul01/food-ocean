@@ -7,14 +7,14 @@ import Navbar from '../sections/Navbar';
 import Footer from '../sections/Footer';
 
 // components
-import Message from '../components/Message';
+import Confirmation from '../components/Confirmation';
 
 const AppLayout = ({ children }) => {
     return (
         <>
             <Topbar/>
             <Header/>
-            <Message/>
+            <Confirmation/>
             <Navbar/>
             {children}
             <Footer/>
