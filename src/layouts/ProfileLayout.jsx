@@ -41,7 +41,7 @@ const ProfileLayout = ({ children }) => {
                 {/* navigation */}
                 <div className="w-full md:w-[240px]">
                     <div className="p-[0.4rem] w-full border-[1px] rounded-lg">
-                        <Link to="/user/profile" className={`${path[0] === 'profile' ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
+                        <Link to="/user/profile" className={`${(path[0] === 'profile' || path[0] === 'delete-account') ? 'bg-[#eeefef]' : null} px-[0.6rem] py-[0.4rem] flex items-center rounded-lg hover:bg-[#eeefef] cursor-pointer transition-all duration-200`}>
                             <FiUser className="text-[1.2rem]"/>
                             <p className="ms-[0.6rem] text-[1.1rem] font-[500]">My Profile</p>
                         </Link>

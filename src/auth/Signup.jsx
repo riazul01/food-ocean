@@ -87,7 +87,8 @@ const Signup = () => {
                     postcode: '', 
                     division: 'Dhaka', 
                     country: 'Bangladesh'
-                }
+                },
+                scheduleForDeletion: false
             });
             setUser({email: '', name: '', password: ''});
             setError({flag: false, code: null, message: ''});

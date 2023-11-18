@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // layout
 import AppLayout from '../layouts/AppLayout';
@@ -17,6 +18,7 @@ import { FiCalendar } from 'react-icons/fi';
 
 const Profile = () => {
     const userDetails = useContext(UserDetailsContext);
+    const navigate = useNavigate();
 
     return (
         <AppLayout>
@@ -89,7 +91,7 @@ const Profile = () => {
                 </div>
 
                 {/* account delete button */}
-                {userDetails ? <button className="mt-[2rem] px-[0.6rem] py-[0.2rem] text-[#a71818] font-[500] border-[1px] border-[#a71818] rounded-md" disabled={userDetails.email ? false : true}>Delete account</button> : <Skeleton className="mt-[2rem] w-[120px] h-[22px]"/>}
+                {userDetails ? <button onClick={() => navigate('/user/delete-account')} className="mt-[2rem] px-[0.6rem] py-[0.2rem] text-[#a71818] font-[500] border-[1px] border-[#a71818] rounded-md" disabled={userDetails.email ? false : true}>Delete account</button> : <Skeleton className="mt-[2rem] w-[120px] h-[22px]"/>}
             </ProfileLayout>
         </AppLayout>
     );

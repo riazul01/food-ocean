@@ -24,6 +24,7 @@ import Profile from './pages/Profile';
 import UpdateProfile from './pages/UpdateProfile';
 import Orders from './pages/Orders';
 import OrderDetails from './pages/OrderDetails';
+import DeleteAccount from './pages/DeleteAccount';
 
 // cart
 import Cart from './pages/Cart';
@@ -89,6 +90,7 @@ const App = () => {
         <Route path="/user/update-profile" element={<RequireAuth><UpdateProfile/></RequireAuth>}/>
         <Route path="/user/orders" element={<RequireAuth><Orders/></RequireAuth>}/>
         <Route path="/user/orders/:id" element={<RequireAuth><OrderDetails/></RequireAuth>}/>
+        <Route path="/user/delete-account" element={<RequireAuth><DeleteAccount/></RequireAuth>}/>
         
         {/* cart */}
         <Route path="/cart" element={<RequireAddToCart><Cart/></RequireAddToCart>}/>
