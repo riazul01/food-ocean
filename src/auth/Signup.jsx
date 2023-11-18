@@ -116,7 +116,7 @@ const Signup = () => {
                     {/* signup form */}
                     <form onSubmit={handleSubmit}>
                         <div className="mt-[1rem] w-full h-[45px] flex items-center border-[1px] border-[#aaa] rounded-md overflow-hidden">
-                            <LuUserCircle2 className="ms-[0.75rem] text-gray-500 text-[1.25rem]"/>
+                            <LuUserCircle2 className="ms-[0.75rem] text-gray-500 text-[1.2rem]"/>
                             <input type="text" name="name" value={user.name} onChange={handleChange} className="px-[0.58rem] text-[1.1rem] h-full w-full border-none outline-none placeholder:text-gray-500 box-border" placeholder="Enter your name" required/>
                         </div>
                         <div className="mt-[1rem] w-full h-[45px] flex items-center border-[1px] border-[#aaa] rounded-md overflow-hidden">
