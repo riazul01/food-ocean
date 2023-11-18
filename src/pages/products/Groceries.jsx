@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 
 // layouts
-import AppLayout from '../layouts/AppLayout';
+import AppLayout from '../../layouts/AppLayout';
 
 // sections
-import SectionProducts from '../sections/SectionProducts';
-import Categories from '../sections/Categories';
+import SectionProducts from '../../sections/SectionProducts';
+import Categories from '../../sections/Categories';
 
 // context
-import { ProductsContext } from '../context/ProductsContextProvider';
+import { ProductsContext } from '../../context/ProductsContextProvider';
 
 const Groceries = () => {
     const { vegetables, fruits, meat, fish, eggs, teaCoffe, spices, dryFruits, biscuits, cakes, jams, breads, rice, flour, oil } = useContext(ProductsContext);

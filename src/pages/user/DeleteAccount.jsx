@@ -2,16 +2,16 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // layout
-import AppLayout from '../layouts/AppLayout';
-import ProfileLayout from '../layouts/ProfileLayout';
+import AppLayout from '../../layouts/AppLayout';
+import ProfileLayout from '../../layouts/ProfileLayout';
 
 // context
-import { CartContext } from '../context/CartContextProvider';
-import { LoginContext } from '../context/LoginContextProvider';
-import { UserDetailsContext } from '../context/UserDetailsContextProvider';
+import { CartContext } from '../../context/CartContextProvider';
+import { LoginContext } from '../../context/LoginContextProvider';
+import { UserDetailsContext } from '../../context/UserDetailsContextProvider';
 
 // firebase
-import { fs, auth } from "../firebase";
+import { fs, auth } from "../../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { signOut } from 'firebase/auth';
 

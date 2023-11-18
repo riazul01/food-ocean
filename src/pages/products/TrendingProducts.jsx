@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 
 // layouts
-import AppLayout from '../layouts/AppLayout';
+import AppLayout from '../../layouts/AppLayout';
 
 // sections
-import SectionProducts from '../sections/SectionProducts';
+import SectionProducts from '../../sections/SectionProducts';
 
 // context
-import { ProductsContext } from '../context/ProductsContextProvider';
+import { ProductsContext } from '../../context/ProductsContextProvider';
 
 const TrendingProducts = () => {
     const { top, recent, popular } = useContext(ProductsContext);

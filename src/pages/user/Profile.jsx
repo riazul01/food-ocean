@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // layout
-import AppLayout from '../layouts/AppLayout';
-import ProfileLayout from '../layouts/ProfileLayout';
+import AppLayout from '../../layouts/AppLayout';
+import ProfileLayout from '../../layouts/ProfileLayout';
 
 // context
-import { UserDetailsContext } from '../context/UserDetailsContextProvider';
+import { UserDetailsContext } from '../../context/UserDetailsContextProvider';
 
 // skeleton loader
 import Skeleton from 'react-loading-skeleton';

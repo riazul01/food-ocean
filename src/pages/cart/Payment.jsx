@@ -2,14 +2,14 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // layouts
-import AppLayout from '../layouts/AppLayout';
+import AppLayout from '../../layouts/AppLayout';
 
 // context
-import { CartContext } from '../context/CartContextProvider';
-import { UserDetailsContext } from '../context/UserDetailsContextProvider';
+import { CartContext } from '../../context/CartContextProvider';
+import { UserDetailsContext } from '../../context/UserDetailsContextProvider';
 
 // firebase
-import { fs } from '../firebase';
+import { fs } from '../../firebase';
 import { doc, setDoc } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
 

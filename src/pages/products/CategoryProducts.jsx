@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // layouts
-import AppLayout from '../layouts/AppLayout';
+import AppLayout from '../../layouts/AppLayout';
 
 // components
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../../components/ProductCard';
 
 // context
-import { ProductsContext } from '../context/ProductsContextProvider';
+import { ProductsContext } from '../../context/ProductsContextProvider';
 
 // skeleton loader
 import Skeleton from 'react-loading-skeleton';

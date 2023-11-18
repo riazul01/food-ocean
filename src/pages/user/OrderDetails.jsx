@@ -2,16 +2,16 @@ import React, { useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // layouts
-import AppLayout from '../layouts/AppLayout';
-import ProfileLayout from '../layouts/ProfileLayout';
+import AppLayout from '../../layouts/AppLayout';
+import ProfileLayout from '../../layouts/ProfileLayout';
 
 // components
-import AlertBox from '../components/AlertBox';
+import AlertBox from '../../components/AlertBox';
 
 // context
-import { UserDetailsContext } from '../context/UserDetailsContextProvider';
+import { UserDetailsContext } from '../../context/UserDetailsContextProvider';
 
-import { fs } from '../firebase';
+import { fs } from '../../firebase';
 import { doc, setDoc } from "firebase/firestore";
 
 // skeleton loader

@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // layouts
-import AppLayout from '../layouts/AppLayout';
-import ProfileLayout from '../layouts/ProfileLayout';
+import AppLayout from '../../layouts/AppLayout';
+import ProfileLayout from '../../layouts/ProfileLayout';
 
 // context
-import { UserDetailsContext } from '../context/UserDetailsContextProvider';
+import { UserDetailsContext } from '../../context/UserDetailsContextProvider';
 
 // icons
 import { RxDoubleArrowRight } from 'react-icons/rx';

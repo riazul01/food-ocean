@@ -3,34 +3,34 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // pages
 import Home from './pages/Home';
-import Groceries from './pages/Groceries';
-import Beverages from './pages/Beverages';
-import RawProducts from './pages/RawProducts';
-import TrendingProducts from './pages/TrendingProducts';
-import CategoryProducts from './pages/CategoryProducts';
-import SearchResults from './pages/SearchResults';
+import Groceries from './pages/products/Groceries';
+import Beverages from './pages/products/Beverages';
+import RawProducts from './pages/products/RawProducts';
+import TrendingProducts from './pages/products/TrendingProducts';
+import CategoryProducts from './pages/products/CategoryProducts';
+import SearchResults from './pages/products/SearchResults';
 import HelpCenter from './pages/HelpCenter';
-import Offers from './pages/Offers';
+import Offers from './pages/products/Offers';
 import About from './pages/About';
 
 // auth
 import Login from './auth/Login';
 import Signup from './auth/Signup';
-import ResetPassword from './pages/ResetPassword';
+import ResetPassword from './auth/ResetPassword';
 
 // user
-import User from './pages/User';
-import Profile from './pages/Profile';
-import UpdateProfile from './pages/UpdateProfile';
-import Orders from './pages/Orders';
-import OrderDetails from './pages/OrderDetails';
-import DeleteAccount from './pages/DeleteAccount';
+import User from './pages/user/User';
+import Profile from './pages/user/Profile';
+import UpdateProfile from './pages/user/UpdateProfile';
+import Orders from './pages/user/Orders';
+import OrderDetails from './pages/user/OrderDetails';
+import DeleteAccount from './pages/user/DeleteAccount';
 
 // cart
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
-import Payment from './pages/Payment';
-import EmptyCart from './pages/EmptyCart';
+import Cart from './pages/cart/Cart';
+import Checkout from './pages/cart/Checkout';
+import Payment from './pages/cart/Payment';
+import EmptyCart from './pages/cart/EmptyCart';
 
 // effects
 import ScrollToTop from './effects/ScrollToTop';

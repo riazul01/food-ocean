@@ -1,5 +1,5 @@
 import React from 'react';
-import AppLayout from '../layouts/AppLayout';
+import AppLayout from '../../layouts/AppLayout';
 
 const EmptyCart = () => {
     return (

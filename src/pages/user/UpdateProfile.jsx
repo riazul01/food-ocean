@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 // layouts
-import AppLayout from '../layouts/AppLayout';
-import ProfileLayout from '../layouts/ProfileLayout';
+import AppLayout from '../../layouts/AppLayout';
+import ProfileLayout from '../../layouts/ProfileLayout';
 
 // context
-import { UserDetailsContext } from '../context/UserDetailsContextProvider';
+import { UserDetailsContext } from '../../context/UserDetailsContextProvider';
 
 // firebase
-import { fs, storage } from '../firebase';
+import { fs, storage } from '../../firebase';
 import { doc, setDoc } from "firebase/firestore";
 import { deleteObject } from "firebase/storage";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";

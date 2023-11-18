@@ -2,13 +2,13 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 // layouts
-import AppLayout from '../layouts/AppLayout';
+import AppLayout from '../../layouts/AppLayout';
 
 // components
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../../components/ProductCard';
 
 // context
-import { ProductsContext } from '../context/ProductsContextProvider';
+import { ProductsContext } from '../../context/ProductsContextProvider';
 
 const SearchResults = () => {
     const { products } = useContext(ProductsContext);

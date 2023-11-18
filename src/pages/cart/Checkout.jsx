@@ -2,11 +2,11 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // layouts
-import AppLayout from '../layouts/AppLayout';
+import AppLayout from '../../layouts/AppLayout';
 
 // context
-import { CartContext } from '../context/CartContextProvider';
-import { UserDetailsContext } from '../context/UserDetailsContextProvider';
+import { CartContext } from '../../context/CartContextProvider';
+import { UserDetailsContext } from '../../context/UserDetailsContextProvider';
 
 // icons
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
