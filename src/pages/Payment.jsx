@@ -52,7 +52,7 @@ const Payment = () => {
                 navigate('/');
             }, 3000);
         } catch (err) {
-            toast.err('An error occured!');
+            toast.error('An error occured!');
         }
     }
 
