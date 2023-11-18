@@ -252,7 +252,7 @@ const UpdateProfile = () => {
                     {/* gender */}
                     {userDetails ? <div className="mt-[0.8rem] flex flex-col sm:flex-row sm:items-center">
                         <strong className="text-[1.1rem] w-[120px]">Gender:</strong>
-                        <select value={user.gender} onChange={handleChange} name="gender" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] w-[130px] border-[1px] border-[silver] outline-none rounded-md">
+                        <select value={user.gender} onChange={handleChange} name="gender" className="mt-[0.2rem] sm:mt-0 px-[0.4rem] py-[0.1rem] text-[1.1rem] w-[130px] border-[1px] border-[silver] outline-none rounded-md">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
