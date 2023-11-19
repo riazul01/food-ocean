@@ -36,7 +36,7 @@ const CartProduct = ({ cartItem }) => {
             <div className="mt-[0.45rem] pl-[0.2rem] sm:pl-[0.6rem]">
                 <h1 className="text-[1.1rem] sm:text-[1.3rem] font-bold">{cartItem.name}</h1>
                 <p className="my-[0.5rem] sm:my-[1rem] text-[1rem] sm:text-[1.1rem] text-[#555] font-bold">{`${cartItem.weight} ${cartItem.unit} * ${cartItem.cartQuantity}`}</p>
-                <p className="text-[1.1rem] sm:text-[1.2rem] text-[#2e7016] font-bold">{(cartItem.price - (cartItem.price * (cartItem.discount) / 100)) * cartItem.cartQuantity} Tk</p>
+                <p className="text-[1.1rem] sm:text-[1.2rem] text-[#2e7016] font-bold">{((cartItem.price - (cartItem.price * (cartItem.discount) / 100)) * cartItem.cartQuantity).toFixed(1)} Tk</p>
             </div>
 
             {/* product delete button */}
