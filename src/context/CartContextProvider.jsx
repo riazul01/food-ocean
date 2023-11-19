@@ -14,7 +14,7 @@ const reducer = (state, action) => {
             if (state.cartItems.find((elem) => elem.id === action.payload.id)) {
                 return state;
             }
-            return {...state, cartItems: [...state.cartItems, {...action.payload, cartQuantity: 1}]};
+            return {...state, cartItems: [...state.cartItems, {...action.payload, quantity: 1}]};
                     
         case 'REMOVE_PRODUCT':
             const cartItems = state.cartItems.filter((elem) => {
@@ -69,8 +69,8 @@ const CartContextProvider = ({ children }) => {
     // calculate total amounts
     for (let i = 0; i < state.cartItems.length; i ++) {
         let elem = state.cartItems[i];
-        subTotal += (elem.price - (elem.price * (elem.discount) / 100)) * elem.cartQuantity;
-        discount += (elem.price * (elem.discount) / 100) * elem.cartQuantity;
+        subTotal += (elem.price - (elem.price * (elem.discount) / 100)) * elem.quantity;
+        discount += (elem.price * (elem.discount) / 100) * elem.quantity;
     }
 
     totalCost = (shippingCost + subTotal).toFixed(1);

@@ -20,15 +20,15 @@ const ProductCard = ({ data }) => {
 
     // increase product quantity
     const handleIncrement = () => {
-        dispatch({type: 'CONTROL_QUANTITY', payload: {...data, cartQuantity: cartItem.cartQuantity + 1}});
+        dispatch({type: 'CONTROL_QUANTITY', payload: {...data, quantity: cartItem.quantity + 1}});
     }
 
     // decrease product quantity
     const handleDecrement = () => {
-        if (cartItem.cartQuantity <= 1) {
+        if (cartItem.quantity <= 1) {
             dispatch({type: 'REMOVE_PRODUCT', payload: cartItem});
         } else {
-            dispatch({type: 'CONTROL_QUANTITY', payload: {...data, cartQuantity: cartItem.cartQuantity - 1}});
+            dispatch({type: 'CONTROL_QUANTITY', payload: {...data, quantity: cartItem.quantity - 1}});
         }
     }
 
@@ -51,7 +51,7 @@ const ProductCard = ({ data }) => {
                 <button onClick={handleAddToCart} className={`absolute left-0 bottom-0 py-[0.4rem] ${addedToCart ? 'w-[45%]': 'w-full'} bg-[#327e16] text-[1.1rem] text-white font-[500] outline-none rounded-sm z-[99]`}>{addedToCart ? 'Added' : 'Add to Cart'}</button>
                 <div className={`absolute right-0 bottom-0 flex items-center`}>
                     <button onClick={handleDecrement} className="px-[0.7rem] py-[0.62rem] border-none outline-none bg-[#222] rounded-sm"><HiMinus className="text-white text-[1.2rem]"/></button>
-                    <span className="text-[1.2rem] text-center font-bold w-[2.5rem]">{`${(cartItem !== undefined) ? cartItem.cartQuantity : 0}`}</span>
+                    <span className="text-[1.2rem] text-center font-bold w-[2.5rem]">{`${(cartItem !== undefined) ? cartItem.quantity : 0}`}</span>
                     <button onClick={handleIncrement} className="px-[0.7rem] py-[0.62rem] border-none outline-none bg-[#222] rounded-sm"><HiPlus className="text-white text-[1.2rem]"/></button>
                 </div>
             </div>

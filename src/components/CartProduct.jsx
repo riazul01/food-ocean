@@ -16,12 +16,12 @@ const CartProduct = ({ cartItem }) => {
     }
 
     const handleIncrement = () => {
-        dispatch({type: 'CONTROL_QUANTITY', payload: {...cartItem, cartQuantity: cartItem.cartQuantity + 1}});
+        dispatch({type: 'CONTROL_QUANTITY', payload: {...cartItem, quantity: cartItem.quantity + 1}});
     }
 
     const handleDecrement = () => {
-        if (cartItem.cartQuantity > 1) {
-            dispatch({type: 'CONTROL_QUANTITY', payload: {...cartItem, cartQuantity: cartItem.cartQuantity - 1}});
+        if (cartItem.quantity > 1) {
+            dispatch({type: 'CONTROL_QUANTITY', payload: {...cartItem, quantity: cartItem.quantity - 1}});
         }
     }
 
@@ -35,8 +35,8 @@ const CartProduct = ({ cartItem }) => {
             {/* product details */}
             <div className="mt-[0.45rem] pl-[0.2rem] sm:pl-[0.6rem]">
                 <h1 className="text-[1.1rem] sm:text-[1.3rem] font-bold">{cartItem.name}</h1>
-                <p className="my-[0.5rem] sm:my-[1rem] text-[1rem] sm:text-[1.1rem] text-[#555] font-bold">{`${cartItem.weight} ${cartItem.unit} * ${cartItem.cartQuantity}`}</p>
-                <p className="text-[1.1rem] sm:text-[1.2rem] text-[#2e7016] font-bold">{((cartItem.price - (cartItem.price * (cartItem.discount) / 100)) * cartItem.cartQuantity).toFixed(1)} Tk</p>
+                <p className="my-[0.5rem] sm:my-[1rem] text-[1rem] sm:text-[1.1rem] text-[#555] font-bold">{`${cartItem.weight} ${cartItem.unit} * ${cartItem.quantity}`}</p>
+                <p className="text-[1.1rem] sm:text-[1.2rem] text-[#2e7016] font-bold">{((cartItem.price - (cartItem.price * (cartItem.discount) / 100)) * cartItem.quantity).toFixed(1)} Tk</p>
             </div>
 
             {/* product delete button */}
@@ -47,7 +47,7 @@ const CartProduct = ({ cartItem }) => {
             {/* control product quantity */}
             <div className="absolute bottom-[0.2rem] right-[0.2rem] sm:bottom-[1rem] sm:right-[1rem] flex items-center justify-center border-[1px] border-[#ccc] rounded-md">
                 <button onClick={handleDecrement} className="px-[0.4rem] py-[0.1rem] sm:px-[0.6rem] sm:py-[0.2rem]"><HiMinus className="ctrlIcon" /></button>
-                <span className="py-[0.175rem] font-[500] w-[2.4rem] sm:w-[3rem] flex items-center justify-center border-x-[1px] border-x-[#ccc]">{cartItem.cartQuantity}</span>
+                <span className="py-[0.175rem] font-[500] w-[2.4rem] sm:w-[3rem] flex items-center justify-center border-x-[1px] border-x-[#ccc]">{cartItem.quantity}</span>
                 <button onClick={handleIncrement} className="px-[0.4rem] py-[0.1rem] sm:px-[0.6rem] sm:py-[0.2rem]"><HiPlus className="ctrlIcon" /></button>
             </div>
 

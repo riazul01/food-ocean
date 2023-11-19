@@ -152,11 +152,11 @@ const OrderDetails = () => {
                                             </p>
                                             <p className="py-[0.1rem] flex flex-col sm:flex-row sm:items-center border-b-[1px] border-b-[#ccc] border-dashed sm:border-b-0 last:border-b-0">
                                                 <strong className="text-[1.1rem] font-[600] text-green-900 w-full sm:w-[150px]">Weight</strong>
-                                                <span className="text-[1.1rem]">{`${elem.weight}${elem.unit} * ${elem.cartQuantity}`}</span>
+                                                <span className="text-[1.1rem]">{`${elem.weight}${elem.unit} * ${elem.quantity}`}</span>
                                             </p>
                                             <p className="py-[0.1rem] flex flex-col sm:flex-row sm:items-center border-b-[1px] border-b-[#ccc] border-dashed sm:border-b-0 last:border-b-0">
                                                 <strong className="text-[1.1rem] font-[600] text-green-900 w-full sm:w-[150px]">Total Price</strong>
-                                                <span className="text-[1.1rem]">{parseInt(elem.price - ((elem.price * elem.discount) / 100)) * elem.cartQuantity} Tk</span>
+                                                <span className="text-[1.1rem]">{parseInt(elem.price - ((elem.price * elem.discount) / 100)) * elem.quantity} Tk</span>
                                             </p>
                                         </div>
                                         <div className="mt-[0.2rem] h-[110px] w-[120px]">
