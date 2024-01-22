@@ -11,8 +11,7 @@ import CartContextProvider from './context/CartContextProvider';
 // style
 import './index.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <LoginContextProvider>
       <UserDetailsContextProvider>
@@ -23,5 +22,5 @@ root.render(
         </ProductsContextProvider>
       </UserDetailsContextProvider>
     </LoginContextProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
