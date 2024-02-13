@@ -37,8 +37,8 @@ const Offers = () => {
             <div className="mx-auto px-[0.4rem] pb-[3rem] max-w-[1420px] min-h-[50vh]">
                 {/* header */}
                 <div className="py-[1.2rem] flex items-center justify-between">
-                    <h1 className="text-[1.4rem] font-bold capitalize">Best Products</h1>
-                    <p className="text-[1rem] font-bold text-[green]">{discountProducts ? discountProducts.length : '0'} Items</p>
+                    <h1 className="text-[1.4rem] font-bold capitalize">Discount Products</h1>
+                    <p className="text-[green] text-[1rem] font-bold">{discountProducts ? discountProducts.length : '0'} Items</p>
                 </div>
 
                 {/* products */}
