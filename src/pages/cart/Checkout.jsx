@@ -106,11 +106,11 @@ const Checkout = () => {
             <div className="mx-auto px-[0.4rem] pb-[3rem] w-full max-w-[1420px]">
                 {/* breadcrumb */}
                 <div className="flex items-center justify-start gap-[0.4rem]">
-                    <span onClick={() => navigate('/cart')} className="text-[#327e16] text-[1.1rem] font-[500] cursor-pointer">Cart</span>
+                    <span onClick={() => navigate('/cart')} className="text-[#0f3536] text-[1.1rem] font-[500] cursor-pointer">Cart</span>
                     <MdKeyboardDoubleArrowRight className="text-[#aaa] text-[1.3rem] font-[500] cursor-context-menu"/>
-                    <span className="text-[#327e16] text-[1.1rem] font-[500] cursor-pointer">Checkout</span>
+                    <span className="text-[#0f3536] text-[1.1rem] font-[500] cursor-pointer">Checkout</span>
                     <MdKeyboardDoubleArrowRight className="text-[#aaa] text-[1.3rem] font-[500] cursor-context-menu"/>
-                    <span className="text-[1.1rem] font-[500] cursor-pointer">Payment</span>
+                    <span className="text-[#888] text-[1.1rem] font-[500] cursor-pointer">Payment</span>
                 </div>
                 
                 <div className="mt-[1rem] flex flex-col lg:flex-row items-center lg:items-start justify-between gap-[1rem]">
@@ -199,7 +199,7 @@ const Checkout = () => {
                             <p className="text-[1.1rem] sm:text-[1.2rem] font-[600]">Total Cost</p>
                             <p className="text-[1.1rem] sm:text-[1.2rem] font-[600]">{totalCost} Tk</p>
                         </div>
-                        <button onClick={handleCheckout} className="mt-[0.6rem] h-[40px] w-full text-[#fff] text-[1.1rem] sm:text-[1.2rem] font-[500] bg-[#327e16] rounded-md">Checkout</button>
+                        <button onClick={handleCheckout} className="mt-[0.6rem] h-[40px] w-full text-[orange] text-[1.1rem] sm:text-[1.2rem] font-[500] bg-[#0c2a2b] rounded-md">Checkout</button>
                     </div>
                 </div>
             </div>
