@@ -36,7 +36,7 @@ const Sidebar = ({ toggle, setToggle }) => {
                         {(pathAra[0] === 'beverages' || pathAra[1] === 'beverages') && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
                         <span>Beverages</span>
                     </NavLink>
-                    <NavLink to="/offers" onClick={() => setToggle(false)} className={`${pathAra[0] === 'offers' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
+                    <NavLink to="/groceries/offers" onClick={() => setToggle(false)} className={`${pathAra[0] === 'offers' ? 'bg-[#173334]' : null} px-[0.8rem] py-[0.4rem] text-[#fff] text-[1.1rem] flex items-center hover:bg-[#173334] rounded-lg`}>
                         {pathAra[0] === 'offers' && <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>}
                         <span>New Offers</span>
                     </NavLink>

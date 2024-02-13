@@ -11,7 +11,7 @@ const Topbar = () => {
         <div className="pt-[0.8rem] h-[auto] w-full bg-[#173334]">
             <div className="mx-[auto] px-[0.4rem] text-[#fff] flex justify-center md:justify-between max-w-[1420px]">
                 <p className="hidden lg:block text-[1rem] font-[500]">Need Help? Call Us: <span className="text-[orange] font-bold">+88 01234567890</span></p>
-                <p className="hidden md:block text-[1rem] font-[500]">Get <span className="text-[orange] font-bold">30% off</span> for first order with exciting gift box! <Link to="/offers" className="underline">Learn more</Link></p>
+                <p className="hidden md:block text-[1rem] font-[500]">Get <span className="text-[orange] font-bold">30% off</span> for first order with exciting gift box! <Link to="/groceries/offers" className="underline">Learn more</Link></p>
                 
                 {/* topbar links */}
                 <div className="flex items-center">
