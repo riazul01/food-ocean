@@ -126,7 +126,7 @@ const Footer = () => {
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">Track Orders</span>
                     </Link>
-                    <Link to="/offers" className="mt-[0.6rem] flex items-center">
+                    <Link to="/groceries/offers" className="mt-[0.6rem] flex items-center">
                         <MdKeyboardArrowRight className="text-[#fff] text-[1.3rem]"/>
                         <span className="text-[#fff] text-[1.1rem]">New offers</span>
                     </Link>
